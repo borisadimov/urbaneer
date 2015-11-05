@@ -1,0 +1,83 @@
+@keyframes rotate
+  from
+    background-position-x: 0px
+  to
+    background-position-x: 858px
+
+.earth
+  padding-top: 84px
+
+  .logo
+    width: 1000.88px
+    margin: 0 auto 128px auto
+    svg
+      width: 100%
+
+  .path
+    position: absolute
+    top: 500px
+
+  .why_video
+    width: 302px
+    height: 302px
+    border-radius: 500px
+    background: #9eb484
+    margin: 0 auto
+    position: relative
+    .play
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%,-60%) rotate(-90deg)
+      width: 140px
+      height: 141px
+      transition: transform .4s ease
+      cursor: pointer
+      &:hover
+        transform: translate(-35%,-50%) rotate(0deg)
+      img
+        width: 100%
+
+
+  .largest
+    margin: 134px auto 150px auto
+    text-align: center
+    padding: 24px 0
+    padding-left: 160px
+    height: 109px
+    background: url('../img/human.png') 144px 50% no-repeat
+    background-size: 43px 109px
+    +light(40px,48px)
+
+    span
+      +bold(40px,58px)
+      color: #96B482
+
+
+
+  .globe
+    margin: 0 auto
+    width: 193px
+    height: 193px
+    background: #1E2314 url(../img/worldmap.png)
+    background-size: 429px 193px
+    border-radius: 500px
+    background-position: 0px 0px
+    animation-name: rotate
+    animation-duration: 5s
+    animation-iteration-count: infinite
+    animation-timing-function: linear
+
+
+
+
+
+
+
+
+
+
+
+
+
+

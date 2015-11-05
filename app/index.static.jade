@@ -6,13 +6,57 @@ head
   link(rel="stylesheet" href="stylesheets/app.css")
 
   script(src="javascripts/vendor.js")
+
+body
+
+  .hero
+    .bg
+    .weapon
+      img(src="./img/weapon.png")
+    .logo
+      include ./assets/svg/logo_black.svg
+
+    .menu
+      a(href="#") About
+      a(href="#") Get smarter
+      a(href="#") Contact
+    .scroll_down
+      img(src='./svg/scroll_down.svg')
+  .spacer
+
+  section.earth
+    .container
+      .path.animated
+        include ./assets/svg/largest.svg
+      .logo
+        include ./assets/svg/logo_black.svg
+
+      .why_video
+        .play
+          img(src="./img/play_video.png")
+
+      .largest
+        | Millennials are the
+        = " "
+        span LARGEST
+        = " "
+        | generation on the planet.
+
+
+
+      .globe
+
+
+
+
+
+
+
+
+
+
+
   script(src="javascripts/app.js")
 
   script.
     require('initialize');
-
-body
-
-  .section
-    h1 Hello man! Write your Jade here.
-    hr
