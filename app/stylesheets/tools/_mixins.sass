@@ -1,0 +1,154 @@
+
+
+@function Rem($size)
+  $remSize: $size / $base-font-size
+  @return $remSize * 1rem
+
+
+
+@function em($size, $context: $base-font-size)
+  @return $size / $context + em
+
+// Px to rem sixing
+@function rem($size, $context: $base-font-size)
+  @return $size / $context + rem
+
+
+=regular($size: 1rem, $line: 1.5rem, $space: 0.02em)
+  @if unit($size) == ""
+    $size: $size * 1px
+  @if unit($line) == ""
+    $line: $line * 1px
+  font: 400 #{$size}/#{$line} $neosans
+  letter-spacing: $space
+  -webkit-font-smoothing: antialiased
+
+=roboto($size: 1rem, $line: 1.5rem, $space: 0.02em)
+  @if unit($size) == ""
+    $size: $size * 1px
+  @if unit($line) == ""
+    $line: $line * 1px
+  font: 400 #{$size}/#{$line} $roboto
+  letter-spacing: $space
+  -webkit-font-smoothing: antialiased
+
+=light($size: 1rem, $line: 1.5rem, $space: 0.02em)
+  @if unit($size) == ""
+    $size: $size * 1px
+  @if unit($line) == ""
+    $line: $line * 1px
+  font: 300 #{$size}/#{$line} $neosans
+  -webkit-font-smoothing: antialiased
+
+=medium($size: 1rem, $line: 1.5rem, $space: 0.02em)
+  @if unit($size) == ""
+    $size: $size * 1px
+  @if unit($line) == ""
+    $line: $line * 1px
+  font: 500 #{$size}/#{$line} $neosans
+  -webkit-font-smoothing: antialiased
+
+
+=bolditalic($size: 1rem, $line: 1.5rem, $space: 0.02em)
+  @if unit($size) == ""
+    $size: $size * 1px
+  @if unit($line) == ""
+    $line: $line * 1px
+  font: 700 #{$size}/#{$line} $subtitle
+  font-style: italic
+
+
+
+=title($size: 1rem, $line: 1.5rem, $space: 0.02em)
+  @if unit($size) == ""
+    $size: $size * 1px
+  @if unit($line) == ""
+    $line: $line * 1px
+  font: 400 #{$size}/#{$line} $title
+
+=bold($size: 1rem, $line: 1.5rem, $space: 0.02em)
+  @if unit($size) == ""
+    $size: $size * 1px
+  @if unit($line) == ""
+    $line: $line * 1px
+  font: 700 #{$size}/#{$line} $title
+
+
+
+
+=mobile()
+  +max-screen(767px)
+    @content
+
+
+=tablet()
+  +screen(768px, 991px)
+    @content
+
+=normal()
+  +screen(992px, 1200px)
+    @content
+
+
+=hd()
+  +min-screen(1201px)
+    @content
+
+=greygradient()
+  background: #333333
+  background: url(data:image/svg+xmlbase64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzMzMzMzMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjY1JSIgc3RvcC1jb2xvcj0iIzRkNGQ0ZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzMzMzMzMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+)
+  background: -moz-linear-gradient(top,  #333333 0%, #4d4d4d 65%, #333333 100%)
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#333333), color-stop(65%,#4d4d4d), color-stop(100%,#333333))
+  background: -webkit-linear-gradient(top,  #333333 0%,#4d4d4d 65%,#333333 100%)
+  background: -o-linear-gradient(top,  #333333 0%,#4d4d4d 65%,#333333 100%)
+  background: -ms-linear-gradient(top,  #333333 0%,#4d4d4d 65%,#333333 100%)
+  background: linear-gradient(to bottom,  #333333 0%,#4d4d4d 65%,#333333 100%)
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#333333',GradientType=0 )
+
+
+=hideble()
+  transition: opacity .4s ease
+  opacity: 1
+  body.transition-step-1 &
+    opacity: 0
+
+  body.transition-step-2 &
+    display: none
+
+  body.transition-step-3 &
+    display: none
+
+  body.transition-step-4 &
+    display: none
+
+=showble()
+  transition: opacity .5s ease, max-height 0.5s ease
+  opacity: 0
+  max-height: 0
+  overflow: hidden
+
+
+  > *
+    transition: opacity .3s ease
+    opacity: 0.01
+
+
+
+  body.transition-step-2 &
+    display: block
+
+
+  body.transition-step-3 &
+    display: block
+    opacity: 1
+    max-height: 3000px !important
+
+
+  body.transition-step-4 &
+    display: block
+    opacity: 1
+    max-height: 3000px !important
+    > *
+      opacity: 1
+
+

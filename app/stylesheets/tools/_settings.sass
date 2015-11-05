@@ -1,0 +1,123 @@
+// COLORS
+
+
+$white: #ffffff
+$blue: #0066d0
+$black: #010101
+
+$red: #FF1A36
+$orange: #ef7d00
+$yellow: #F5A623
+$purple: #a4519a
+$bright-purple: #bd10e0
+$green: #58c928
+$pink: #DB9DD8
+$dark-pink: #BD85BD
+$dark-blue: #4a90e2
+$pink-hr: #F1C3E3
+
+$light-gray: #9F9F9F
+$mid-gray: #666666
+$dark-gray: #9F9F9F
+$gray: #9b9b9b
+
+$gray-form: #A8A8A8
+$gray-form-labels: #9E9E9E
+
+$primary-color: $gray
+
+$base-font-size: 14
+$tablet-font-size: 14
+$mobile-font-size: 12
+
+$neosans: 'NeoSansW1G', sans-serif
+$roboto: 'Roboto', sans-serif
+// Custom
+
+$text-color: $black
+
+$placeholder-color-reversed: rgba(255,255,255,0.4)
+$placeholder-color: rgba(0,0,0,0.3)
+
+$gradient-colors: $orange, $purple
+$cta-background: $bright-purple
+
+
+$helvetica: 'Helvetica', "Open Sans", sans-serif
+$roboto: 'Roboto', sans-serif
+$slab: 'Roboto Slab', sans-serif
+
+
+
+$title: $slab
+$subtitle: $roboto
+$body: $helvetica
+
+
+*
+  box-sizing: border-box
+
+
+.container
+  width: 100%
+  max-width: 1200px
+  min-height: 100%
+  margin: 0 auto
+  position: relative
+  padding: 0 65px
+  text-align: left
+  @extend %clearfix
+  +tablet
+    padding: 0 40px
+  +mobile
+    padding: 0 15px
+
+
+
+html,body
+  font-size: #{$base-font-size}px
+  line-height: #{$base-font-size*1.5}px
+  color: $black
+
+  +tablet
+    font-size: #{$tablet-font-size}px
+
+  +mobile
+    font-size: #{$mobile-font-size}px
+
+
+.column
+  display: flex
+  flex-flow: column nowrap
+  justify-content: space-between
+
+.row
+  display: flex
+  flex-flow: row nowrap
+  justify-content: space-between
+
+
+fieldset
+  border: 0
+  margin: 0
+  padding: 0
+
+textarea
+  line-height: 1.6
+  resize: vertical
+
+p
+  color: inherit
+
+@keyframes myAnimation
+  0%
+    transform: translateY(0)
+
+  50%
+    transform: translateY(50px)
+
+  100%
+    transform: translateY(0)
+
+
+
