@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="114px" height="113px" viewBox="0 0 114 113" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4 (15575) - http://www.bohemiancoding.com/sketch -->
+    <title>Speaking</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Main" sketch:type="MSArtboardGroup" transform="translate(-1254.000000, -8137.000000)">
+            <g id="About-Us" sketch:type="MSLayerGroup" transform="translate(0.000000, 3131.000000)">
+                <g id="Get-Started" transform="translate(211.000000, 4811.000000)" sketch:type="MSShapeGroup">
+                    <g id="Speaking" transform="translate(1043.000000, 195.000000)">
+                        <path d="M113.4324,56.5944 C113.4324,25.5384 88.2576,0.3612 57.2004,0.3612 C26.1432,0.3612 0.9684,25.5384 0.9684,56.5944 C0.9684,87.6504 26.1432,112.8264 57.2004,112.8264 C88.2576,112.8264 113.4324,87.6504 113.4324,56.5944" id="Fill-1" fill="#1E2313"></path>
+                        <path d="M85.0932,49.5564 L80.4552,46.5108 L80.4552,35.9784 L74.2728,35.9784 L74.2728,42.4512 L56.844,31.0068 L29.106,49.5564 L29.106,77.382 L52.0932,77.382 L52.0932,60.9828 L62.31,60.9828 L62.31,77.382 L85.2948,77.382 L85.2948,49.5564 L85.0932,49.5564" id="Fill-2" fill="#FFFFFF"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

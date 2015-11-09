@@ -5,13 +5,32 @@
 @import 'tools/_settings'
 @import 'sections/_hero'
 @import 'sections/_earth'
+@import 'sections/_future'
+@import 'sections/_about_us'
+@import 'sections/_guideline'
 
 
 
 body
-  min-width: 1400px
+  min-width: 980px
 
 section
   position: relative
   z-index: 2
   background: #fff
+
+.textbox
+  border: 1px solid #000
+  padding: 20px 16px
+  background: #fff
+  +light(18px,23px)
+  span
+    +bold(18px,23px)
+    color: #96B482
+
+.container
+  // background: rgba(0,0,0,0.1)
+
+
+.disable-hover, .disable-hover *
+  pointer-events: none !important

@@ -5,21 +5,21 @@
     background-position-x: 858px
 
 .earth
-  padding-top: 84px
+  padding-top: 60px
 
   .logo
-    width: 1000.88px
-    margin: 0 auto 128px auto
-    svg
+    width: 500px
+    margin: 0 auto 70px auto
+    img
       width: 100%
 
   .path
     position: absolute
-    top: 500px
+    top: 300px
 
   .why_video
-    width: 302px
-    height: 302px
+    width: 250px
+    height: 250px
     border-radius: 500px
     background: #9eb484
     margin: 0 auto
@@ -30,7 +30,7 @@
       left: 50%
       transform: translate(-50%,-60%) rotate(-90deg)
       width: 140px
-      height: 141px
+      height: 140.5px
       transition: transform .4s ease
       cursor: pointer
       &:hover
@@ -40,23 +40,29 @@
 
 
   .largest
-    margin: 134px auto 150px auto
+    margin: 155px auto 80px auto
     text-align: center
     padding: 24px 0
-    padding-left: 160px
-    height: 109px
-    background: url('../img/human.png') 144px 50% no-repeat
-    background-size: 43px 109px
-    +light(40px,48px)
+    padding-left: 16px
+    background: url('../img/human.png') 90px 50% no-repeat
+    background-size: 21.5px 54.5px
+    +light(24px,36px)
 
     span
-      +bold(40px,58px)
+      +bold(24px,36px)
       color: #96B482
 
 
+  .globe_container
+    margin-bottom: 80px
+    display: flex
+    flex-flow: row nowrap
+    justify-content: flex-end
+    align-items: center
 
   .globe
-    margin: 0 auto
+    flex: 0 0 193px
+    margin-right: 48px
     width: 193px
     height: 193px
     background: #1E2314 url(../img/worldmap.png)
@@ -64,9 +70,23 @@
     border-radius: 500px
     background-position: 0px 0px
     animation-name: rotate
-    animation-duration: 5s
+    animation-duration: 8s
     animation-iteration-count: infinite
     animation-timing-function: linear
+
+
+
+
+
+  .over
+    flex: 0 0 auto
+    border: 2px solid #000
+    padding: 18px 20px
+    display: block
+    +light(20px,20px)
+    span
+      +bold(20px,20px)
+      color: #96B482
 
 
 

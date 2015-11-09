@@ -14,7 +14,7 @@ body
     .weapon
       img(src="./img/weapon.png")
     .logo
-      include ./assets/svg/logo_black.svg
+      img(src="./img/logo-big.png")
 
     .menu
       a(href="#") About
@@ -29,7 +29,7 @@ body
       .path.animated
         include ./assets/svg/largest.svg
       .logo
-        include ./assets/svg/logo_black.svg
+        img(src="./img/logo-black.png")
 
       .why_video
         .play
@@ -42,15 +42,300 @@ body
         = " "
         | generation on the planet.
 
+      .globe_container
+        .globe
+
+        .over
+          | Over
+          = " "
+          span 80 million
+          = " "
+          | in the US.
+
+  section.future
+    .timeline
+      .line
+      .points_first
+        .point.current 2020
+        .point
+        .point
+        .point
+        .point
+          span.s2 2040
+        .point
+          span.s1 2025
+      .points_second
+        .point
+        .point
+        .point
+        .point
+        .point
+          | 2065
+
+        .point
+
+    .population
+      .population_background.showed
+        .bg_row
+        .bg_row
+        .bg_row
+        .bg_row
+        .bg_row
+        .bg_row
+        .bg_row
+
+      .container
+        .textbox
+          | Millennials will represent <span>50%</span> of the global workforce.
+        .line.path.animated
+          include ./assets/svg/population_line.svg
+        .textbox
+          | Millennials will represent <span>as much as 75%.</span>
 
 
-      .globe
+    .timeline.third_state
+      .line
+      .points_first
+        .point.current 2020
+        .point
+        .point
+        .point
+        .point
+          span.s2 2040
+        .point
+          span.s1 2025
+      .points_second
+        .point
+        .point
+        .point
+        .point
+        .point.end
+          | 2065
+          .vline
+            .hline
+
+        .point
+
+    .money
+      .money_column
+        .money_sign
+      .money_column
+        .money_sign
+        .money_sign
+      .money_column
+        .money_sign
+        .money_sign
+      .money_column
+        .money_sign
+        .money_sign
+        .money_sign
+      .money_column
+        .money_sign
+        .money_sign
+        .money_sign
+      .money_column
+        .money_sign
+        .money_sign
+        .money_sign
+      .money_column
+        .money_sign
+        .money_sign
+        .money_sign
+      .money_column
+        .money_sign
+        .money_sign
+        .money_sign
+        .money_sign
+      .money_column
+        .money_sign
+        .money_sign
+        .money_sign
+        .money_sign
+      .money_column
+        .money_sign
+        .money_sign
+        .money_sign
+        .money_sign
+      .money_column
+        .money_sign
+        .money_sign
+        .money_sign
+        .money_sign
+      .money_column
+        .money_sign
+        .money_sign
+        .money_sign
+        .money_sign
+        .money_sign
+      .money_column
+        .money_sign
+        .money_sign
+        .money_sign
+        .money_sign
+        .money_sign
+
+
+    .textbox.total
+      | They already wield an estimated annual purchasing power in
+      | the trillions, and their financial capital will explode as they
+      | inherit and invest a staggering <span>$36 TRILLION</span> over the
+      | next <span>45 years</span>.
+
+
+  section.about_us
+    .video_section
+      .video_section_bg(style="background-image: url(./img/about_us_bg.jpg)")
+
+      .label
+        | About <span>us</span>
+      .quote
+        | "My family’s still in Mexico, I basically<br/>
+        | you have one foot in American culture,<br/>
+        | and another foot in another culture."
+
+
+      .name
+        | Nick <br/>
+        | Brooklyn, NY
+
+    .container
+      include guidelines
+      .who
+        .heading
+          | <span>Who</span> we are
+        .text_columns
+          .col
+            | A boutique creative consultancy focused on helping clients understand and engage the Millennial Generation through <span> Insights, Strategies, and Executions.</span>
+          .col
+            | We came up with the term “Urbaneer” because the urban pioneers we were meeting didn’t like being called hipsters. We decided that <span>these influencers and early adopters of the Millennial Generation deserved a new moniker</span> that matched their ingenuity and pioneering spirit.
+          .col
+            | We’ve met Millennial Urbaneers all across America, from Los Angeles to Boston— our two locations—and have traveled extensively to observe and collaborate with these innovators. We are constantly conducting quantitative and qualitative proprietary research to learn about emerging trends as they develop—<span>aggregating "Actionable Intelligence,” as we like to call it.</span>
+
+
+        .heading
+          | <span>What</span> we do
+
+
+      .iconset
+        .item.insights
+          .icon
+            img(src="./svg/insights.svg")
+          .label Insights
+        .item.strategy
+          .icon
+            img(src="./svg/strategy.svg")
+          .label Strategy
+        .item.execution
+          .icon
+            img(src="./svg/execution.svg")
+          .label Execution
+
+
+        .black_block
+          .text We design and deliver insight-driven strategies that help clients understand and engage the Millennial generation as consumers and employees through our proprietary ADI process*:
+          .process
+            .point AWARENESS
+            .arrow
+            .point DEMAND
+            .arrow
+            .point INTENT
+
+          .small_text
+            | *ADI was originally conceived in 2006, as an evolved approach towards marketing and media planning for motion pictures.  The process worked, and has been tested across verticals and with non-traditional initiatives (like engaging prospective employees) with great success.
+
+      .video_centered
+        .video_centered_bg(style="background-image: url(./img/centered_video_bg.jpg)")
+
+        .quote
+          | “Yes, I think that it is great idea, but it's really difficult to implement. How can I help you?”
+        .name
+          | Jessica <br/>
+          | Columbus, OH
+
+
+      .how
+        .heading
+          | <span>How</span> we do it
 
 
 
+      .iconset.how_we_do_it
+        .item.culture
+          .icon
+            img(src="./svg/culture.svg")
+          .label Culture
+        .item.communication
+          .icon
+            img(src="./svg/communication.svg")
+          .label Communications
+        .item.content
+          .icon
+            img(src="./svg/Content.svg")
+          .label Content
+
+        .black_block
+          .text We design and deliver insight-driven strategies that help clients understand and engage the Millennial generation as consumers and employees through our proprietary ADI process*:
+          .process
+            .point AWARENESS
+            .arrow
+            .point DEMAND
+            .arrow
+            .point INTENT
+
+          .small_text
+            | *ADI was originally conceived in 2006, as an evolved approach towards marketing and media planning for motion pictures.  The process worked, and has been tested across verticals and with non-traditional initiatives (like engaging prospective employees) with great success.
+
+
+      .video_centered.second_video_centered
+        .video_centered_bg(style="background-image: url(./img/centered_video_bg.jpg)")
+
+        .quote
+          | “Yes, I think that it is great idea, but it's really difficult to implement. How can I help you?”
+        .name
+          | Jessica <br/>
+          | Columbus, OH
+
+
+      .get_started
+        .heading
+          | <span>How</span> we do it
 
 
 
+      .iconset.get_started_iconset
+        .item.assessments
+          .icon
+            img(src="./svg/assessments.svg")
+          .label assessments
+        .item.workshops
+          .icon
+            img(src="./svg/workshops.svg")
+          .label Workshops
+        .item.speaking
+          .icon
+            img(src="./svg/speaking.svg")
+          .label speaking <br/> engagements
+
+
+
+        .black_block
+          .text We design and deliver insight-driven strategies that help clients understand and engage the Millennial generation as consumers and employees through our proprietary ADI process*:
+          .process
+            .point AWARENESS
+            .arrow
+            .point DEMAND
+            .arrow
+            .point INTENT
+
+          .small_text
+            | *ADI was originally conceived in 2006, as an evolved approach towards marketing and media planning for motion pictures.  The process worked, and has been tested across verticals and with non-traditional initiatives (like engaging prospective employees) with great success.
+
+
+    .video_section.get_smarter_video
+      .video_section_bg(style="background-image: url(./img/get_smarter_video_bg.jpg)")
+
+      .label
+        | Get <span>smarter</span>
 
 
 
