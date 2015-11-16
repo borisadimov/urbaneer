@@ -6,336 +6,431 @@ head
   link(rel="stylesheet" href="stylesheets/app.css")
 
   script(src="javascripts/vendor.js")
+  script(src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/plugins/debug.addIndicators.min.js")
+  style
+    include ./stylesheets/_loader.css
 
-body
+body.loading#body
+  .loader
+    .left
+    .right
+    .cssload-loader
+      .cssload-inner.cssload-one
+      .cssload-inner.cssload-two
+      .cssload-inner.cssload-three
 
-  .hero
-    .bg
-    .weapon
-      img(src="./img/weapon.png")
-    .logo
-      img(src="./img/logo-big.png")
-
-    .menu
-      a(href="#") About
-      a(href="#") Get smarter
-      a(href="#") Contact
-    .scroll_down
-      img(src='./svg/scroll_down.svg')
-  .spacer
-
-  section.earth
-    .container
-      .path.animated
-        include ./assets/svg/largest.svg
-      .logo
-        img(src="./img/logo-black.png")
-
-      .why_video
-        .play
-          img(src="./img/play_video.png")
-
-      .largest
-        | Millennials are the
-        = " "
-        span LARGEST
-        = " "
-        | generation on the planet.
-
-      .globe_container
-        .globe
-
-        .over
-          | Over
-          = " "
-          span 80 million
-          = " "
-          | in the US.
-
-  section.future
-    .timeline
-      .line
-      .points_first
-        .point.current 2020
-        .point
-        .point
-        .point
-        .point
-          span.s2 2040
-        .point
-          span.s1 2025
-      .points_second
-        .point
-        .point
-        .point
-        .point
-        .point
-          | 2065
-
-        .point
-
-    .population
-      .population_background.showed
-        .bg_row
-        .bg_row
-        .bg_row
-        .bg_row
-        .bg_row
-        .bg_row
-        .bg_row
-
-      .container
-        .textbox
-          | Millennials will represent <span>50%</span> of the global workforce.
-        .line.path.animated
-          include ./assets/svg/population_line.svg
-        .textbox
-          | Millennials will represent <span>as much as 75%.</span>
+  .wrapper
+    .scroller
+      .progress
+      .side_menu
+        .item.to_home home
+        .item.to_about_us about us
+        .item.to_get_smarter get smarter
+        .item.to_contact contact
+    .inner
+      .hero#hero
+        .bg
+          video.hero_video(autoplay="autoplay" preload="true" loop='loop')
+            source(src='./video/hero.mp4' type='video/mp4')
+            source(src='./video/hero.webm' type='video/webm')
+        .weapon
+          img(src="./img/weapon.png")
+        .logo
+          img(src="./img/logo-big.png")
 
 
-    .timeline.third_state
-      .line
-      .points_first
-        .point.current 2020
-        .point
-        .point
-        .point
-        .point
-          span.s2 2040
-        .point
-          span.s1 2025
-      .points_second
-        .point
-        .point
-        .point
-        .point
-        .point.end
-          | 2065
-          .vline
-            .hline
+        .scroll_down
+          img(src='./svg/scroll_down.svg')
+      .spacer#scrolltrigger
+        .menu
+          a(href="#").to_about_us About
+          a(href="#").to_get_smarter Get smarter
+          a(href="#").to_contact Contact
 
-        .point
+      section.earth#content_start
+        .container
+          .path.animated
+            include ./assets/svg/largest.svg
+          .logo
+            img(src="./img/logo-black.png")
 
-    .money
-      .money_column
-        .money_sign
-      .money_column
-        .money_sign
-        .money_sign
-      .money_column
-        .money_sign
-        .money_sign
-      .money_column
-        .money_sign
-        .money_sign
-        .money_sign
-      .money_column
-        .money_sign
-        .money_sign
-        .money_sign
-      .money_column
-        .money_sign
-        .money_sign
-        .money_sign
-      .money_column
-        .money_sign
-        .money_sign
-        .money_sign
-      .money_column
-        .money_sign
-        .money_sign
-        .money_sign
-        .money_sign
-      .money_column
-        .money_sign
-        .money_sign
-        .money_sign
-        .money_sign
-      .money_column
-        .money_sign
-        .money_sign
-        .money_sign
-        .money_sign
-      .money_column
-        .money_sign
-        .money_sign
-        .money_sign
-        .money_sign
-      .money_column
-        .money_sign
-        .money_sign
-        .money_sign
-        .money_sign
-        .money_sign
-      .money_column
-        .money_sign
-        .money_sign
-        .money_sign
-        .money_sign
-        .money_sign
+          .why_video
+            .play
+              img(src="./img/play_video.png")
 
+          .largest.fadein
+            | Millennials are the
+            = " "
+            span LARGEST
+            = " "
+            | generation on the planet.
 
-    .textbox.total
-      | They already wield an estimated annual purchasing power in
-      | the trillions, and their financial capital will explode as they
-      | inherit and invest a staggering <span>$36 TRILLION</span> over the
-      | next <span>45 years</span>.
+          .globe_container
+            .globe#globe
 
+            .over.fadein
+              | Over
+              = " "
+              span 80 million
+              = " "
+              | in the US.
 
-  section.about_us
-    .video_section
-      .video_section_bg(style="background-image: url(./img/about_us_bg.jpg)")
+      section.future
+        .timeline
+          .line
+          .points_first
+            .point.current 2020
+            .point
+            .point
+            .point
+            .point
+              span.s2 2040
+            .point
+              span.s1 2025
+          .points_second
+            .point
+            .point
+            .point
+            .point
+            .point.end
+              | 2065
+              .vline
+                .hline
 
-      .label
-        | About <span>us</span>
-      .quote
-        | "My family’s still in Mexico, I basically<br/>
-        | you have one foot in American culture,<br/>
-        | and another foot in another culture."
+            .point
 
+        .population
+          .population_background
+            .bg_row
+            .bg_row
+            .bg_row
+            .bg_row
+            .bg_row
+            .bg_row
+            .bg_row
 
-      .name
-        | Nick <br/>
-        | Brooklyn, NY
-
-    .container
-      include guidelines
-      .who
-        .heading
-          | <span>Who</span> we are
-        .text_columns
-          .col
-            | A boutique creative consultancy focused on helping clients understand and engage the Millennial Generation through <span> Insights, Strategies, and Executions.</span>
-          .col
-            | We came up with the term “Urbaneer” because the urban pioneers we were meeting didn’t like being called hipsters. We decided that <span>these influencers and early adopters of the Millennial Generation deserved a new moniker</span> that matched their ingenuity and pioneering spirit.
-          .col
-            | We’ve met Millennial Urbaneers all across America, from Los Angeles to Boston— our two locations—and have traveled extensively to observe and collaborate with these innovators. We are constantly conducting quantitative and qualitative proprietary research to learn about emerging trends as they develop—<span>aggregating "Actionable Intelligence,” as we like to call it.</span>
-
-
-        .heading
-          | <span>What</span> we do
-
-
-      .iconset
-        .item.insights
-          .icon
-            img(src="./svg/insights.svg")
-          .label Insights
-        .item.strategy
-          .icon
-            img(src="./svg/strategy.svg")
-          .label Strategy
-        .item.execution
-          .icon
-            img(src="./svg/execution.svg")
-          .label Execution
-
-
-        .black_block
-          .text We design and deliver insight-driven strategies that help clients understand and engage the Millennial generation as consumers and employees through our proprietary ADI process*:
-          .process
-            .point AWARENESS
-            .arrow
-            .point DEMAND
-            .arrow
-            .point INTENT
-
-          .small_text
-            | *ADI was originally conceived in 2006, as an evolved approach towards marketing and media planning for motion pictures.  The process worked, and has been tested across verticals and with non-traditional initiatives (like engaging prospective employees) with great success.
-
-      .video_centered
-        .video_centered_bg(style="background-image: url(./img/centered_video_bg.jpg)")
-
-        .quote
-          | “Yes, I think that it is great idea, but it's really difficult to implement. How can I help you?”
-        .name
-          | Jessica <br/>
-          | Columbus, OH
-
-
-      .how
-        .heading
-          | <span>How</span> we do it
+          .container
+            .textbox.t1.fadein
+              | Millennials will represent <span>50%</span> of the global workforce.
+            .line.path.animated
+              include ./assets/svg/population_line.svg
+            .textbox.t2.fadein
+              | Millennials will represent <span>as much as 75%.</span>
 
 
 
-      .iconset.how_we_do_it
-        .item.culture
-          .icon
-            img(src="./svg/culture.svg")
-          .label Culture
-        .item.communication
-          .icon
-            img(src="./svg/communication.svg")
-          .label Communications
-        .item.content
-          .icon
-            img(src="./svg/Content.svg")
-          .label Content
 
-        .black_block
-          .text We design and deliver insight-driven strategies that help clients understand and engage the Millennial generation as consumers and employees through our proprietary ADI process*:
-          .process
-            .point AWARENESS
-            .arrow
-            .point DEMAND
-            .arrow
-            .point INTENT
-
-          .small_text
-            | *ADI was originally conceived in 2006, as an evolved approach towards marketing and media planning for motion pictures.  The process worked, and has been tested across verticals and with non-traditional initiatives (like engaging prospective employees) with great success.
-
-
-      .video_centered.second_video_centered
-        .video_centered_bg(style="background-image: url(./img/centered_video_bg.jpg)")
-
-        .quote
-          | “Yes, I think that it is great idea, but it's really difficult to implement. How can I help you?”
-        .name
-          | Jessica <br/>
-          | Columbus, OH
-
-
-      .get_started
-        .heading
-          | <span>How</span> we do it
-
-
-
-      .iconset.get_started_iconset
-        .item.assessments
-          .icon
-            img(src="./svg/assessments.svg")
-          .label assessments
-        .item.workshops
-          .icon
-            img(src="./svg/workshops.svg")
-          .label Workshops
-        .item.speaking
-          .icon
-            img(src="./svg/speaking.svg")
-          .label speaking <br/> engagements
-
-
-
-        .black_block
-          .text We design and deliver insight-driven strategies that help clients understand and engage the Millennial generation as consumers and employees through our proprietary ADI process*:
-          .process
-            .point AWARENESS
-            .arrow
-            .point DEMAND
-            .arrow
-            .point INTENT
-
-          .small_text
-            | *ADI was originally conceived in 2006, as an evolved approach towards marketing and media planning for motion pictures.  The process worked, and has been tested across verticals and with non-traditional initiatives (like engaging prospective employees) with great success.
+        .money
+          .money_column
+            .money_sign
+          .money_column
+            .money_sign
+            .money_sign
+          .money_column
+            .money_sign
+            .money_sign
+          .money_column
+            .money_sign
+            .money_sign
+            .money_sign
+          .money_column
+            .money_sign
+            .money_sign
+            .money_sign
+          .money_column
+            .money_sign
+            .money_sign
+            .money_sign
+          .money_column
+            .money_sign
+            .money_sign
+            .money_sign
+          .money_column
+            .money_sign
+            .money_sign
+            .money_sign
+            .money_sign
+          .money_column
+            .money_sign
+            .money_sign
+            .money_sign
+            .money_sign
+          .money_column
+            .money_sign
+            .money_sign
+            .money_sign
+            .money_sign
+          .money_column
+            .money_sign
+            .money_sign
+            .money_sign
+            .money_sign
+          .money_column
+            .money_sign
+            .money_sign
+            .money_sign
+            .money_sign
+            .money_sign
+          .money_column
+            .money_sign
+            .money_sign
+            .money_sign
+            .money_sign
+            .money_sign
 
 
-    .video_section.get_smarter_video
-      .video_section_bg(style="background-image: url(./img/get_smarter_video_bg.jpg)")
+        .textbox.total.fadein
+          | They already wield an estimated annual purchasing power in
+          | the trillions, and their financial capital will explode as they
+          | inherit and invest a staggering <span>$36 TRILLION</span> over the
+          | next <span>45 years</span>.
 
-      .label
-        | Get <span>smarter</span>
+
+      section.about_us
+        .video_section.video_section_about_us
+          .video_section_bg(style="background-image: url(./img/about_us_bg.jpg)")
+            .overlay
+            video.about_us_video(autoplay="autoplay" preload="true" loop='loop')
+              source(src='./video/noah.mp4' type='video/mp4')
+              source(src='./video/noah.webm' type='video/webm')
+
+
+          .label
+            | About <span>us</span>
+          .quote
+            | "My family’s still in Mexico, I basically<br/>
+            | you have one foot in American culture,<br/>
+            | and another foot in another culture."
+
+
+          .name
+            | Nick <br/>
+            | Brooklyn, NY
+
+        .container.long
+          include guidelines
+          .who
+            .heading.h1.fadein
+              | <span>Who</span> we are
+            .text_columns
+              .col.fadein
+                | A boutique creative consultancy focused on helping clients understand and engage the Millennial Generation through <span> Insights, Strategies, and Executions.</span>
+              .col.fadein
+                | We came up with the term “Urbaneer” because the urban pioneers we were meeting didn’t like being called hipsters. We decided that <span>these influencers and early adopters of the Millennial Generation deserved a new moniker</span> that matched their ingenuity and pioneering spirit.
+              .col.fadein
+                | We’ve met Millennial Urbaneers all across America, from Los Angeles to Boston— our two locations—and have traveled extensively to observe and collaborate with these innovators. We are constantly conducting quantitative and qualitative proprietary research to learn about emerging trends as they develop—<span>aggregating "Actionable Intelligence,” as we like to call it.</span>
+
+
+            .heading.h2.fadein
+              | <span>What</span> we do
+
+
+          .iconset.what_we_do
+            .item.insights
+              .icon
+                img(src="./img/insight.gif")
+              .label Insights
+            .item.strategy
+              .icon
+                img(src="./img/strategy.gif")
+              .label Strategy
+            .item.execution
+              .icon
+                img(src="./img/execution.gif")
+              .label Execution
+
+
+            .black_block.b1.fadein
+              .text Expertise is the delta between observation and insight. We’ve built our expertise through many years of observing Millennials as they live, work, and play; we’ve organized these observations into insights that we can share. Today, the insights serve as actionable intelligence for our clients, looking to better understand and engage Millennials.
+
+
+            .black_block.b2.fadein
+              .text We design and deliver insight-driven strategies that help clients understand and engage the Millennial generation as consumers and employees through our proprietary ADI process*:
+              .process
+                .point AWARENESS
+                .arrow
+                .point DEMAND
+                .arrow
+                .point INTENT
+
+              .small_text
+                | *ADI was originally conceived in 2006, as an evolved approach towards marketing and media planning for motion pictures.  The process worked, and has been tested across verticals and with non-traditional initiatives (like engaging prospective employees) with great success.
+
+
+            .black_block.b3.fadein
+              .text We flawlessly execute our strategies through a combination of engaging content, thought- provoking campaigns, and corporate culture initiatives. Backed by our parent company, Hamagami/Carroll, Inc., Urbaneer Creative has best-in-class execution capabilities.
+
+          .video_centered.jessica
+            .video_centered_bg.fadein(style="background-image: url(./img/centered_video_bg.jpg)")
+              video.jessica_video(autoplay="autoplay" preload="true" loop='loop')
+                source(src='./video/elli.mp4' type='video/mp4')
+                source(src='./video/elli.webm' type='video/webm')
+            .quote.fadein
+              | “Yes, I think that it is great idea, but it's really difficult to implement. How can I help you?”
+            .name.fadein
+              | Jessica <br/>
+              | Columbus, OH
+
+
+          .how.fadein
+            .heading
+              | <span>How</span> we do it
+
+
+
+          .iconset.how_we_do_it
+            .item.culture
+              .icon
+                img(src="./img/culture.gif")
+              .label Culture
+            .item.communication
+              .icon
+                img(src="./img/campaign.gif")
+              .label Communications
+            .item.content
+              .icon
+                img(src="./img/Content.gif")
+              .label Content
+
+            .black_block.b4.fadein
+              .text Content is king. From social media to multimedia, digital content is essential for capturing Millennials’ attention and building brand loyalty. We specialize in creating the dynamic content needed to truly engage Millennials.
+            .black_block.b5.fadein
+              .text Millennials expect transparent, authentic, ongoing communication with brands. We work with clients to create communication strategies and campaigns designed to maximize opportunities—by delivering it at the right time and in the right way—to create deeper connections with targeted Millennial audiences.
+
+            .black_block.b6.fadein
+              .text Your corporate culture matters. Get it wrong, and Millennials will move along in a matter of months. We know what drives and inspires Millennials to do great work, and we use that knowledge to help clients attract and retain the best and brightest of the Millennial generation.
+
+
+          .video_centered.second_video_centered.jessica2
+            .video_centered_bg.fadein(style="background-image: url(./img/centered_video_bg.jpg)")
+              video.jessica_video2(autoplay="autoplay" preload="true" loop='loop')
+                source(src='./video/elli.mp4' type='video/mp4')
+                source(src='./video/elli.webm' type='video/webm')
+            .quote.fadein
+              | “Yes, I think that it is great idea, but it's really difficult to implement. How can I help you?”
+            .name.fadein
+              | Jessica <br/>
+              | Columbus, OH
+
+
+          .get_started.fadein
+            .heading
+              | <span>Get</span> started
+
+
+
+          .iconset.get_started_iconset
+            .item.assessments
+              .icon
+                img(src="./img/assessments.gif")
+              .label assessments
+            .item.workshops
+              .icon
+                img(src="./img/workshops.gif")
+              .label Workshops
+            .item.speaking
+              .icon
+                img(src="./img/speaking.gif")
+              .label speaking <br/> engagements
+
+
+
+            .black_block.b7.fadein
+              .text Is your brand engaging Millennials? Are you authentic enough for this massive generation of digital natives? We offer custom assessments tailored to your company’s unique needs.
+
+
+            .black_block.b8.fadein
+              .text If you’re ready to dive into the world of Millennials, we offer workshops for you to get the ball rolling. Urbaneer Creative conducts workshops that are customized to your particular area of interest, as it relates to understanding and engaging Millennials. Typically 2-4 hours in length, workshops are structured but flexible, designed to align your team around super-relevant insights and inspire the foundation of a targeted strategy.
+
+
+            .black_block.b9.fadein
+              .text Our founder, Matt Heller, is an expert on the Millennial generation, and a popular speaker on the topic. Matt is best known for his unique, sociological approach to studying the early adopters and influencers within the Millennial Generation, and the anecdotal content he’s collected over the years. Book him to speak at your next conference or event to educate, and entertain the audience about this generation and its unique needs, desires, and aspirations.
+
+
+        .video_section.get_smarter_video
+          .video_section_bg(style="background-image: url(./img/get_smarter_video_bg.jpg)")
+            video.get_smarter(autoplay="autoplay" preload="true" loop='loop')
+              source(src='./video/kathy.mp4' type='video/mp4')
+              source(src='./video/kathy.webm' type='video/webm')
+
+
+          .label
+            | Get <span>smarter</span>
+
+
+          .quote
+            | "I studied Urban Planning at M.I.T. to explore how<br/>
+            | entrepreneurship keeps regions agile."
+
+
+          .name
+            | Kathy Chang <br/>
+            | Detroit, MI
+
+        .container.footer
+          include guidelines_footer
+
+          .footer_items
+            .footer_item.i1.fadein
+              .illustration
+                img(src="./img/the_gbrief.jpg")
+              .text the gbrief
+            .footer_item.i2.fadein
+              .illustration
+                img(src="./img/the_frontier.png")
+              .text the new <br> frontier
+            .footer_item.i3.content_item.fadein
+              .illustration
+                img(src="./img/content.jpg")
+              .text content for <br> purchase
+          .purchase_form
+            .content_item
+              .text content for purchase
+              .illustration
+                img(src="./img/content_big.jpg")
+            .borders
+              include ./assets/svg/first_form1.svg
+
+            .first_form
+              .title white paper request
+              form
+                label.name
+                  span name
+                  input(type="text")
+                label.email
+                  span email
+                  input(type="text")
+                label.message
+                  span message
+                  textarea
+
+                .submit
+                  | submit
+
+
+          .contact_form
+            .borders
+              include ./assets/svg/first_form2.svg
+
+            .second_form.fadein
+              .title contact
+              form
+                label.name
+                  span name
+                  input(type="text")
+                label.email
+                  span email
+                  input(type="text")
+                label.message
+                  span message
+                  textarea
+
+                .submit
+                  | submit
+
+
+
+
 
 
 

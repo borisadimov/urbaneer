@@ -1,4 +1,20 @@
+@keyframes zoom-in
+  from
+    transform: scale(0.3)
+    transform-origin: 50% 50%
+    opacity: 0.0001
+  to
+    transform: scale(1)
+    transform-origin: 50% 50%
+    opacity: 0.9999
 
+@keyframes fade-in
+  0%
+    opacity: 0.0001
+  50%
+    opacity: 0.0001
+  100%
+    opacity: 0.9999
 
 .hero
   height: 100%
@@ -20,6 +36,17 @@
     height: 100vh
 
 
+    video
+      position: absolute
+      width: 100%
+      height: 100%
+      left: 0
+      top: 0
+      object-fit: cover
+      &.hidden
+        display: none
+
+
   .weapon
     width: 40px
     height: 40px
@@ -33,10 +60,19 @@
     width: 620px
     img
       width: 100%
+      animation-name: zoom-in
+      animation-duration: 1.8s
+      animation-iteration-count: 1
+      animation-timing-function: ease
     position: absolute
     top: 40%
     left: 50%
     transform: translate(-50%,-50%)
+    transform-origin: 50% 50%
+
+
+
+
 
 
 
@@ -48,6 +84,14 @@
     display: flex
     flex-flow: center nowrap
     justify-content: center
+    animation-name: fade-in
+    animation-duration: 2s
+    animation-iteration-count: 1
+    animation-timing-function: ease
+    animation-delay: 0
+
+
+
     a
       display: block
       text-shadow: 0px 0px 2px rgba(0,0,0,1)
@@ -76,7 +120,7 @@
     width: 53.3px
     height: 23.3px
     position: absolute
-    bottom: 2.5%
+    bottom: 5%
     left: 50%
     margin-left: -26.5px
     img
@@ -85,10 +129,59 @@
 .spacer
   height: 100%
   height: 100vh
+  margin-top: 40px
   width: 100%
-  pointer-events: none
+  // pointer-events: none
   z-index: 1
   position: relative
 
   &.white
     background: #fff
+
+
+  .menu
+    position: absolute
+    bottom: 20%
+    left: 0
+    width: 100%
+    display: flex
+    flex-flow: center nowrap
+    justify-content: center
+    transition: opacity .3s ease
+    animation-name: fade-in
+    animation-duration: 2s
+    animation-iteration-count: 1
+    animation-timing-function: ease
+    animation-delay: 0
+
+
+
+    a
+      display: block
+      text-shadow: 0px 0px 2px rgba(0,0,0,1)
+      flex: 0 1 240px
+      +light(16px,48px)
+      text-transform: uppercase
+      height: 50px
+      color: #D2D2D2
+      border: 2px solid #D2D2D2
+      text-decoration: none
+      text-align: center
+      transition: all .3s ease
+
+      border-left: 1px solid #D2D2D2
+      border-right: 1px solid #D2D2D2
+      &:first-child
+        border-left: 2px solid #D2D2D2
+      &:last-child
+        border-right: 2px solid #D2D2D2
+
+      &:hover
+        background-color: #fff
+        color: #000
+        text-shadow: none
+
+
+.disable-hover
+  .menu
+    opacity: 0

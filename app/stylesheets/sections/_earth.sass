@@ -5,11 +5,20 @@
     background-position-x: 858px
 
 .earth
-  padding-top: 60px
+  padding-top: 120px
 
   .logo
     width: 500px
     margin: 0 auto 70px auto
+    transition: opacity 1s ease, transform 1s ease
+    opacity: 0.001
+    transform-origin: 50% 50%
+    transform: scale(0.3)
+    &.showed
+      opacity: 0.9999
+      transform: scale(1)
+
+
     img
       width: 100%
 
@@ -69,10 +78,11 @@
     background-size: 429px 193px
     border-radius: 500px
     background-position: 0px 0px
-    animation-name: rotate
-    animation-duration: 8s
-    animation-iteration-count: infinite
-    animation-timing-function: linear
+    &.animated
+      animation-name: rotate
+      animation-duration: 8s
+      animation-iteration-count: infinite
+      animation-timing-function: linear
 
 
 
@@ -80,9 +90,13 @@
 
   .over
     flex: 0 0 auto
-    border: 2px solid #000
+    border: 1px solid #000
     padding: 18px 20px
     display: block
+    transition: opacity 1s ease, transform 1s ease
+    opacity: 0.001
+    &.showed
+      opacity: 0.9999
     +light(20px,20px)
     span
       +bold(20px,20px)

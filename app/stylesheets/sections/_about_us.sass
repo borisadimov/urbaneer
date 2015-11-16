@@ -8,6 +8,31 @@
       height: 100%
       background: #fff center center no-repeat
       background-size: cover
+      overflow: hidden
+      z-index: 4
+
+      .overlay
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background: rgba(0,0,0,0.4)
+        z-index: 1
+        display: none
+        &.showed
+          display: block
+
+      video
+        position: absolute
+        width: 100%
+        height: 100%
+        left: 0
+        top: 0%
+        object-fit: cover
+        display: none
+        &.showed
+          display: block
 
 
     .label
@@ -16,7 +41,9 @@
       color: #A6BF94
       position: absolute
       left: 15%
-      top: 10%
+      top: 60%
+      z-index: 6
+
       span
         color: #fff
         opacity: 0.5
@@ -29,6 +56,7 @@
       position: absolute
       right: 4%
       top: 20%
+      z-index: 6
 
     .name
       +bold(22px,30px)
@@ -37,11 +65,13 @@
       position: absolute
       bottom: 10%
       right: 5%
+      z-index: 6
 
 
 
   .container
-    min-height: 4600px
+    &.long
+      min-height: 4000px
 
     .heading
       margin: 60px 0 30px 0
@@ -74,42 +104,56 @@
           +bold(14px,24px)
           color: #A6BF94
 
+        @for $i from 1 through 3
+          &:nth-child(#{$i})
+            transition-delay: 0.2s * $i
+
+
 
 
     .who
       padding: 0 0 0 20px
+      transition-delay: .8s
 
 
     .iconset
       position: relative
-      z-index: 2
+      z-index: 5
       padding-top: 60px
       display: flex
       flex-flow: row nowrap
       justify-content: space-around
       text-align: center
-      +bold(24px, 36px)
+      +bold(24px, 28px)
       color: #D2D2D2
       text-transform: uppercase
 
       .item
         transition: all .3s ease
         transform-origin: 50% 35%
-        &:hover
-          transform: scale(1.8)
-          color: #000
+        flex: 0 0 240px
+        .icon
+          height: 114px
+          text-align: center
+          margin-bottom: 10px
+          img
+            height: 100%
+        // &:hover
+        //   transform: scale(1.8)
+        //   color: #000
 
 
       .black_block
         position: absolute
         width: 100%
-        top: 300px
+        top: 260px
         left: 0
         background: #000
         +light(18px,26px)
         color: #fff
         margin: 0 auto
         padding: 30px 80px
+        z-index: 5
 
         .process
           margin: 30px 0
@@ -137,19 +181,35 @@
 
 
     .video_centered
-      top: 1624px
+      top: 1424px
       position: absolute
       z-index: 2
       width: 500px
       height: 285px
+      background: #fff
       left: 50%
       transform: translate3D(-50%,0,0)
+
 
       .video_centered_bg
         position: absolute
         width: 100%
         height: 100%
         background-size: cover
+        overflow: hidden
+        border: 1px solid #000
+
+
+        video
+          display: none
+          position: absolute
+          width: 100%
+          height: 100%
+          left: 0
+          top: 0
+          object-fit: cover
+          &.showed
+            display: block
 
       .quote
         position: absolute
@@ -163,8 +223,7 @@
       .name
         position: absolute
         bottom: -50px
-        right: -250px
-        width: 330px
+        right: -162px
         color: #000
         +bold(20px,24px)
         text-align: center
@@ -172,7 +231,7 @@
 
     .how
       position: absolute
-      top: 2030px
+      top: 1830px
 
       .heading
         &:before
@@ -181,17 +240,17 @@
 
     .how_we_do_it
       position: absolute
-      top: 2246px
+      top: 2046px
       width: 850px
 
 
     .second_video_centered
-      top: 3236px
+      top: 2836px
 
 
     .get_started
       position: absolute
-      top: 3620px
+      top: 3220px
       .heading
         &:before
           left: -52px
@@ -199,19 +258,235 @@
 
     .get_started_iconset
       position: absolute
-      top: 3860px
+      top: 3460px
       width: 850px
 
 
 
+  .get_smarter_video
+    .label
+      left: 8%
+
+  .footer
+    height: 1700px
+    &.extended
+      height: 2200px
+    .footer_items
+      position: relative
+      margin: 0 auto
+      top: 286px
+      display: flex
+      flex-flow: row nowrap
+      justify-content: space-around
+      padding: 0 10px 0 4px
+
+      .footer_item
+        flex: 1 0 230px
+        max-width:  230px
+        height: 130px
+        position: relative
+        background: #fff
+        display: flex
+        justify-content: center
+        align-items: center
+        transition: all .5s ease
+        transform-origin: 50% 50%
+        cursor: pointer
+        overflow: hidden
+        // &.selected
+        //   flex-basis: 0
+        //   max-width:  0
+        &:hover
+          transform: scale(1.1)
+        .illustration
+          position: absolute
+          top: 0
+          left: 0
+          width: 100%
+          height: 100%
+          img
+            width: 100%
+            opacity: 0.3
+        .text
+          text-align: center
+          +bold(22px,28px)
+          text-transform: uppercase
+          opacity: 0.9999
+          transition: all .3s ease
+      &.disabled
+        pointer-events: none
+        .footer_item .text
+          opacity: 0.0001
+
+    .purchase_form
+
+      display: none
+      position: absolute
+      top: 150px
+      left: 80px
+
+      .content_item
+        position: absolute
+        left: 100px
+        top: 0px
+        z-index: 10
+        opacity: 0.0001
+        transition: opacity .4s ease
+        .text
+          text-align: center
+          +bold(22px,28px)
+          text-transform: uppercase
+          margin-bottom: 10px
+        .illustration
+          width: 600px
+          img
+            width: 100%
+
+      .borders
+        position: absolute
+        top: 290px
+        svg
+          path
+            transition: all 2s ease
+
+      .first_form
+        +light(22px,28px)
+        position: absolute
+        top: 430px
+        text-transform: uppercase
+        width: 800px
+        .title
+          width: 100%
+          height: 70px
+          padding-top: 4px
+          text-align: center
+          vertical-align: center
+          display: flex
+          justify-content: center
+          align-items: center
+        label
+          display: block
+          height: 66px
+          width: 800px
+          padding-left: 50px
+          padding-top: 14px
+          position: relative
+          input, textarea
+            position: absolute
+            top: 2px
+            left: 212px
+            width: 586px
+            height: 63px
+            border: none
+            padding: 5px 10px
+            &:focus
+              outline-color: #ddd
+          &.message
+            height: 298px
+            textarea
+              height: 294px
+              resize: none
+
+        .submit
+          display: block
+          position: absolute
+          bottom: -65px
+          right: 1px
+          width: 146px
+          height: 66px
+          border: none
+          text-align: center
+          line-height: 66px
+          cursor: pointer
+
+
+
+      &.showed
+        display: block
+        &.drawn
+          .content_item
+            opacity: .9999
+          svg
+            path
+              stroke-dashoffset: 0 !important
 
 
 
 
 
 
+    .contact_form
+      @extend .purchase_form
+
+      display: block
+      top: 534px
+      left: 30.5px
+      transition: all .5s ease
+      &.down
+        transform: translate3D(0,400px,0)
 
 
+
+
+
+
+      .second_form
+        +light(24px,30px)
+        position: absolute
+        top: 430px
+        text-transform: uppercase
+        width: 900px
+        .title
+          width: 100%
+          height: 73px
+          padding-top: 4px
+          text-align: center
+          vertical-align: center
+          display: flex
+          justify-content: center
+          align-items: center
+        label
+          display: block
+          height: 75px
+          width: 900px
+          padding-left: 50px
+          padding-top: 22px
+          position: relative
+          input, textarea
+            position: absolute
+            top: 2px
+            left: 239px
+            width: 659px
+            height: 72px
+            border: none
+            padding: 5px 10px
+            &:focus
+              outline-color: #ddd
+          &.message
+            height: 332px
+            textarea
+              height: 332px
+              resize: none
+
+        .submit
+          display: block
+          position: absolute
+          bottom: -78px
+          right: 1px
+          width: 164px
+          height: 72px
+          border: none
+          text-align: center
+          line-height: 66px
+          cursor: pointer
+
+      &.showed
+        .second_form
+          opacity: 0.9999
+
+        svg
+          path
+            stroke-dashoffset: 0 !important
 
 
 
