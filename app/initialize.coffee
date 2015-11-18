@@ -1,72 +1,81 @@
-$( window ).load ->
-  setTimeout ->
-    $('body').toggleClass('opening loading')
+isiPad = false
+ipadCheck = ->
+  isiPad = navigator.userAgent.match(/iPad/i) != null
+  if isiPad
+    $('body').addClass('is-ipad')
+
+
+initShowWhyVideo = =>
+  $('.why_video .play').click ->
+    $('.why_video').addClass('step1')
     setTimeout ->
-      $('body').removeClass('opening')
-    , 399
-  , 500
+      $('.why_video').removeClass('step1')
+      $('.why_video').addClass('step2')
+    ,501
 
-$(document).ready ->
-
-
-  window.controller = controller = new ScrollMagic.Controller({container: ".inner"})
-
-  controller.scrollTo (newpos) ->
-    TweenMax.to window, 0.5, {scrollTo: {y: newpos, autoKill:false}}
-
+initScrollMaigic = =>
   # # # # # #
   # Hero Scroll
   # # # # # #
+
+
   scrolling = false
+  $('.spacer .scrolldown').click ->
+    if scrolling then return
+    scrolling = true
+    $('body').addClass('disable-hover')
+    scrollTo $(".inner")[0], $('#hero').height()+40, ->
+      $('body').removeClass('disable-hover')
+      scrolling = false
+
   $('.to_about_us').click ->
     if scrolling then return
     scrolling = true
     $('body').addClass('disable-hover')
-    $(".inner").scrollTop(3150)
-    setTimeout ->
+    scrollTo $(".inner")[0], 3150, ->
       $('body').removeClass('disable-hover')
       scrolling = false
-    ,60
   $('.to_home').click ->
     if scrolling then return
     scrolling = true
     $('body').addClass('disable-hover')
-    $(".inner").scrollTop(0)
-    setTimeout ->
+    scrollTo $(".inner")[0], 0 , ->
       $('body').removeClass('disable-hover')
       scrolling = false
-    ,60
+
   $('.to_get_smarter').click ->
     if scrolling then return
     scrolling = true
     $('body').addClass('disable-hover')
-    $(".inner").scrollTop(7540)
-    setTimeout ->
+    scrollTo $(".inner")[0], 7540, ->
       $('body').removeClass('disable-hover')
       scrolling = false
-    ,60
+
   $('.to_contact').click ->
     if scrolling then return
     scrolling = true
     $('body').addClass('disable-hover')
-    $(".inner").scrollTop(8840)
-    setTimeout ->
+    scrollTo $(".inner")[0],8840, ->
       $('body').removeClass('disable-hover')
       scrolling = false
-    ,60
 
 
   scrollDown = new ScrollMagic.Scene
     triggerElement: "#scrolltrigger"
     duration: "100%"
   .triggerHook(0)
+  .on 'progress', (e) ->
+    if e.target.controller().info("scrollDirection") is "FORWARD"
+      $('.progress .icon').removeClass('reversed')
+    else
+      $('.progress .icon').addClass('reversed')
   .on "start end", (e) ->
     if e.type is "start"
       if e.target.controller().info("scrollDirection") is "FORWARD"
         if scrolling then return
         scrolling = true
         $('body').addClass('disable-hover')
-        $(".inner").stop().animate {scrollTop: $('#hero').height()+40}, ->
+        scrollTo $(".inner")[0], $('#hero').height()+40, ->
           $('body').removeClass('disable-hover')
           scrolling = false
 
@@ -74,20 +83,21 @@ $(document).ready ->
       else
     else
       if e.target.controller().info("scrollDirection") is "REVERSE"
-        $('.hero_video').removeClass('hidden')
+        $('.hero .bg').append(require('hero_video'))
+        $(".inner")[0].scrollTop = $('#hero').height()+40
         setTimeout ->
           if scrolling then return
           scrolling = true
           $('body').addClass('disable-hover')
-          $(".inner").stop().animate({scrollTop: 0}, ->
+          scrollTo $(".inner")[0], 0, ->
             $('body').removeClass('disable-hover')
-            scrolling = false)
-        , 20
+            scrolling = false
+        , 200
 
       else
         setTimeout ->
-          $('.hero_video').addClass('hidden')
-        , 20
+          $('.hero_video').remove()
+        , 500
 
   .addTo(controller)
 
@@ -97,6 +107,12 @@ $(document).ready ->
     triggerElement: "#scrolltrigger"
     duration: 3300
   .triggerHook(0)
+  .on 'progress', (e) ->
+    if e.target.controller().info("scrollDirection") is "FORWARD"
+      $('.progress .icon').removeClass('reversed')
+    else
+      $('.progress .icon').addClass('reversed')
+
   .setTween(scroller_tween1)
   .addTo(controller)
 
@@ -107,26 +123,32 @@ $(document).ready ->
     offset: 3301
     duration: 4200
   .triggerHook(0)
+  .on 'progress', (e) ->
+    if e.target.controller().info("scrollDirection") is "FORWARD"
+      $('.progress .icon').removeClass('reversed')
+    else
+      $('.progress .icon').addClass('reversed')
   .setTween(scroller_tween2)
   .addTo(controller)
 
   scroller_tween3 = new TimelineMax()
-  .add(TweenMax.to($('.scroller .progress'), 1, {height: '120%'}))
+  .add(TweenMax.to($('.scroller .progress'), 1, {height: '110%'}))
   scroller2 = new ScrollMagic.Scene
     triggerElement: "#scrolltrigger"
     offset: 7501
     duration: 2000
   .triggerHook(0)
+  .on 'progress', (e) ->
+    if e.target.controller().info("scrollDirection") is "FORWARD"
+      $('.progress .icon').removeClass('reversed')
+    else
+      $('.progress .icon').addClass('reversed')
   .setTween(scroller_tween3)
   .addTo(controller)
 
 
 
 
-
-  # $('body').bind 'mousewheel', (e) ->
-  #   unless $(".wrapper").scrollTop()
-  #     $(".wrapper").animate({scrollTop: $(window).height()});
 
 
   # # #
@@ -153,6 +175,7 @@ $(document).ready ->
     tweenChanges: true
   .on "start", ->
     $(".earth .logo").addClass("showed")
+    $(".why_video .play").addClass("rotated")
   .on "end", ->
     $(".earth .largest").addClass("showed")
   .triggerHook(0)
@@ -187,11 +210,18 @@ $(document).ready ->
     offset: 100
     duration: 450
   .triggerHook(0.7)
-  .on "start", ->
-    $(".future .timeline").addClass("second_state")
-  .on "end", ->
-    $(".future .timeline").removeClass("second_state")
-    $(".future .timeline").addClass("third_state")
+  .on "start", (e)->
+    if e.target.controller().info("scrollDirection") is "FORWARD"
+      $(".future .timeline").addClass("second_state")
+    else
+      $(".future .timeline").removeClass("second_state")
+  .on "end", (e)->
+    if e.target.controller().info("scrollDirection") is "FORWARD"
+      $(".future .timeline").removeClass("second_state")
+      $(".future .timeline").addClass("third_state")
+    else
+      $(".future .timeline").addClass("second_state")
+      $(".future .timeline").removeClass("third_state")
   .addTo(controller)
 
   # # #
@@ -199,16 +229,14 @@ $(document).ready ->
   # # #
 
   population_tween = new TimelineMax()
-  $('.population .path path').each (i,e) ->
-    pathPrepare($(e))
-    population_tween.add(TweenMax.to($(e), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
+  .add(TweenMax.to('.population .filler', 1, {width: '100%'}))
 
 
   scene_population = new ScrollMagic.Scene
-    triggerElement: ".population_background"
+    triggerElement: ".future"
     duration: 200
-    tweenChanges: true
-  .triggerHook(0.7)
+    # tweenChanges: true
+  .triggerHook(0.4)
   .on "start", ->
     $(".population_background").addClass("showed")
     $(".textbox.t1").addClass("showed")
@@ -225,7 +253,8 @@ $(document).ready ->
 
   money_tween = new TimelineMax()
   .add(TweenMax.staggerFromTo('.money .money_column', 1,{opacity: '0.0001'}, {opacity: '0.9999', ease: Back.easeOut}, 0.1))
-  .add(TweenMax.to($('.point .vline'), 1, {height: '378px'}))
+  .add(TweenMax.to($('.point .vline'), 0.7, {height: '378px'}))
+  .add(TweenMax.to($('.point .hline'), 0.3, {width: '30vw'}))
 
   scene_money = new ScrollMagic.Scene
     triggerElement: ".money"
@@ -236,7 +265,7 @@ $(document).ready ->
   .on "start", ->
     return
   .on "end", ->
-    $('.end .vline, .end .hline, .future .total').addClass('showed')
+    $('.future .total').addClass('showed')
   .setTween(money_tween)
   .addTo(controller)
 
@@ -250,7 +279,16 @@ $(document).ready ->
     offset: 0
     duration: '200%'
   .triggerHook(1)
-  .setClassToggle(".about_us_video, .about_us .overlay", "showed")
+  .on 'start', (e) ->
+    if e.target.controller().info("scrollDirection") is "FORWARD"
+      $('.insert_about_us_video').append(require('about_us_video'))
+    else
+      $('.insert_about_us_video .overlay, .insert_about_us_video .about_us_video').remove()
+  .on 'end', (e) ->
+    unless e.target.controller().info("scrollDirection") is "FORWARD"
+      $('.insert_about_us_video').append(require('about_us_video'))
+    else
+      $('.insert_about_us_video .overlay, .insert_about_us_video .about_us_video').remove()
   .setTween(about_us_tween)
   .addTo(controller)
 
@@ -334,8 +372,11 @@ $(document).ready ->
   .triggerHook(0.3)
 
   .setTween(what_we_do_tips_tween)
-  .on "end", ->
-    $('.jessica_video').addClass('showed')
+  .on "end", (e) ->
+    if e.target.controller().info("scrollDirection") is "FORWARD"
+      $('.insert_jessica_video').append(require('jessica_video'))
+    else
+      $('.insert_jessica_video .jessica_video').remove()
 
   .addTo(controller)
 
@@ -425,10 +466,16 @@ $(document).ready ->
   .triggerHook(0.3)
 
   .setTween(how_we_do_it_icons_tween)
-  .on "start", ->
-    $('.jessica_video').removeClass('showed')
-  .on "end", ->
-    $('.jessica_video2').addClass('showed')
+  .on "start", (e)->
+    unless e.target.controller().info("scrollDirection") is "FORWARD"
+      $('.insert_jessica_video').append(require('jessica_video'))
+    else
+      $('.insert_jessica_video .jessica_video').remove()
+  .on "end", (e)->
+    if e.target.controller().info("scrollDirection") is "FORWARD"
+      $('.insert_jessica_video2').append(require('jessica_video2'))
+    else
+      $('.insert_jessica_video2 .jessica_video2').remove()
 
   .addTo(controller)
 
@@ -518,11 +565,16 @@ $(document).ready ->
   .triggerHook(0.3)
 
   .setTween(get_started_tween)
-  .on "start", ->
-    $('.jessica_video2').removeClass('showed')
-  .on "end", ->
-    $('.get_smarter').addClass('showed')
-
+  .on "start", (e)->
+    unless e.target.controller().info("scrollDirection") is "FORWARD"
+      $('.insert_jessica_video2').append(require('jessica_video2'))
+    else
+      $('.insert_jessica_video2 .jessica_video2').remove()
+  .on "end", (e)->
+    if e.target.controller().info("scrollDirection") is "FORWARD"
+      $('.insert_get_smarter_video').append(require('get_smarter_video'))
+    else
+      $('.insert_get_smarter_video .get_smarter').remove()
   .addTo(controller)
 
 
@@ -548,7 +600,7 @@ $(document).ready ->
     offset: 4560
     duration: '200%'
   .triggerHook(1)
-  .setClassToggle(".about_us_video, .about_us .overlay", "showed")
+  # .setClassToggle(".about_us_video, .about_us .overlay", "showed")
   .setTween(get_smarter_tween)
   .addTo(controller)
 
@@ -663,3 +715,31 @@ $(document).ready ->
   #     $('.footer_items').removeClass('disabled')
   #     $('.purchase_form').removeClass('showed')
   #   , 2100
+
+
+
+
+
+$( window ).load ->
+  setTimeout ->
+    $('body').toggleClass('opening loading')
+    $('.insert_about_us_video .overlay, .insert_about_us_video .about_us_video').remove()
+    $('.insert_jessica_video .jessica_video').remove()
+    $('.insert_jessica_video2 .jessica_video2').remove()
+    $('.insert_get_smarter_video .get_smarter').remove()
+    setTimeout ->
+      $('body').removeClass('opening')
+      initScrollMaigic()
+      initShowWhyVideo()
+    , 399
+  , 500
+
+$(document).ready ->
+  ipadCheck()
+
+  window.controller = controller = new ScrollMagic.Controller({container: ".inner"})
+
+  # controller.scrollTo (newpos) ->
+  #   TweenMax.to window, 0.5, {scrollTo: {y: newpos, autoKill:false}}
+
+

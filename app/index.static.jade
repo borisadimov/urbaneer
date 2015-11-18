@@ -22,6 +22,8 @@ body.loading#body
   .wrapper
     .scroller
       .progress
+        .icon
+          include ./assets/svg/wagon.svg
       .side_menu
         .item.to_home home
         .item.to_about_us about us
@@ -30,9 +32,7 @@ body.loading#body
     .inner
       .hero#hero
         .bg
-          video.hero_video(autoplay="autoplay" preload="true" loop='loop')
-            source(src='./video/hero.mp4' type='video/mp4')
-            source(src='./video/hero.webm' type='video/webm')
+          include hero_video
         .weapon
           img(src="./img/weapon.png")
         .logo
@@ -42,10 +42,11 @@ body.loading#body
         .scroll_down
           img(src='./svg/scroll_down.svg')
       .spacer#scrolltrigger
-        .menu
-          a(href="#").to_about_us About
-          a(href="#").to_get_smarter Get smarter
-          a(href="#").to_contact Contact
+        .scrolldown
+        //- .menu
+        //-   a(href="#").to_about_us About
+        //-   a(href="#").to_get_smarter Get smarter
+        //-   a(href="#").to_contact Contact
 
       section.earth#content_start
         .container
@@ -57,6 +58,8 @@ body.loading#body
           .why_video
             .play
               img(src="./img/play_video.png")
+            .video_hidden
+              iframe(src="https://player.vimeo.com/video/89055976" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen)
 
           .largest.fadein
             | Millennials are the
@@ -109,11 +112,11 @@ body.loading#body
             .bg_row
             .bg_row
 
-          .container
+          .text
             .textbox.t1.fadein
               | Millennials will represent <span>50%</span> of the global workforce.
-            .line.path.animated
-              include ./assets/svg/population_line.svg
+            .line
+              .filler
             .textbox.t2.fadein
               | Millennials will represent <span>as much as 75%.</span>
 
@@ -188,11 +191,7 @@ body.loading#body
 
       section.about_us
         .video_section.video_section_about_us
-          .video_section_bg(style="background-image: url(./img/about_us_bg.jpg)")
-            .overlay
-            video.about_us_video(autoplay="autoplay" preload="true" loop='loop')
-              source(src='./video/noah.mp4' type='video/mp4')
-              source(src='./video/noah.webm' type='video/webm')
+          .video_section_bg(style="background-image: url(./img/about-us.jpg)")
 
 
           .label
@@ -262,9 +261,6 @@ body.loading#body
 
           .video_centered.jessica
             .video_centered_bg.fadein(style="background-image: url(./img/centered_video_bg.jpg)")
-              video.jessica_video(autoplay="autoplay" preload="true" loop='loop')
-                source(src='./video/elli.mp4' type='video/mp4')
-                source(src='./video/elli.webm' type='video/webm')
             .quote.fadein
               | “Yes, I think that it is great idea, but it's really difficult to implement. How can I help you?”
             .name.fadein
@@ -289,7 +285,7 @@ body.loading#body
               .label Communications
             .item.content
               .icon
-                img(src="./img/Content.gif")
+                img(src="./img/content.gif")
               .label Content
 
             .black_block.b4.fadein
@@ -303,9 +299,7 @@ body.loading#body
 
           .video_centered.second_video_centered.jessica2
             .video_centered_bg.fadein(style="background-image: url(./img/centered_video_bg.jpg)")
-              video.jessica_video2(autoplay="autoplay" preload="true" loop='loop')
-                source(src='./video/elli.mp4' type='video/mp4')
-                source(src='./video/elli.webm' type='video/webm')
+
             .quote.fadein
               | “Yes, I think that it is great idea, but it's really difficult to implement. How can I help you?”
             .name.fadein
@@ -348,10 +342,7 @@ body.loading#body
 
 
         .video_section.get_smarter_video
-          .video_section_bg(style="background-image: url(./img/get_smarter_video_bg.jpg)")
-            video.get_smarter(autoplay="autoplay" preload="true" loop='loop')
-              source(src='./video/kathy.mp4' type='video/mp4')
-              source(src='./video/kathy.webm' type='video/webm')
+          .video_section_bg(style="background-image: url(./img/get-smarter.jpg)")
 
 
           .label
@@ -407,6 +398,10 @@ body.loading#body
                 .submit
                   | submit
 
+        .video_section.get_smarter_video
+          .video_section_bg(style="background-image: url(./img/contact-us.jpg)")
+
+        .container.contact
 
           .contact_form
             .borders

@@ -21,21 +21,21 @@
 
     .points_first
       position: absolute
-      width: 80%
+      width: 60%
       display: flex
       flex-flow: row nowrap
       justify-content: space-between
-      left: 10%
+      left: 20%
       transform: translate3D(50%,0,0)
       transition: transform .5s ease, width .3s ease
 
     .points_second, .points_etc
       position: absolute
-      width: 40%
+      width: 35%
       display: flex
       flex-flow: row nowrap
       justify-content: space-between
-      left: 55%
+      left: 59%
       transform: translate3D(50%,0,0)
       transition: transform .5s ease
 
@@ -91,7 +91,7 @@
     &.second_state
       .line
         width: 200vw
-        left: 10%
+        left: 20%
 
       .points_first
         transform: translate3D(0,0,0)
@@ -108,7 +108,7 @@
       transform: translate3D(0, 560px, 0)
       .line
         width: 200vw
-        left: 10%
+        left: 20%
 
       .s1
         display: none
@@ -116,7 +116,7 @@
         display: inline-block
 
       .points_first
-        width: 40%
+        width: 35%
         transform: translate3D(0,0,0)
         transition-delay: 1.55s
         .point
@@ -130,7 +130,7 @@
 
       .points_second, .points_etc
         display: flex
-        width: 40%
+        width: 35%
         transform: translate3D(0,0,0)
         .point
           opacity: 0.9999
@@ -148,7 +148,7 @@
       width: 1px
       height: 0px
       background: #000
-      left: 50%
+      left: 52%
       top: 28px
       margin-left: -1px
       &.showed
@@ -181,7 +181,7 @@
       width: 100%
 
       .bg_row
-        background: url(../img/human_repeat.jpg) repeat-x
+        background: url(../img/human_repeat.png) repeat-x
         background-size: auto 100%
         height: 44px
         margin-bottom: 2px
@@ -203,14 +203,29 @@
               transition-delay: 0.15s * $i
 
 
-    .container
+    .text
       display: flex
       height: 322px
       margin-bottom: 240px
       justify-content: center
       align-items: center
+      padding: 0 14%
 
-
+      .line
+        flex: 1 1 100%
+        height: 1px
+        z-index: 5
+        overflow: hidden
+        transform-origin: 50% 50%
+        transform: translateZ(1px) rotate(-5deg)
+        position: relative
+        .filler
+          height: 1px
+          position: absolute
+          left: 0
+          top: 0
+          width: 0%
+          background: #000
       .textbox
         &:first-child
           flex: 0 0 240px
