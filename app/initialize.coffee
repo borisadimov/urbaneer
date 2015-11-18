@@ -100,7 +100,8 @@ initScrollMaigic = =>
 
 
   $('.footer_item.show_frontier').click ->
-
+    setFooterTween(500)
+    $('.footer').addClass('extended')
     $('.footer_items').addClass('disabled')
     $('.footer_item_ext.frontier').addClass('showed')
     $('.footer_item_ext.frontier .illustration').append(require('frontier'))
@@ -141,6 +142,7 @@ initScrollMaigic = =>
     $('.footer_item_ext.frontier').removeClass('drawn')
     $('.illustration iframe').remove()
     setTimeout ->
+      setFooterTween(0)
       $('.footer_items').removeClass('disabled')
       $('.footer_item_ext.frontier').removeClass('showed')
     , 400
