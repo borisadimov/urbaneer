@@ -8,7 +8,7 @@ module.exports = (controller) ->
   scene_get_started = new ScrollMagic.Scene
     triggerElement: ".about_us"
     duration: 200
-    offset: 3400
+    offset: 5400
   .triggerHook(0.2)
   .setTween(get_started_tween)
   .addTo(controller)
@@ -58,7 +58,7 @@ module.exports = (controller) ->
   scene_get_started_tips = new ScrollMagic.Scene
     triggerElement: ".about_us"
     duration: 350
-    offset: 3750
+    offset: 5750
     tweenChanges: true
   .triggerHook(0.3)
 
@@ -73,7 +73,7 @@ module.exports = (controller) ->
   scene_end_of_guideline = new ScrollMagic.Scene
     triggerElement: ".about_us"
     duration: 200
-    offset: 3960
+    offset: 5960
   .triggerHook(0.2)
   .setTween(end_of_guideline_tween)
   .addTo(controller)
