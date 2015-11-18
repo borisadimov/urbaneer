@@ -35,16 +35,17 @@
 
     .label
       text-transform: uppercase
-      +bold(60px,80px)
-      color: #A6BF94
+      +bold(80px,100px)
+      color: #000
       position: absolute
-      left: 15%
-      top: 60%
+      left: 0
+      top: 65%
       z-index: 6
-
+      opacity: 0.8
+      width: 100%
+      text-align: center
       span
-        color: #fff
-        opacity: 0.5
+        color: #000
 
     .quote
       +bold(16px,24px)
@@ -260,14 +261,11 @@
 
 
 
-  .get_smarter_video
-    .label
-      left: 8%
 
   .footer
-    height: 1700px
+    height: 600px
     &.extended
-      height: 2200px
+      height: 1200px
     .footer_items
       position: relative
       margin: 0 auto
@@ -315,7 +313,7 @@
         .footer_item .text
           opacity: 0.0001
 
-    .purchase_form
+    .footer_item_ext
 
       display: none
       position: absolute
@@ -329,6 +327,17 @@
         z-index: 10
         opacity: 0.0001
         transition: opacity .4s ease
+        .close
+          position: absolute
+          top: 0
+          right: 0
+          width: 20px
+          height: 20px
+          cursor: pointer
+          &:before
+            content: "x"
+            +bold(20px,20px)
+
         .text
           text-align: center
           +bold(22px,28px)
@@ -346,7 +355,7 @@
           path
             transition: all 2s ease
 
-      .first_form
+      .first_form, .content_block
         +light(22px,28px)
         position: absolute
         top: 430px
@@ -407,13 +416,53 @@
             path
               stroke-dashoffset: 0 !important
 
+      .content_block
+        text-align: center
+      .info_block
+        border: 2px solid #000
+        padding: 20px 50px 20px 50px
+        margin-bottom: 30px
+        display: inline-block
+        text-align: left
+        .header
+          +bold(22px, 30px)
+          margin-bottom: 8px
+
+        .text
+          +light(15px,20px)
+          text-transform: none
+
+
+      .cta
+        +regular(18px,24px)
+        text-transform: none
+        padding: 20px 80px 20px 80px
+        text-align: left
+        .button
+          text-transform: none
+          border: 2px solid #000
+          padding: 10px 15px
+          background: #fff
+          color: #000
+          text-decoration: none
+          transition: all .3s ease
+          display: block
+          margin: 8px auto
+          margin-top: 40px
+          width: 230px
+          text-align: center
+
+          &:hover
+            color: #fff
+            background-color: #000
+
 
 
 
 
 
     .contact_form
-      @extend .purchase_form
+      @extend .footer_item_ext
 
       display: block
       top: 534px

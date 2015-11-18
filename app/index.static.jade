@@ -43,10 +43,6 @@ body.loading#body
           img(src='./svg/scroll_down.svg')
       .spacer#scrolltrigger
         .scrolldown
-        //- .menu
-        //-   a(href="#").to_about_us About
-        //-   a(href="#").to_get_smarter Get smarter
-        //-   a(href="#").to_contact Contact
 
       section.earth#content_start
         .container
@@ -196,15 +192,6 @@ body.loading#body
 
           .label
             | About <span>us</span>
-          .quote
-            | "My family’s still in Mexico, I basically<br/>
-            | you have one foot in American culture,<br/>
-            | and another foot in another culture."
-
-
-          .name
-            | Nick <br/>
-            | Brooklyn, NY
 
         .container.long
           include guidelines
@@ -349,33 +336,52 @@ body.loading#body
             | Get <span>smarter</span>
 
 
-          .quote
-            | "I studied Urban Planning at M.I.T. to explore how<br/>
-            | entrepreneurship keeps regions agile."
-
-
-          .name
-            | Kathy Chang <br/>
-            | Detroit, MI
-
         .container.footer
           include guidelines_footer
 
           .footer_items
-            .footer_item.i1.fadein
+            .footer_item.i1.show_gbrief.fadein
               .illustration
                 img(src="./img/the_gbrief.jpg")
               .text the gbrief
-            .footer_item.i2.fadein
+            .footer_item.i2.show_frontier.fadein
               .illustration
                 img(src="./img/the_frontier.png")
               .text the new <br> frontier
-            .footer_item.i3.content_item.fadein
+            .footer_item.i3.show_purchase.fadein
               .illustration
                 img(src="./img/content.jpg")
               .text content for <br> purchase
-          .purchase_form
+
+
+          .footer_item_ext.gbrief
             .content_item
+              .close
+              .text The gbrief
+              .illustration
+                img(src="./img/thegbrief.jpg")
+
+            .content_block
+              .info_block
+                .header
+                  | MILLENNIALS AND BIKE CULTURE: <br/>
+                  | Reshaping the Urban Landscape
+                .text
+                  | Millennials and bicycles go together like fixies (fixed-gear bikes for those unfamiliar)<br> Fewer are interested in obtaining their driver’s licenses, and buying<br> a car—once a rite of passage into adulthood alongside home ownership and marriage—is<br> often seen as a burden.
+              .cta
+                | Want to get smarter, faster about Millennials? Our digital destination is updated daily with new insights about today’s largest generation
+                a.button(href="http://www.thegbrief.com" target="_blank")
+                  | Visit The G Brief
+
+          .footer_item_ext.frontier
+            .content_item
+              .close
+              .text the new frontier
+              .illustration
+
+          .footer_item_ext.purchase_form
+            .content_item
+              .close
               .text content for purchase
               .illustration
                 img(src="./img/content_big.jpg")
@@ -398,9 +404,10 @@ body.loading#body
                 .submit
                   | submit
 
-        .video_section.get_smarter_video
+        .video_section.contact_us_video
           .video_section_bg(style="background-image: url(./img/contact-us.jpg)")
 
+          .label contact us
         .container.contact
 
           .contact_form
