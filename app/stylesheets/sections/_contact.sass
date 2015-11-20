@@ -1,0 +1,453 @@
+
+//colors
+$color_tapa_approx: #777
+
+//fonts
+$font_0: HelveticaNeueCyr-Roman
+$font_1: Helvetica
+$font_2: Arial
+$font_3: sans-serif
+$font_4: HelveticaNeueCyr-Bold
+.contact_form_new
+  .contacts__inner
+    width: 940px
+    margin: auto
+    margin-top: 60px
+
+  .contacts-table__cell
+    //If you use compass, instead of the line below you could use + box-sizing($bs)
+    box-sizing: border-box
+    padding-left: 40px
+    vertical-align: middle
+    &:first-child
+      width: 392px
+
+
+  .contact-item
+    font-family: $font_0, $font_1, $font_2, $font_3
+    font-weight: normal
+    font-size: 18px
+    letter-spacing: 0.1em
+    line-height: 1.667
+    text-transform: uppercase
+    > a
+      text-decoration: none
+      color: inherit
+
+
+  .contact-item__label
+    display: block
+    font-family: $font_4, $font_1, $font_2, $font_3
+    font-weight: normal
+    font-size: 10px
+    letter-spacing: 0.2em
+    line-height: 2.2
+    color: $color_tapa_approx
+    text-transform: uppercase
+
+  .contact-item__phone
+    font-size: 24px
+
+  .filter
+    width: 790px
+    //If you use compass, instead of the line below you could use + box-sizing($bs)
+    box-sizing: border-box
+    margin: 0 auto 70px
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    position: relative
+    > .deco
+      position: absolute
+      top: -100px
+      left: -140px
+      right: auto
+      bottom: auto
+
+    + .object-wrapper
+      margin-top: 70px
+
+
+  .filter__item
+    display: inline-block
+    vertical-align: top
+    position: relative
+    cursor: pointer
+    > input
+      position: absolute
+      opacity: 0
+      top: 0
+      left: 0
+
+    .btn
+      //If you use compass, instead of the line below you could use + user-select($select)
+      user-select: none
+
+    input:checked ~ .btn .btn__hover
+      width: 100%
+
+
+  .object-wrapper
+    width: 790px
+    height: 450px
+    position: relative
+    margin: 130px auto
+    &:first-child
+      margin-top: 0
+
+    &:last-child
+      margin-bottom: 0
+
+    &.is-slider
+      width: 100%
+      height: auto
+      //If you use compass, instead of the line below you could use + transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+      transition: height 0.5s linear
+      .object-label
+        opacity: 0
+        visibility: hidden
+
+      .object
+        height: auto
+
+      .object__inner
+        position: relative
+
+      .object__detail
+        padding-bottom: 0
+        animation: none
+
+
+    &.is-animate .object-label
+      opacity: 0
+      visibility: hidden
+
+
+  .object-label
+    display: block
+    position: absolute
+    z-index: 1
+    top: -55px
+    left: -65px
+    font-family: $font_4, $font_1, $font_2, $font_3
+    font-weight: normal
+    font-size: 24px
+    letter-spacing: 1em
+    line-height: 1.333
+    text-transform: uppercase
+    //If you use compass, instead of the line below you could use + transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: all 0.2s linear
+    opacity: 1
+    visibility: visible
+
+  // .contacts-table .form
+
+  .contacts-table__row1 .contacts-table__cell
+    height: 125px
+
+  .contacts-table__row2 .contacts-table__cell
+    height: 286px
+
+  //colors
+  $white: #fff
+  $color_tapa_approx: #777
+  $color_mine_shaft_approx: #333
+
+  //fonts
+  $font_0: HelveticaNeueCyr-Roman
+  $font_1: Helvetica
+  $font_2: Arial
+  $font_3: sans-serif
+
+  .form
+    position: relative
+    &.is-success .form__message
+      opacity: 1
+      visibility: visible
+
+
+  .form__message
+    position: absolute
+    z-index: 5
+    top: 3px
+    left: 3px
+    right: 3px
+    bottom: 3px
+    opacity: 0
+    visibility: hidden
+    //If you use compass, instead of the line below you could use + transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: 0.5s ease
+    background: $white
+    //If you use compass, instead of the line below you could use + transition-property($property-1, $property-2, $property-3, $property-4, $property-5, $property-6, $property-7, $property-8, $property-9, $property-10)
+    transition-property: opacity, visibility
+    overflow: hidden
+    text-align: center
+    font-size: 0
+    font-family: $font_0, $font_1, $font_2, $font_3
+    font-weight: normal
+    font-size: 16px
+    letter-spacing: 0.1em
+    &:before
+      content: ""
+      display: inline-block
+      vertical-align: middle
+      width: 0
+      height: 100%
+
+    strong
+      display: block
+      margin-bottom: 10px
+      font-family: $font_0, $font_1, $font_2, $font_3
+      font-weight: normal
+      font-size: 20px
+      letter-spacing: 0.3em
+      text-transform: uppercase
+
+
+  .form__message-inner
+    display: inline-block
+    vertical-align: middle
+
+  .form__contact
+    height: 184px
+    padding: 35px 0 0 40px
+    font-family: $font_1, $font_2, $font_3
+    font-weight: normal
+    font-size: 14px
+    color: $color_tapa_approx
+    //If you use compass, instead of the line below you could use + box-sizing($bs)
+    box-sizing: border-box
+    > p
+      margin: 10px 0
+      color: $color_mine_shaft_approx
+      text-transform: uppercase
+      font-family: $font_0, $font_1, $font_2, $font_3
+      font-weight: normal
+      font-size: 14px
+      letter-spacing: 0.1em
+
+
+  .input
+    display: block
+    width: 100%
+    height: 52px
+    padding: 15px 15px 15px 0
+    //If you use compass, instead of the line below you could use + box-sizing($bs)
+    box-sizing: border-box
+    font-family: $font_1, $font_2, $font_3
+    font-weight: normal
+    font-size: 16px
+    letter-spacing: 0.03em
+    color: $color_mine_shaft_approx
+    //If you use compass, instead of the line below you could use + transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: color 0.3s linear
+    border: none
+    //If you use compass, instead of the line below you could use + box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: none
+    background: none
+    overflow: hidden
+    &:-ms-input-placeholder
+      color: $color_tapa_approx
+      line-height: normal
+      //If you use compass, instead of the line below you could use + transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+      transition: all 0.5s ease
+
+    &:hover::-moz-placeholder
+      color: $color_mine_shaft_approx
+
+    &:hover::-webkit-input-placeholder
+      color: $color_mine_shaft_approx
+
+    &:hover::placeholder
+      color: $color_mine_shaft_approx
+
+    &:focus::-moz-placeholder
+      color: $color_mine_shaft_approx
+      //If you use compass, instead of the line below you could use + transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: translate(50px, 0)
+      opacity: 0
+
+    &:focus::-webkit-input-placeholder
+      color: $color_mine_shaft_approx
+      //If you use compass, instead of the line below you could use + transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: translate(50px, 0)
+      opacity: 0
+
+    &:focus::placeholder
+      color: $color_mine_shaft_approx
+      //If you use compass, instead of the line below you could use + transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: translate(50px, 0)
+      opacity: 0
+
+    &:hover:-ms-input-placeholder
+      color: $color_mine_shaft_approx
+
+    &:focus:-ms-input-placeholder
+      color: $color_mine_shaft_approx
+      //If you use compass, instead of the line below you could use + transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: translate(50px, 0)
+      opacity: 0
+
+
+  .input::-moz-placeholder
+    color: $color_tapa_approx
+    line-height: normal
+    //If you use compass, instead of the line below you could use + transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: all 0.5s ease
+
+  .input::-webkit-input-placeholder
+    color: $color_tapa_approx
+    line-height: normal
+    //If you use compass, instead of the line below you could use + transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: all 0.5s ease
+
+  .input::placeholder
+    color: $color_tapa_approx
+    line-height: normal
+    //If you use compass, instead of the line below you could use + transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: all 0.5s ease
+
+  .contacts-table .form__message
+    top: 1px
+    left: 0
+
+  textarea.input
+    height: 162px
+    resize: none
+    margin: 0
+
+  //colors
+  $color_norway_approx: #a6bf94
+  $color_mine_shaft_approx: #333
+  $color_silver_chalice_approx: #aaa
+  $red: #f00
+
+  //fonts
+  $font_0: HelveticaNeueCyr-Bold
+  $font_1: Helvetica
+  $font_2: Arial
+  $font_3: sans-serif
+  $font_4: HelveticaNeueCyr
+
+
+
+  .heading1
+    display: block
+    font-family: $font_4, $font_1, $font_2, $font_3
+    font-weight: normal
+    font-size: 16px
+    text-transform: uppercase
+    color: $color_mine_shaft_approx
+
+
+
+  .text
+    font-family: $font_1, $font_2, $font_3
+    font-weight: normal
+    font-size: 16px
+    line-height: 1.375
+    p
+      margin: 12px 0
+      &:first-child
+        margin-top: 0
+
+      &:last-child
+        margin-top: 0
+
+
+
+  .contacts-table
+    position: relative
+    height: 500px
+
+    margin-top: 100px
+    margin-bottom: 40px
+
+    svg
+      path
+        transition: stroke-dashoffset .5s ease
+
+    &.drawn
+      svg
+        path
+          stroke-dashoffset: 0 !important
+      .table_content
+        opacity: .9999 !important
+    .table__border
+      position: absolute
+      top: 0px
+      left: 0px
+    .table_content
+      opacity: 0.0001
+      transition: opacity 0.4s ease
+      width: 940px
+      height: 430px
+      position: absolute
+      position: absolute
+      top: 0px
+      left: 0px
+      display: flex
+      justify-content: flex-start
+      align-items: stretch
+      flex-flow: row nowrap
+
+      .col
+        display: flex
+        flex-flow: column nowrap
+      .col_1
+        flex: 0 0 394px
+        display: flex
+        align-items: stretch
+        padding-left: 30px
+        .cell1
+          flex: 0 0 176px
+          display: flex
+          justify-content: flex-start
+          align-items: center
+        .cell2
+          flex: 0 0 250px
+          display: flex
+          justify-content: flex-start
+          align-items: center
+
+
+
+
+      .col_2
+        flex: 0 0 542px
+        display: flex
+        align-items: stretch
+        justify-content: flex-start
+
+        .cell
+          &:first-child
+            flex: 0 0 91px
+            display: flex
+            align-items: center
+            padding-left: 30px
+
+        form
+          .input
+            height: 45px
+            padding-left: 30px
+            &:focus
+              outline: none
+          textarea.input
+            height: 141px
+
+          .btn_submit
+            font-family: "HelveticaNeueCyr-Bold", Helvetica, Arial, sans-serif
+            height: 60px
+            display: flex
+            align-items: center
+            padding-left: 30px
+            width: 100%
+
+
+
+
+
+
+
+

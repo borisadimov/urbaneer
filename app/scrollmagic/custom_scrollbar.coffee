@@ -8,6 +8,8 @@ module.exports = (controller) ->
     duration: 3300
   .triggerHook(0)
   .on 'progress', (e) ->
+    $('.active_icon').removeClass('active_icon')
+    $('.disabled').removeClass('disabled')
     if e.target.controller().info("scrollDirection") is "FORWARD"
       $('.progress .icon').removeClass('reversed')
     else
@@ -21,9 +23,11 @@ module.exports = (controller) ->
   scroller2 = new ScrollMagic.Scene
     triggerElement: "#scrolltrigger"
     offset: 3301
-    duration: 4200
+    duration: 5800
   .triggerHook(0)
   .on 'progress', (e) ->
+    $('.active_icon').removeClass('active_icon')
+    $('.disabled').removeClass('disabled')
     if e.target.controller().info("scrollDirection") is "FORWARD"
       $('.progress .icon').removeClass('reversed')
     else
@@ -35,10 +39,13 @@ module.exports = (controller) ->
   .add(TweenMax.to($('.scroller .progress'), 1, {height: '110%'}))
   scroller2 = new ScrollMagic.Scene
     triggerElement: "#scrolltrigger"
-    offset: 7501
-    duration: 2000
+    offset: 9100
+    duration: 1200
   .triggerHook(0)
   .on 'progress', (e) ->
+    $('.active_icon').removeClass('active_icon')
+    $('.disabled').removeClass('disabled')
+
     if e.target.controller().info("scrollDirection") is "FORWARD"
       $('.progress .icon').removeClass('reversed')
     else

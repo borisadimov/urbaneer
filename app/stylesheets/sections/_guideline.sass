@@ -7,9 +7,12 @@
 
 
 
+
+
   .guide_line
     position: absolute
     background: #000
+    transition: all 0.3s ease
     &.ln1
       width: 1px
       height: 0px
@@ -19,6 +22,8 @@
       top: 750px
       height: 1px
       width: 0px
+      &.complete
+        width: 940px !important
     &.ln3
       top: 750px
       right: 20px
@@ -32,32 +37,35 @@
       // transform: rotate(60.4deg)
       transform-origin: 0% 0%
     &.ln4_1
-      top: 2832px
+      top: 2432px
       right: 20px
       height: 1px //1079px
       width: 0 //920px
       transform-origin: 0% 0%
     &.ln5
-      top: 2833px
+      top: 2433px
       left: 20px
       height: 0px //330px
       width: 1px
 
     &.ln6
       left: 20px
-      top: 3162px
+      top: 2762px
       height: 1px
       width: 0px //940px
+      &.complete
+        width: 940px !important
 
 
     &.ln7
-      top: 3162px
+      top: 2762px
       right: 20px
       height: 0px //750px
       width: 1px
 
+
     &.ln8
-      top: 3712px
+      top: 3312px
       right: 20px
       height: 0px //1079px
       width: 1px
@@ -65,7 +73,7 @@
       transform-origin: 0% 0%
 
     &.ln8_1
-      top: 5245px
+      top: 4345px
       right: 20px
       height: 1px //1079px
       width: 0px //960px
@@ -73,20 +81,22 @@
       transform-origin: 0% 0%
 
     &.ln9
-      top: 5245px
+      top: 4345px
       left: 20px
       height: 0px //330px
       width: 1px
 
 
     &.ln10
-      top: 5575px
+      top: 4675px
       left: 20px
       height: 1px
       width: 0px //940px
+      &.complete
+        width: 940px !important
 
     &.ln11
-      top: 5575px
+      top: 4675px
       right: 20px
       height: 0 //750px
       width: 1px
@@ -96,6 +106,7 @@
   .guide_line
     position: absolute
     background: #000
+    transition: all .3s ease
     &.ln12
       width: 1px
       height: 0px //350px
@@ -107,39 +118,45 @@
       top: 350px
     &.ln14
       width: 1px
-      height: 0px //40px
+      height: 40px //40px
       left: 61px
       top: 350px
       transform: rotate(180deg)
       transform-origin: 0 0
+      opacity: .00001
     &.ln15
       width: 1px
-      height: 0px //40px
+      height: 40px //40px
       left: 60px
       top: 350px
+      opacity: .00001
     &.ln16
-      width: 0px //860px
+      width: 860px //860px
       height: 1px
       left: 60px
       top: 310px
+      opacity: .00001
     &.ln17
-      width: 0px //860px
+      width: 860px //860px
       height: 1px
       left: 60px
       top: 390px
+      opacity: .00001
 
     &.ln18
       width: 1px
-      height: 0px //40px
+      height: 40px //40px
       left: 920px
       top: 310px
+      opacity: .00001
     &.ln19
       width: 1px
-      height: 0px // 40px
+      height: 40px // 40px
       left: 921px
       top: 390px
       transform-origin: 0 0
       transform: rotate(180deg)
+      opacity: .00001
     &.ln20
       width: 0px //40px
       height: 1px

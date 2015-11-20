@@ -33,8 +33,6 @@ body.loading#body
       .hero#hero
         .bg
           include hero_video
-        .weapon
-          img(src="./img/weapon.png")
         .logo
           img(src="./img/logo-big.png")
 
@@ -212,15 +210,15 @@ body.loading#body
 
 
           .iconset.what_we_do
-            .item.insights
+            .item.insights(data-id="b1")
               .icon
                 img(src="./img/insight.gif")
               .label Insights
-            .item.strategy
+            .item.strategy(data-id="b2")
               .icon
                 img(src="./img/strategy.gif")
               .label Strategy
-            .item.execution
+            .item.execution(data-id="b3")
               .icon
                 img(src="./img/execution.gif")
               .label Execution
@@ -286,15 +284,15 @@ body.loading#body
 
 
           .iconset.how_we_do_it
-            .item.culture
+            .item.culture(data-id="b4")
               .icon
                 img(src="./img/culture.gif")
               .label Culture
-            .item.communication
+            .item.communication(data-id="b5")
               .icon
                 img(src="./img/campaign.gif")
               .label Communications
-            .item.content
+            .item.content(data-id="b6")
               .icon
                 img(src="./img/content.gif")
               .label Content
@@ -347,15 +345,15 @@ body.loading#body
 
 
           .iconset.get_started_iconset
-            .item.assessments
+            .item.assessments(data-id="b7")
               .icon
                 img(src="./img/assessments.gif")
               .label assessments
-            .item.workshops
+            .item.workshops(data-id="b8")
               .icon
                 img(src="./img/workshops.gif")
               .label Workshops
-            .item.speaking
+            .item.speaking(data-id="b9")
               .icon
                 img(src="./img/speaking.gif")
               .label speaking <br/> engagements
@@ -464,25 +462,26 @@ body.loading#body
           .label contact us
         .container.contact
 
-          .contact_form
-            .borders
-              include ./assets/svg/first_form2.svg
+          .contact_form.contact_form_new
+            include contact_form
+            //- .borders
+            //-   include ./assets/svg/first_form2.svg
 
-            .second_form.fadein
-              .title contact
-              form
-                label.name
-                  span name
-                  input(type="text")
-                label.email
-                  span email
-                  input(type="text")
-                label.message
-                  span message
-                  textarea
+            //- .second_form.fadein
+            //-   .title contact
+            //-   form
+            //-     label.name
+            //-       span name
+            //-       input(type="text")
+            //-     label.email
+            //-       span email
+            //-       input(type="text")
+            //-     label.message
+            //-       span message
+            //-       textarea
 
-                .submit
-                  | submit
+            //-     .submit
+            //-       | submit
 
 
 

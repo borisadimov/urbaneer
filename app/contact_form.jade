@@ -1,0 +1,89 @@
+
+.contacts-table.table.js-table.is-animate
+  .table__border.js-border
+    svg(width='940', height='430', viewbox='0 0 1080 494', xmlns='http://www.w3.org/2000/svg')
+      title
+        | contacts-table
+      g(stroke-linecap='square', stroke='#333', fill='none', fill-rule='evenodd')
+        path.inner-border(d='M452.5 1.5v421h626')
+        path.inner-border(d='M452.5 1.5v259h626')
+        path.inner-border(d='M452.5 1.5v207h626')
+        path.inner-border(d='M452.5 1.5v155h626')
+        path.inner-border(d='M452.5 1.5v103h626')
+        g(stroke-width='3')
+          path.outer-border(d='M1.5 1.5v207h451')
+          path.outer-border(d='M1.5 1.5h451v491')
+          path.outer-border(d='M1.5 1.5v491h1077')
+          path.outer-border(d='M1.5 1.5h1077v491')
+  .table_content
+    .col.col_1
+      .cell.cell1
+        .contact-item
+          small.contact-item__label E-mail
+          a(href='mailto:ohhey@urbaneercreative.com') info@urbaneercreative.com
+      .cell.cell2
+        .contact-item
+          small.contact-item__label Address
+          | Urbaneer Creative
+          br
+          | 63 Melcher
+          br
+          | Boston, MA 02210
+
+    .col.col_2
+      .cell
+        strong.heading1
+          | Still have
+          br
+          | questions?
+      .cell
+        form.form(name='question', data-subject='Вопрос')
+          .form__message
+            .form__message-inner
+              strong Thanks
+              span We call you back soon
+          input.input(type='text', name='name', placeholder='Your name')
+          input.input(type='tel', name='phone', placeholder='Your phone')
+          input.input(type='email', name='email', placeholder='Your email')
+          textarea.input(name='message', placeholder='Message')
+          .btn.btn_submit(type='submit')
+            | Send
+
+
+
+  //- table.table_content
+  //-   tbody
+  //-     tr.contacts-table__row1
+  //-       td.contacts-table__cell(rowspan='2')
+  //-         .contact-item
+  //-           small.contact-item__label E-mail
+  //-           a(href='mailto:ohhey@urbaneercreative.com') info@urbaneercreative.com
+  //-       td.contacts-table__cell
+  //-         strong.heading1
+  //-           | Still have
+  //-           br
+  //-           | questions?
+  //-     tr.contacts-table__row1
+  //-       td.contacts-table__cell
+  //-       td.contacts-table__cell(rowspan='2')
+  //-         form.form(name='question', data-subject='Вопрос')
+  //-           .form__message
+  //-             .form__message-inner
+  //-               strong Thanks
+  //-               span We call you back soon
+  //-           input.input(type='text', name='name', placeholder='Your name')
+  //-           input.input(type='tel', name='phone', placeholder='Your phone')
+  //-           input.input(type='email', name='email', placeholder='Your email')
+  //-           textarea.input(name='message', placeholder='Message')
+  //-           .btn.btn_submit(type='submit')
+  //-             | Send
+
+  //-     tr.contacts-table__row2
+  //-       td.contacts-table__cell
+  //-         .contact-item
+  //-           small.contact-item__label Address
+  //-           | Urbaneer Creative
+  //-           br
+  //-           | 63 Melcher
+  //-           br
+  //-           | Boston, MA 02210

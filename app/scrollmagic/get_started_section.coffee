@@ -8,7 +8,7 @@ module.exports = (controller) ->
   scene_get_started = new ScrollMagic.Scene
     triggerElement: ".about_us"
     duration: 200
-    offset: 5400
+    offset: 4300
   .triggerHook(0.2)
   .setTween(get_started_tween)
   .addTo(controller)
@@ -58,7 +58,7 @@ module.exports = (controller) ->
   scene_get_started_tips = new ScrollMagic.Scene
     triggerElement: ".about_us"
     duration: 350
-    offset: 5750
+    offset: 4750
     tweenChanges: true
   .triggerHook(0.3)
 
@@ -68,13 +68,18 @@ module.exports = (controller) ->
 
 
   end_of_guideline_tween = new TimelineMax()
-  .add(TweenMax.to($('.guidelines .ln11'), 2, {'height': '550px'}))
+  .add(TweenMax.to($('.guidelines .ln11'), 2, {'height': '550px', delay: 0.4}))
 
   scene_end_of_guideline = new ScrollMagic.Scene
     triggerElement: ".about_us"
     duration: 200
-    offset: 5960
+    offset: 4960
   .triggerHook(0.2)
+  .on 'start', (e) ->
+    if e.target.controller().info("scrollDirection") is "FORWARD"
+      $('.ln10').addClass('complete')
+    else
+      $('.ln10').removeClass('complete')
   .setTween(end_of_guideline_tween)
   .addTo(controller)
 

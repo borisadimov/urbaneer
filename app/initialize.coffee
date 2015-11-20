@@ -33,22 +33,18 @@ initScrollMaigic = =>
 
   setFooterTween = (height) ->
     footer_tween = new TimelineMax()
-    .add(TweenMax.to($('.guidelines_footer .ln12'), 0.1, {'height': '350px'}))
+    .add(TweenMax.to($('.guidelines_footer .ln12'), 1, {'height': '350px'}))
     .add(TweenMax.to($('.guidelines_footer .ln13'), 0.1, {'width': '40px'}))
     .add([
-      TweenMax.to($('.guidelines_footer .ln14'), 0.1, {'height': '40px'})
-      TweenMax.to($('.guidelines_footer .ln15'), 0.1, {'height': '40px'})])
-
-    .add([
-      TweenMax.to($('.guidelines_footer .ln16'), 1, {'width': '860px'})
-      TweenMax.to($('.guidelines_footer .ln17'), 1, {'width': '860px'})
-      TweenMax.to($('.footer_items .i1'), 0.1, {'opacity': '0.9999'})
-      TweenMax.to($('.footer_items .i2'), 0.1, {'opacity': '0.9999', delay: 0.3})
-      TweenMax.to($('.footer_items .i3'), 0.1, {'opacity': '0.9999', delay: 0.63})
-      ])
-    .add([
-      TweenMax.to($('.guidelines_footer .ln18'), 0.1, {'height': '40px'})
-      TweenMax.to($('.guidelines_footer .ln19'), 0.1, {'height': '40px'})
+      TweenMax.to($('.guidelines_footer .ln14'), 1, {'opacity': '0.9999'})
+      TweenMax.to($('.guidelines_footer .ln15'), 1, {'opacity': '0.9999'})
+      TweenMax.to($('.guidelines_footer .ln16'), 1, {'opacity': '0.9999'})
+      TweenMax.to($('.guidelines_footer .ln17'), 1, {'opacity': '0.9999'})
+      TweenMax.to($('.footer_items .i1'), 1, {'opacity': '0.9999'})
+      TweenMax.to($('.footer_items .i2'), 1, {'opacity': '0.9999'})
+      TweenMax.to($('.footer_items .i3'), 1, {'opacity': '0.9999'})
+      TweenMax.to($('.guidelines_footer .ln18'), 1, {'opacity': '0.9999'})
+      TweenMax.to($('.guidelines_footer .ln19'), 1, {'opacity': '0.9999'})
       ])
     .add(TweenMax.to($('.guidelines_footer .ln20'), 0.1, {'width': '40px'}))
     .add(TweenMax.to($('.guidelines_footer .ln21'), 0.5, {'height': "#{400+height}px"}))
@@ -145,6 +141,7 @@ initScrollMaigic = =>
       setFooterTween(0)
       $('.footer_items').removeClass('disabled')
       $('.footer_item_ext.frontier').removeClass('showed')
+      $('.footer').removeClass('extended')
     , 400
 
 

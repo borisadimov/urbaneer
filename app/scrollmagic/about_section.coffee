@@ -97,9 +97,8 @@ module.exports = (controller) ->
 
 
   jessica_tween = new TimelineMax()
-  .add(TweenMax.to($('.guidelines .ln3'), 0.1, {'height': '550px'}))
-
   .add([
+    TweenMax.to($('.guidelines .ln3'), 0.1, {'height': '550px', delay: 0.4}),
     TweenMax.to($('.stories .story1'), 4, {'transform': 'translate3D(0,-900px,0)'}),
     TweenMax.to($('.stories .story2'), 2.5, {'transform': 'translate3D(0,-900px,0)'}),
     TweenMax.to($('.stories .story3'), 2, {'transform': 'translate3D(0,-1100px,0)', delay: 0.1}),
@@ -110,14 +109,20 @@ module.exports = (controller) ->
     TweenMax.to($('.stories .story3 .quote'), 5, {'transform': 'translate3D(0, 100px,0)', delay: 0.1}),
     TweenMax.to($('.stories .story4 .quote'), 4.3, {'transform': 'translate3D(0,-250px,0)', delay: 0.3}),
     TweenMax.to($('.stories .story5 .quote'), 4.8, {'transform': 'translate3D(0,-200px,0)', delay: 0.6}),
-    TweenMax.to($('.guidelines .ln4'), 2, {'height': '1532px'})])
+    TweenMax.to($('.guidelines .ln4'), 2, {'height': '1132px', delay: 0.6})])
   .add(TweenMax.to($('.guidelines .ln4_1'), 0.2, {'width': '940px'}))
 
   scene_jessica = new ScrollMagic.Scene
     triggerElement: ".about_us"
-    duration: 1800
+    duration: 1400
     offset: 1200
   .triggerHook(0.3)
+  .on 'start', (e) ->
+    if e.target.controller().info("scrollDirection") is "FORWARD"
+      $('.ln2').addClass('complete')
+    else
+      $('.ln2').removeClass('complete')
+
   .setTween(jessica_tween)
   .addTo(controller)
 
@@ -132,7 +137,7 @@ module.exports = (controller) ->
   scene_how_we_do_it = new ScrollMagic.Scene
     triggerElement: ".about_us"
     duration: 400
-    offset: 2900
+    offset: 2500
   .triggerHook(0.2)
   .setTween(how_we_do_it_tween)
   .addTo(controller)
@@ -180,7 +185,7 @@ module.exports = (controller) ->
   scene_what_we_do_tips = new ScrollMagic.Scene
     triggerElement: ".about_us"
     duration: 300
-    offset: 3300
+    offset: 2900
     tweenChanges: true
   .triggerHook(0.3)
   .setTween(how_we_do_it_icons_tween)
@@ -191,9 +196,8 @@ module.exports = (controller) ->
 
 
   jessica_tween2 = new TimelineMax()
-  .add(TweenMax.to($('.guidelines .ln7'), 0.1, {'height': '550px'}))
-
   .add([
+    TweenMax.to($('.guidelines .ln7'), 0.1, {'height': '550px', delay: 0.4}),
     TweenMax.to($('.stories2 .story1'), 4, {'transform': 'translate3D(0,-900px,0)'}),
     TweenMax.to($('.stories2 .story2'), 2.5, {'transform': 'translate3D(0,-900px,0)'}),
     TweenMax.to($('.stories2 .story3'), 2, {'transform': 'translate3D(0,-1100px,0)', delay: 0.1}),
@@ -204,18 +208,30 @@ module.exports = (controller) ->
     TweenMax.to($('.stories2 .story3 .quote'), 5, {'transform': 'translate3D(0, 100px,0)', delay: 0.1}),
     TweenMax.to($('.stories2 .story4 .quote'), 4.3, {'transform': 'translate3D(0,-250px,0)', delay: 0.3}),
     TweenMax.to($('.stories2 .story5 .quote'), 4.8, {'transform': 'translate3D(0,-200px,0)', delay: 0.6}),
-    TweenMax.to($('.guidelines .ln8'), 2, {'height': '1532px'})])
+    TweenMax.to($('.guidelines .ln8'), 2, {'height': '1032px', delay: 0.6})])
   .add(TweenMax.to($('.guidelines .ln8_1'), 0.2, {'width': '940px'}))
 
   scene_jessica2 = new ScrollMagic.Scene
     triggerElement: ".about_us"
-    duration: 1600
-    offset: 3750
+    duration: 1100
+    offset: 3250
   .triggerHook(0.3)
+  .on 'start', (e) ->
+    if e.target.controller().info("scrollDirection") is "FORWARD"
+      $('.ln6').addClass('complete')
+    else
+      $('.ln6').removeClass('complete')
   .setTween(jessica_tween2)
   .addTo(controller)
 
 
 
+  $('.iconset .item').click ->
+    $('.active_icon').removeClass('active_icon')
+    $('.iconset .item').addClass('disabled')
+    $('.iconset .black_block').addClass('disabled')
+    id = $(this).data('id')
+    $(this).addClass('active_icon').removeClass('disabled')
+    $('.'+id).addClass('active_icon').removeClass('disabled')
 
 

@@ -7,7 +7,7 @@ module.exports = (controller) ->
 
   scene_get_smarter = new ScrollMagic.Scene
     triggerElement: ".about_us"
-    offset: 6560
+    offset: 5660
     duration: '200%'
   .triggerHook(1)
   # .setClassToggle(".about_us_video, .about_us .overlay", "showed")
@@ -21,10 +21,9 @@ module.exports = (controller) ->
 
   scene_get_smarter = new ScrollMagic.Scene
     triggerElement: ".about_us"
-    offset: 7560
+    offset: 6660
     duration: '200%'
   .triggerHook(1)
-  # .setClassToggle(".about_us_video, .about_us .overlay", "showed")
   .setTween(contact_us_video_tween)
   .addTo(controller)
 
@@ -33,14 +32,18 @@ module.exports = (controller) ->
   $('.purchase_form svg path').each (i,e) ->
     pathPrepare($(e))
 
-  # contact_tween = []
+  contact_tween = []
   $('.contact_form svg path').each (i,e) ->
     pathPrepare($(e))
-    # contact_tween.push(TweenMax.to($(e), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
 
 
-
-
+  scene_get_smarter = new ScrollMagic.Scene
+    triggerElement: ".contact_us_video"
+    offset: 40
+    duration: '150%'
+  .triggerHook(0)
+  .setClassToggle('.contacts-table', 'drawn')
+  .addTo(controller)
 
 
 
