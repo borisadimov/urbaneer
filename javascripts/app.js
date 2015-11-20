@@ -1065,7 +1065,7 @@ module.exports = function(controller) {
     return $(".why_video .play").addClass("rotated");
   }).on("end", function() {
     $(".earth .largest").addClass("showed");
-    return $(".earth .call_to_action").addClass("fadein");
+    return $(".earth .call_to_action").addClass("showed");
   }).triggerHook(0).setTween(largest_tween).addTo(controller);
   scene_earth = new ScrollMagic.Scene({
     triggerElement: ".earth .largest",
