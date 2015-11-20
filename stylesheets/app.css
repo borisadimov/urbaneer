@@ -674,6 +674,26 @@ p {
     background-position-x: 0px; }
   to {
     background-position-x: 858px; } }
+@-webkit-keyframes press_me {
+  0% {
+    -webkit-transform: translate(-35%, -50%) rotate(0deg) scale(1);
+            transform: translate(-35%, -50%) rotate(0deg) scale(1); }
+  50% {
+    -webkit-transform: translate(-35%, -50%) rotate(0deg) scale(1.05);
+            transform: translate(-35%, -50%) rotate(0deg) scale(1.05); }
+  100% {
+    -webkit-transform: translate(-35%, -50%) rotate(0deg) scale(1);
+            transform: translate(-35%, -50%) rotate(0deg) scale(1); } }
+@keyframes press_me {
+  0% {
+    -webkit-transform: translate(-35%, -50%) rotate(0deg) scale(1);
+            transform: translate(-35%, -50%) rotate(0deg) scale(1); }
+  50% {
+    -webkit-transform: translate(-35%, -50%) rotate(0deg) scale(1.05);
+            transform: translate(-35%, -50%) rotate(0deg) scale(1.05); }
+  100% {
+    -webkit-transform: translate(-35%, -50%) rotate(0deg) scale(1);
+            transform: translate(-35%, -50%) rotate(0deg) scale(1); } }
 .earth {
   padding-top: 120px; }
   .earth .logo {
@@ -700,6 +720,20 @@ p {
   .earth .path {
     position: absolute;
     top: 300px; }
+  .earth .call_to_action {
+    display: block;
+    position: absolute;
+    top: 450px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    font: 300 30px/30px "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica Neue, Helvetica, Arial;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.02em;
+    color: #666;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
   .earth .why_video {
     width: 250px;
     height: 250px;
@@ -732,11 +766,9 @@ p {
       .earth .why_video .play.rotated {
         -webkit-transform: translate(-35%, -50%) rotate(0deg);
             -ms-transform: translate(-35%, -50%) rotate(0deg);
-                transform: translate(-35%, -50%) rotate(0deg); }
-      .earth .why_video .play:hover {
-        -webkit-transform: translate(-35%, -50%) rotate(0deg) scale(1.1);
-            -ms-transform: translate(-35%, -50%) rotate(0deg) scale(1.1);
-                transform: translate(-35%, -50%) rotate(0deg) scale(1.1); }
+                transform: translate(-35%, -50%) rotate(0deg);
+        -webkit-animation: press_me 1.5s ease infinite 0.6s;
+                animation: press_me 1.5s ease infinite 0.6s; }
       .earth .why_video .play img {
         width: 100%; }
     .earth .why_video .video_hidden {
@@ -752,6 +784,11 @@ p {
         opacity: 0.0001; }
       .earth .why_video.step1 .video_hidden {
         display: block; }
+      .earth .why_video.step1 + .call_to_action {
+        top: 500px;
+        opacity: 0; }
+        .earth .why_video.step1 + .call_to_action + .largest {
+          margin-top: 134px; }
     .earth .why_video.step2 {
       width: 500px;
       height: 281px;
@@ -761,8 +798,13 @@ p {
       .earth .why_video.step2 .video_hidden {
         display: block;
         opacity: 0.9999; }
-      .earth .why_video.step2 + .largest {
-        margin-top: 124px; }
+      .earth .why_video.step2 + .call_to_action {
+        top: 500px;
+        opacity: 0; }
+        .earth .why_video.step2 + .call_to_action + .largest {
+          margin-top: 124px; }
+    .earth .why_video:hover + .call_to_action {
+      color: #000; }
   .earth .largest {
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
@@ -1402,7 +1444,9 @@ p {
   font: 300 60px/90px "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica Neue, Helvetica, Arial;
   -webkit-font-smoothing: antialiased;
   letter-spacing: 0.02em;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  -webkit-transition: opacity 0.9s ease;
+  transition: opacity 0.9s ease; }
   .about_us .container .heading span {
     font: 700 60px/90px "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
     -webkit-font-smoothing: antialiased;
@@ -1895,7 +1939,7 @@ p {
         display: block;
         margin-top: 10px; }
     .about_us .stories .story.story1, .about_us .stories2 .story.story1 {
-      top: 100px;
+      top: 150px;
       right: 30px;
       width: 300px; }
       .about_us .stories .story.story1 .quote, .about_us .stories2 .story.story1 .quote {
@@ -1956,8 +2000,8 @@ p {
   .guidelines .guide_line {
     position: absolute;
     background: #000;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease; }
+    -webkit-transition: width 0.3s ease, height 0.3s ease;
+    transition: width 0.3s ease, height 0.3s ease; }
     .guidelines .guide_line.ln1 {
       width: 1px;
       height: 0px;
