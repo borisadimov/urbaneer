@@ -733,7 +733,9 @@ p {
     letter-spacing: 0.02em;
     color: #666;
     -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease; }
+    transition: all 0.3s ease;
+    -webkit-transition-delay: 0.5s;
+            transition-delay: 0.5s; }
   .earth .why_video {
     width: 250px;
     height: 250px;
@@ -786,7 +788,9 @@ p {
         display: block; }
       .earth .why_video.step1 + .call_to_action {
         top: 500px;
-        opacity: 0; }
+        opacity: 0;
+        -webkit-transition-delay: 0s;
+                transition-delay: 0s; }
         .earth .why_video.step1 + .call_to_action + .largest {
           margin-top: 134px; }
     .earth .why_video.step2 {
@@ -800,7 +804,9 @@ p {
         opacity: 0.9999; }
       .earth .why_video.step2 + .call_to_action {
         top: 500px;
-        opacity: 0; }
+        opacity: 0;
+        -webkit-transition-delay: 0s;
+                transition-delay: 0s; }
         .earth .why_video.step2 + .call_to_action + .largest {
           margin-top: 124px; }
     .earth .why_video:hover + .call_to_action {
