@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="114px" height="114px" viewBox="0 0 114 114" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4 (15575) - http://www.bohemiancoding.com/sketch -->
+    <title>Assessments</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Main" sketch:type="MSArtboardGroup" transform="translate(-396.000000, -8138.000000)">
+            <g id="About-Us" sketch:type="MSLayerGroup" transform="translate(0.000000, 3131.000000)">
+                <g id="Get-Started" transform="translate(211.000000, 4811.000000)" sketch:type="MSShapeGroup">
+                    <g id="Assessments" transform="translate(185.000000, 196.000000)">
+                        <path d="M113.894677,57 C113.894677,25.666736 88.4948907,0.266949333 57.1616267,0.266949333 C25.8283627,0.266949333 0.429786667,25.666736 0.429786667,57 C0.429786667,88.3320533 25.8283627,113.73184 57.1616267,113.73184 C88.4948907,113.73184 113.894677,88.3320533 113.894677,57" id="Fill-1" fill="#1E2313"></path>
+                        <path d="M85.359264,35.723744 L85.359264,77.2241867 L84.2163947,77.4723733 L57.469136,83.2714667 L57.1616267,83.339264 L56.8541173,83.2714667 L30.1080693,77.4723733 L28.9664107,77.2241867 L28.9664107,35.723744 L25.743616,35.1293067 L25.743616,80.2435893 L57.1616267,87.011216 L88.5820587,80.2435893 L88.5820587,35.1293067 L85.359264,35.723744" id="Fill-2" fill="#FFFFFF"></path>
+                        <path d="M31.3090507,31.8314507 L31.3090507,75.436032 L55.990912,80.7883893 L55.990912,37.1825973 L31.3090507,31.8314507" id="Fill-3" fill="#FFFFFF"></path>
+                        <path d="M58.3347627,37.1825973 L58.3347627,80.7883893 L83.012992,75.436032 L83.012992,31.8314507 L58.3347627,37.1825973" id="Fill-4" fill="#FFFFFF"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

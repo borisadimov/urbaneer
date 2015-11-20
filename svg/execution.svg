@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="114px" height="114px" viewBox="0 0 114 114" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4 (15575) - http://www.bohemiancoding.com/sketch -->
+    <title>icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Main" sketch:type="MSArtboardGroup" transform="translate(-1249.000000, -4499.000000)">
+            <g id="About-Us" sketch:type="MSLayerGroup" transform="translate(0.000000, 3131.000000)">
+                <g id="What-We-Do" transform="translate(205.000000, 1112.000000)" sketch:type="MSShapeGroup">
+                    <g id="Execution" transform="translate(989.000000, 256.000000)">
+                        <g id="icon" transform="translate(55.000000, 0.000000)">
+                            <path d="M113.574557,56.7493025 C113.574557,25.4839211 88.2277732,0.137137563 56.9623918,0.137137563 C25.6958351,0.137137563 0.350226804,25.4839211 0.350226804,56.7493025 C0.350226804,88.014684 25.6958351,113.361467 56.9623918,113.361467 C88.2277732,113.361467 113.574557,88.014684 113.574557,56.7493025" id="Fill-1" fill="#D2D2D2"></path>
+                            <path d="M72.8648041,40.4684572 L71.0525567,43.5394056 L61.7997526,43.5394056 L72.8483505,18.4511788 L65.4982887,15.3814056 L59.653732,18.4511788 L52.1320825,18.4511788 L42.6265979,53.5949108 L33.7087423,56.3191582 L41.0588041,59.3889314 L61.9924948,59.3889314 L43.6196907,100.33021 L50.9697526,103.398808 L80.214866,43.5394056 L72.8648041,40.4684572" id="Fill-2" fill="#000000"></path>
+                            <path d="M44.7808454,15.3814056 L65.4982887,15.3814056 L54.4461649,40.4684572 L72.8648041,40.4684572 L43.6196907,100.33021 L55.8306186,56.3191582 L33.7087423,56.3191582 L44.7808454,15.3814056" id="Fill-3" fill="#96B482"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

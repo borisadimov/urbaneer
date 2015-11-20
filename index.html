@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="stylesheets/app.css">
+  <script src="javascripts/vendor.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/plugins/debug.addIndicators.min.js"></script>
+  <style>.cssload-loader {
+  position: relative;
+  left: calc(50% - 124px);
+  width: 248px;
+  top: 200px;
+  height: 248px;
+  border-radius: 50%;
+    -o-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+  perspective: 3100px;
+}
+
+.cssload-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  border-radius: 50%;
+    -o-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+}
+
+.cssload-inner.cssload-one {
+  left: 0%;
+  top: 0%;
+  animation: cssload-rotate-one 0.95s linear infinite;
+    -o-animation: cssload-rotate-one 0.95s linear infinite;
+    -ms-animation: cssload-rotate-one 0.95s linear infinite;
+    -webkit-animation: cssload-rotate-one 0.95s linear infinite;
+    -moz-animation: cssload-rotate-one 0.95s linear infinite;
+  border-bottom: 12px solid rgb(75,96,61);
+}
+
+.cssload-inner.cssload-two {
+  right: 0%;
+  top: 0%;
+  animation: cssload-rotate-two 0.95s linear infinite;
+    -o-animation: cssload-rotate-two 0.95s linear infinite;
+    -ms-animation: cssload-rotate-two 0.95s linear infinite;
+    -webkit-animation: cssload-rotate-two 0.95s linear infinite;
+    -moz-animation: cssload-rotate-two 0.95s linear infinite;
+  border-right: 12px solid rgb(166,191,148);
+}
+
+.cssload-inner.cssload-three {
+  right: 0%;
+  bottom: 0%;
+  animation: cssload-rotate-three 0.95s linear infinite;
+    -o-animation: cssload-rotate-three 0.95s linear infinite;
+    -ms-animation: cssload-rotate-three 0.95s linear infinite;
+    -webkit-animation: cssload-rotate-three 0.95s linear infinite;
+    -moz-animation: cssload-rotate-three 0.95s linear infinite;
+  border-top: 12px solid rgb(183,209,163);
+}
+
+
+
+
+
+
+
+@keyframes cssload-rotate-one {
+  0% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+  }
+}
+
+@-o-keyframes cssload-rotate-one {
+  0% {
+    -o-transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+  }
+  100% {
+    -o-transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+  }
+}
+
+@-ms-keyframes cssload-rotate-one {
+  0% {
+    -ms-transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+  }
+  100% {
+    -ms-transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+  }
+}
+
+@-webkit-keyframes cssload-rotate-one {
+  0% {
+    -webkit-transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+  }
+}
+
+@-moz-keyframes cssload-rotate-one {
+  0% {
+    -moz-transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+  }
+  100% {
+    -moz-transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+  }
+}
+
+@keyframes cssload-rotate-two {
+  0% {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+  }
+}
+
+@-o-keyframes cssload-rotate-two {
+  0% {
+    -o-transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+  }
+  100% {
+    -o-transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+  }
+}
+
+@-ms-keyframes cssload-rotate-two {
+  0% {
+    -ms-transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+  }
+  100% {
+    -ms-transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+  }
+}
+
+@-webkit-keyframes cssload-rotate-two {
+  0% {
+    -webkit-transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+  }
+}
+
+@-moz-keyframes cssload-rotate-two {
+  0% {
+    -moz-transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+  }
+  100% {
+    -moz-transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+  }
+}
+
+@keyframes cssload-rotate-three {
+  0% {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+  }
+}
+
+@-o-keyframes cssload-rotate-three {
+  0% {
+    -o-transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+  }
+  100% {
+    -o-transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+  }
+}
+
+@-ms-keyframes cssload-rotate-three {
+  0% {
+    -ms-transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+  }
+  100% {
+    -ms-transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+  }
+}
+
+@-webkit-keyframes cssload-rotate-three {
+  0% {
+    -webkit-transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+  }
+}
+
+@-moz-keyframes cssload-rotate-three {
+  0% {
+    -moz-transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+  }
+  100% {
+    -moz-transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+  }
+}
+  </style>
+</head>
+<body id="body" class="loading">
+  <div class="loader">
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="cssload-loader">
+      <div class="cssload-inner cssload-one"></div>
+      <div class="cssload-inner cssload-two"></div>
+      <div class="cssload-inner cssload-three"></div>
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="scroller">
+      <div class="progress">
+        <div class="icon"><svg viewBox="0 0 115.1 88.6">
+  <path style="fill:#D2D2D2;" d="M113.6,7.7c-1.8-5-5.4-7.7-10.4-7.7c-0.8,0-1.7,0.4-3,1c-2.3,1-5.7,2.5-10.5,2.5
+        c-3.2,0-6.6-0.7-10.1-2.1C80.4,9,80.7,21.1,78,38.3c-0.2,1-1,1.7-2,1.7c-0.1,0-0.2,0-0.3,0c-1.1-0.2-1.9-1.2-1.7-2.3
+        c2.9-18,2.3-30.4,1.4-37.3c-4.9,3.3-12,3.5-12,3.5c-0.1,0-7-0.2-11.9-3.4c-0.9,7-1.5,19.3,1.4,37.2c0.2,1.1-0.6,2.2-1.7,2.3
+        c-0.1,0-0.2,0-0.3,0c-1,0-1.8-0.7-2-1.7C46.1,21,46.4,8.9,47.2,1.4c-3.6,1.4-7.1,2.1-10.3,2.1C32.1,3.5,28.7,2,26.4,1
+        c-1.3-0.6-2.2-1-3-1c-2.9,0-5.1,1.1-6.6,3.4c-5.1,7.9,0.8,28.7,6.4,44H10.7l6.9,12.9H0v1v5.5v3.7h10.7v-3.7h10.4h0.8
+        c-0.1,0.6-0.1,1.2-0.1,1.8c0,5.4,2.1,10.4,5.9,14.2c3.8,3.8,8.8,5.9,14.2,5.9c5.4,0,10.4-2.1,14.2-5.9c3.8-3.8,5.9-8.8,5.9-14.2
+        c0-0.6,0-1.2-0.1-1.8h4.4c-0.5,5.7,1.4,11.7,5.8,16c3.8,3.8,8.8,5.9,14.2,5.9c5.4,0,10.4-2.1,14.2-5.9c3.8-3.8,5.9-8.8,5.9-14.2
+        c0-0.6,0-1.2-0.1-1.8h6V47.3h-4C114,34,117.2,17.5,113.6,7.7z M50.5,56.7l-8.7,8.7L33,56.7C38.2,52.9,45.3,52.9,50.5,56.7z
+         M30,59.8l8.7,8.7L30,77.2C26.1,72.1,26.1,64.9,30,59.8z M33,80.3l8.7-8.7l8.7,8.7C45.3,84.1,38.2,84.1,33,80.3z M53.5,77.2
+        l-8.7-8.7l8.7-8.7C57.3,65,57.3,72.1,53.5,77.2z M94.7,56.7L86,65.5l-8.7-8.7C82.5,52.9,89.6,52.9,94.7,56.7z M74.3,59.8l8.7,8.7
+        l-8.7,8.7C70.4,72.1,70.4,64.9,74.3,59.8z M77.3,80.3l8.7-8.7l8.7,8.7C89.6,84.1,82.5,84.1,77.3,80.3z M97.8,77.2l-8.7-8.7
+        l8.7-8.7C101.6,65,101.6,72.1,97.8,77.2z"/>
+    </svg>
+        </div>
+      </div>
+      <div class="side_menu">
+        <div class="item to_home">home</div>
+        <div class="item to_about_us">about us</div>
+        <div class="item to_get_smarter">get smarter</div>
+        <div class="item to_contact">contact</div>
+      </div>
+    </div>
+    <div class="inner">
+      <div id="hero" class="hero">
+        <div class="bg">
+          <video autoplay="autoplay" preload="true" loop="loop" class="hero_video">
+            <source src="./video/hero.mp4" type="video/mp4">
+            <source src="./video/hero.webm" type="video/webm">
+          </video>
+        </div>
+        <div class="logo"><img src="./img/logo-big.png"></div>
+        <div class="scroll_down"><img src="./svg/scroll_down.svg"></div>
+      </div>
+      <div id="scrolltrigger" class="spacer">
+        <div class="scrolldown"></div>
+      </div>
+      <section id="content_start" class="earth">
+        <div class="container">
+          <div class="path animated"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="761px" height="380px" viewBox="0 0 761 380" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4 (15575) - http://www.bohemiancoding.com/sketch -->
+    <title>Path 9</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M312,1 L1,1 L2,332 L58,332 L58,276 L760,277 L758,379 L58,379 L58,332" id="Path-9" stroke="#000000" sketch:type="MSShapeGroup"></path>
+    </g>
+</svg>
+          </div>
+          <div class="logo"><img src="./img/logo-black.png"></div>
+          <div class="why_video">
+            <div class="play"><img src="./img/play_video.png"></div>
+            <div class="video_hidden">
+              <iframe src="https://player.vimeo.com/video/89055976" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="largest fadein">Millennials are the <span>LARGEST</span> generation on the planet.
+          </div>
+          <div class="globe_container">
+            <div id="globe" class="globe"></div>
+            <div class="over fadein">Over <span>80 million</span> in the US.
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="future">
+        <div class="timeline">
+          <div class="line"></div>
+          <div class="points_first">
+            <div class="point current">2020</div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"><span class="s2">2040</span></div>
+            <div class="point"><span class="s1">2025</span></div>
+          </div>
+          <div class="points_second">
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point end">2065
+              <div class="vline">
+                <div class="hline"></div>
+              </div>
+            </div>
+            <div class="point"></div>
+          </div>
+        </div>
+        <div class="population">
+          <div class="population_background">
+            <div class="bg_row"></div>
+            <div class="bg_row"></div>
+            <div class="bg_row"></div>
+            <div class="bg_row"></div>
+            <div class="bg_row"></div>
+            <div class="bg_row"></div>
+            <div class="bg_row"></div>
+          </div>
+          <div class="text">
+            <div class="textbox t1 fadein">Millennials will represent <span>50%</span> of the global workforce.</div>
+            <div class="line">
+              <div class="filler"></div>
+            </div>
+            <div class="textbox t2 fadein">Millennials will represent <span>as much as 75%.</span></div>
+          </div>
+        </div>
+        <div class="money">
+          <div class="money_column">
+            <div class="money_sign"></div>
+          </div>
+          <div class="money_column">
+            <div class="money_sign"></div>
+            <div class="money_sign"></div>
+          </div>
+          <div class="money_column">
+            <div class="money_sign"></div>
+            <div class="money_sign"></div>
+          </div>
+          <div class="money_column">
+            <div class="money_sign"></div>
+            <div class="money_sign"></div>
+            <div class="money_sign"></div>
+          </div>
+          <div class="money_column">
+            <div class="money_sign"></div>
+            <div class="money_sign"></div>
+            <div class="money_sign"></div>
+          </div>
+          <div class="money_column">
+            <div class="money_sign"></div>
+            <div class="money_sign"></div>
+            <div class="money_sign"></div>
+          </div>
+          <div class="money_column">
+            <div class="money_sign"></div>
+            <div class="money_sign"></div>
+            <div class="money_sign"></div>
+          </div>
+          <div class="money_column">
+            <div class="money_sign"></div>
+            <div class="money_sign"></div>
+            <div class="money_sign"></div>
+            <div class="money_sign"></div>
+          </div>
+          <div class="money_column">
+            <div class="money_sign"></div>
+            <div class="money_sign"></div>
+            <div class="money_sign"></div>
+            <div class="money_sign"></div>
+          </div>
+          <div class="money_column">
+            <div class="money_sign"></div>
+            <div class="money_sign"></div>
+            <div class="money_sign"></div>
+            <div class="money_sign"></div>
+          </div>
+          <div class="money_column">
+            <div class="money_sign"></div>
+            <div class="money_sign"></div>
+            <div class="money_sign"></div>
+            <div class="money_sign"></div>
+          </div>
+          <div class="money_column">
+            <div class="money_sign"></div>
+            <div class="money_sign"></div>
+            <div class="money_sign"></div>
+            <div class="money_sign"></div>
+            <div class="money_sign"></div>
+          </div>
+          <div class="money_column">
+            <div class="money_sign"></div>
+            <div class="money_sign"></div>
+            <div class="money_sign"></div>
+            <div class="money_sign"></div>
+            <div class="money_sign"></div>
+          </div>
+        </div>
+        <div class="textbox total fadein">
+          They already wield an estimated annual purchasing power in
+          the trillions, and their financial capital will explode as they
+          inherit and invest a staggering <span>$36 TRILLION</span> over the
+          next <span>45 years</span>.
+        </div>
+      </section>
+      <section class="about_us">
+        <div class="video_section video_section_about_us">
+          <div style="background-image: url(./img/about-us.jpg)" class="video_section_bg"></div>
+          <div class="label">About <span>us</span></div>
+        </div>
+        <div class="container long">
+          <div class="guidelines">
+            <div class="guide_line ln1"></div>
+            <div class="guide_line ln2"></div>
+            <div class="guide_line ln3"></div>
+            <div class="guide_line ln4"></div>
+            <div class="guide_line ln4_1"></div>
+            <div class="guide_line ln5"></div>
+            <div class="guide_line ln6"></div>
+            <div class="guide_line ln7"></div>
+            <div class="guide_line ln8"></div>
+            <div class="guide_line ln8_1"></div>
+            <div class="guide_line ln9"></div>
+            <div class="guide_line ln10"></div>
+            <div class="guide_line ln11"></div>
+          </div>
+          <div class="who">
+            <div class="heading h1 fadein"><span>Who</span> we are</div>
+            <div class="text_columns">
+              <div class="col fadein">A boutique creative consultancy focused on helping clients understand and engage the Millennial Generation through <span> Insights, Strategies, and Executions.</span></div>
+              <div class="col fadein">We came up with the term “Urbaneer” because the urban pioneers we were meeting didn’t like being called hipsters. We decided that <span>these influencers and early adopters of the Millennial Generation deserved a new moniker</span> that matched their ingenuity and pioneering spirit.</div>
+              <div class="col fadein">We’ve met Millennial Urbaneers all across America, from Los Angeles to Boston— our two locations—and have traveled extensively to observe and collaborate with these innovators. We are constantly conducting quantitative and qualitative proprietary research to learn about emerging trends as they develop—<span>aggregating "Actionable Intelligence,” as we like to call it.</span></div>
+            </div>
+            <div class="heading h2 fadein"><span>What</span> we do</div>
+          </div>
+          <div class="iconset what_we_do">
+            <div data-id="b1" class="item insights">
+              <div class="icon"><img src="./img/insight.gif"></div>
+              <div class="label">Insights</div>
+            </div>
+            <div data-id="b2" class="item strategy">
+              <div class="icon"><img src="./img/strategy.gif"></div>
+              <div class="label">Strategy</div>
+            </div>
+            <div data-id="b3" class="item execution">
+              <div class="icon"><img src="./img/execution.gif"></div>
+              <div class="label">Execution</div>
+            </div>
+            <div class="black_block b1 fadein">
+              <div class="text">Expertise is the delta between observation and insight. We’ve built our expertise through many years of observing Millennials as they live, work, and play; we’ve organized these observations into insights that we can share. Today, the insights serve as actionable intelligence for our clients, looking to better understand and engage Millennials.</div>
+            </div>
+            <div class="black_block b2 fadein">
+              <div class="text">We design and deliver insight-driven strategies that help clients understand and engage the Millennial generation as consumers and employees through our proprietary ADI process*:</div>
+              <div class="process">
+                <div class="point">AWARENESS</div>
+                <div class="arrow"></div>
+                <div class="point">DEMAND</div>
+                <div class="arrow"></div>
+                <div class="point">INTENT</div>
+              </div>
+              <div class="small_text">*ADI was originally conceived in 2006, as an evolved approach towards marketing and media planning for motion pictures.  The process worked, and has been tested across verticals and with non-traditional initiatives (like engaging prospective employees) with great success.</div>
+            </div>
+            <div class="black_block b3 fadein">
+              <div class="text">We flawlessly execute our strategies through a combination of engaging content, thought- provoking campaigns, and corporate culture initiatives. Backed by our parent company, Hamagami/Carroll, Inc., Urbaneer Creative has best-in-class execution capabilities.</div>
+            </div>
+          </div>
+          <div class="stories">
+            <div class="story story1">
+              <div class="quote">“I really didn’t understand what I got into. I all happend so fast.”<span>Jessica Frank</br>Columbus, OH</span></div>
+              <div class="illustration"><img src="img/story1.jpg"></div>
+            </div>
+            <div class="story story2">
+              <div class="quote">“I really didn’t understand what I got into. I all happend so fast.”<span>Jessica Frank</br>Columbus, OH</span></div>
+              <div class="illustration"><img src="img/story2.jpg"></div>
+            </div>
+            <div class="story story3">
+              <div class="quote">“I really didn’t understand what I got into. I all happend so fast.”<span>Jessica Frank</br>Columbus, OH</span></div>
+              <div class="illustration"><img src="img/story3.jpg"></div>
+            </div>
+            <div class="story story4">
+              <div class="quote">“I really didn’t understand what I got into. I all happend so fast.”<span>Jessica Frank</br>Columbus, OH</span></div>
+              <div class="illustration"><img src="img/story4.jpg"></div>
+            </div>
+            <div class="story story5">
+              <div class="quote">“I really didn’t understand what I got into. I all happend so fast.”<span>Jessica Frank</br>Columbus, OH</span></div>
+              <div class="illustration"><img src="img/story5.jpg"></div>
+            </div>
+          </div>
+          <div class="how fadein">
+            <div class="heading"><span>How</span> we do it</div>
+          </div>
+          <div class="iconset how_we_do_it">
+            <div data-id="b4" class="item culture">
+              <div class="icon"><img src="./img/culture.gif"></div>
+              <div class="label">Culture</div>
+            </div>
+            <div data-id="b5" class="item communication">
+              <div class="icon"><img src="./img/campaign.gif"></div>
+              <div class="label">Communications</div>
+            </div>
+            <div data-id="b6" class="item content">
+              <div class="icon"><img src="./img/content.gif"></div>
+              <div class="label">Content</div>
+            </div>
+            <div class="black_block b4 fadein">
+              <div class="text">Content is king. From social media to multimedia, digital content is essential for capturing Millennials’ attention and building brand loyalty. We specialize in creating the dynamic content needed to truly engage Millennials.</div>
+            </div>
+            <div class="black_block b5 fadein">
+              <div class="text">Millennials expect transparent, authentic, ongoing communication with brands. We work with clients to create communication strategies and campaigns designed to maximize opportunities—by delivering it at the right time and in the right way—to create deeper connections with targeted Millennial audiences.</div>
+            </div>
+            <div class="black_block b6 fadein">
+              <div class="text">Your corporate culture matters. Get it wrong, and Millennials will move along in a matter of months. We know what drives and inspires Millennials to do great work, and we use that knowledge to help clients attract and retain the best and brightest of the Millennial generation.</div>
+            </div>
+          </div>
+          <div class="stories2">
+            <div class="story story1">
+              <div class="quote">“I really didn’t understand what I got into. I all happend so fast.”<span>Jessica Frank</br>Columbus, OH</span></div>
+              <div class="illustration"><img src="img/story1.jpg"></div>
+            </div>
+            <div class="story story2">
+              <div class="quote">“I really didn’t understand what I got into. I all happend so fast.”<span>Jessica Frank</br>Columbus, OH</span></div>
+              <div class="illustration"><img src="img/story2.jpg"></div>
+            </div>
+            <div class="story story3">
+              <div class="quote">“I really didn’t understand what I got into. I all happend so fast.”<span>Jessica Frank</br>Columbus, OH</span></div>
+              <div class="illustration"><img src="img/story3.jpg"></div>
+            </div>
+            <div class="story story4">
+              <div class="quote">“I really didn’t understand what I got into. I all happend so fast.”<span>Jessica Frank</br>Columbus, OH</span></div>
+              <div class="illustration"><img src="img/story4.jpg"></div>
+            </div>
+            <div class="story story5">
+              <div class="quote">“I really didn’t understand what I got into. I all happend so fast.”<span>Jessica Frank</br>Columbus, OH</span></div>
+              <div class="illustration"><img src="img/story5.jpg"></div>
+            </div>
+          </div>
+          <div class="get_started fadein">
+            <div class="heading"><span>Get</span> started</div>
+          </div>
+          <div class="iconset get_started_iconset">
+            <div data-id="b7" class="item assessments">
+              <div class="icon"><img src="./img/assessments.gif"></div>
+              <div class="label">assessments</div>
+            </div>
+            <div data-id="b8" class="item workshops">
+              <div class="icon"><img src="./img/workshops.gif"></div>
+              <div class="label">Workshops</div>
+            </div>
+            <div data-id="b9" class="item speaking">
+              <div class="icon"><img src="./img/speaking.gif"></div>
+              <div class="label">speaking <br/> engagements</div>
+            </div>
+            <div class="black_block b7 fadein">
+              <div class="text">Is your brand engaging Millennials? Are you authentic enough for this massive generation of digital natives? We offer custom assessments tailored to your company’s unique needs.</div>
+            </div>
+            <div class="black_block b8 fadein">
+              <div class="text">If you’re ready to dive into the world of Millennials, we offer workshops for you to get the ball rolling. Urbaneer Creative conducts workshops that are customized to your particular area of interest, as it relates to understanding and engaging Millennials. Typically 2-4 hours in length, workshops are structured but flexible, designed to align your team around super-relevant insights and inspire the foundation of a targeted strategy.</div>
+            </div>
+            <div class="black_block b9 fadein">
+              <div class="text">Our founder, Matt Heller, is an expert on the Millennial generation, and a popular speaker on the topic. Matt is best known for his unique, sociological approach to studying the early adopters and influencers within the Millennial Generation, and the anecdotal content he’s collected over the years. Book him to speak at your next conference or event to educate, and entertain the audience about this generation and its unique needs, desires, and aspirations.</div>
+            </div>
+          </div>
+        </div>
+        <div class="video_section get_smarter_video">
+          <div style="background-image: url(./img/get-smarter.jpg)" class="video_section_bg"></div>
+          <div class="label">Get <span>smarter</span></div>
+        </div>
+        <div class="container footer">
+          <div class="guidelines_footer">
+            <div class="guide_line ln12"></div>
+            <div class="guide_line ln13"></div>
+            <div class="guide_line ln14"></div>
+            <div class="guide_line ln15"></div>
+            <div class="guide_line ln16"></div>
+            <div class="guide_line ln17"></div>
+            <div class="guide_line ln18"></div>
+            <div class="guide_line ln19"></div>
+            <div class="guide_line ln20"></div>
+            <div class="guide_line ln21"></div>
+            <div class="guide_line ln22"></div>
+            <div class="guide_line ln23"></div>
+          </div>
+          <div class="footer_items">
+            <div class="footer_item i1 show_gbrief fadein">
+              <div class="illustration"><img src="./img/the_gbrief.jpg"></div>
+              <div class="text">the gbrief</div>
+            </div>
+            <div class="footer_item i2 show_frontier fadein">
+              <div class="illustration"><img src="./img/the_frontier.png"></div>
+              <div class="text">the new <br> frontier</div>
+            </div>
+            <div class="footer_item i3 show_purchase fadein">
+              <div class="illustration"><img src="./img/content.jpg"></div>
+              <div class="text">content for <br> purchase</div>
+            </div>
+          </div>
+          <div class="footer_item_ext gbrief">
+            <div class="content_item">
+              <div class="close"></div>
+              <div class="text">The gbrief</div>
+              <div class="illustration"><img src="./img/thegbrief.jpg"></div>
+            </div>
+            <div class="content_block">
+              <div class="info_block">
+                <div class="header">
+                  MILLENNIALS AND BIKE CULTURE: <br/>
+                  Reshaping the Urban Landscape
+                </div>
+                <div class="text">Millennials and bicycles go together like fixies (fixed-gear bikes for those unfamiliar)<br> Fewer are interested in obtaining their driver’s licenses, and buying<br> a car—once a rite of passage into adulthood alongside home ownership and marriage—is<br> often seen as a burden.</div>
+              </div>
+              <div class="cta">Want to get smarter, faster about Millennials? Our digital destination is updated daily with new insights about today’s largest generation<a href="http://www.thegbrief.com" target="_blank" class="button">Visit The G Brief</a></div>
+            </div>
+          </div>
+          <div class="footer_item_ext frontier">
+            <div class="content_item">
+              <div class="close"></div>
+              <div class="text">the new frontier</div>
+              <div class="illustration"></div>
+            </div>
+            <div class="content_block">
+              <div class="cta">
+                <div class="header">THE NEW FRONTIER:</div>We’ve traveled across the country to meet the early adopters and influencers of the Millennial Generation, and they’re doing very cool stuff. We’ve lived amongst them so you don’t have to, and created a series that explores how they’re approaching life differently than earlier generations. Check it out.<a href="http://thegbrief.com/new-frontier" target="_blank" class="button">Visit The New Frontier</a>
+              </div>
+            </div>
+          </div>
+          <div class="footer_item_ext purchase_form">
+            <div class="content_item">
+              <div class="close"></div>
+              <div class="text">content for purchase</div>
+              <div class="illustration"><img src="./img/content_big.jpg"></div>
+            </div>
+            <div class="borders"><svg width="800" height="750" viewBox="0 0 982 815" xmlns="http://www.w3.org/2000/svg"><title>first_form1</title><g stroke="#000" fill="none" fill-rule="evenodd"><path d="M490 0v125H1v689h980"/><path d="M490 0v125l491-1v689"/><path d="M490 0v125H1v80h980"/><path d="M490 0v125H1v161h980"/><path d="M490 0v125H1v242h980"/><path d="M490 2v123H1v80h258v528"/><path d="M490 0v125H1v608h980"/><path d="M490 0v125H1v608h801l-1 80"/></g></svg>
+            </div>
+            <div class="first_form">
+              <div class="title">white paper request</div>
+              <form>
+                <label class="name"><span>name</span>
+                  <input type="text">
+                </label>
+                <label class="email"><span>email</span>
+                  <input type="text">
+                </label>
+                <label class="message"><span>message</span>
+                  <textarea></textarea>
+                </label>
+                <div class="submit">submit</div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="video_section contact_us_video">
+          <div style="background-image: url(./img/contact-us.jpg)" class="video_section_bg"></div>
+          <div class="label">contact us</div>
+        </div>
+        <div class="container contact">
+          <div class="contact_form contact_form_new">
+            <div class="contacts-table table js-table is-animate">
+              <div class="table__border js-border">
+                <svg width="940" height="430" viewbox="0 0 1080 494" xmlns="http://www.w3.org/2000/svg">
+                  <title>contacts-table</title>
+                  <g stroke-linecap="square" stroke="#333" fill="none" fill-rule="evenodd">
+                    <path d="M452.5 1.5v421h626" class="inner-border"></path>
+                    <path d="M452.5 1.5v259h626" class="inner-border"></path>
+                    <path d="M452.5 1.5v207h626" class="inner-border"></path>
+                    <path d="M452.5 1.5v155h626" class="inner-border"></path>
+                    <path d="M452.5 1.5v103h626" class="inner-border"></path>
+                    <g stroke-width="3">
+                      <path d="M1.5 1.5v207h451" class="outer-border"></path>
+                      <path d="M1.5 1.5h451v491" class="outer-border"></path>
+                      <path d="M1.5 1.5v491h1077" class="outer-border"></path>
+                      <path d="M1.5 1.5h1077v491" class="outer-border"></path>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+              <div class="table_content">
+                <div class="col col_1">
+                  <div class="cell cell1">
+                    <div class="contact-item"><small class="contact-item__label">E-mail</small><a href="mailto:ohhey@urbaneercreative.com">info@urbaneercreative.com</a></div>
+                  </div>
+                  <div class="cell cell2">
+                    <div class="contact-item"><small class="contact-item__label">Address</small>Urbaneer Creative<br>63 Melcher<br>Boston, MA 02210</div>
+                  </div>
+                </div>
+                <div class="col col_2">
+                  <div class="cell"><strong class="heading1">Still have<br>questions?</strong></div>
+                  <div class="cell">
+                    <form name="question" data-subject="Вопрос" class="form">
+                      <div class="form__message">
+                        <div class="form__message-inner"><strong>Thanks</strong><span>We call you back soon</span></div>
+                      </div>
+                      <input type="text" name="name" placeholder="Your name" class="input">
+                      <input type="tel" name="phone" placeholder="Your phone" class="input">
+                      <input type="email" name="email" placeholder="Your email" class="input">
+                      <textarea name="message" placeholder="Message" class="input"></textarea>
+                      <div type="submit" class="btn btn_submit">Send</div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script src="javascripts/app.js"></script>
+  <script>require('initialize');</script>
+</body>
