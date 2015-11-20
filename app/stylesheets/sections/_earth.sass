@@ -4,6 +4,15 @@
   to
     background-position-x: 858px
 
+@keyframes press_me
+  0%
+    transform: translate(-35%,-50%) rotate(0deg) scale(1)
+  50%
+    transform: translate(-35%,-50%) rotate(0deg) scale(1.05)
+  100%
+    transform: translate(-35%,-50%) rotate(0deg) scale(1)
+
+
 .earth
   padding-top: 120px
 
@@ -25,6 +34,15 @@
   .path
     position: absolute
     top: 300px
+  .call_to_action
+    display: block
+    position: absolute
+    top: 450px
+    left: 50%
+    transform: translateX(-50%)
+    +light(30px,30px)
+    color: #666
+    transition: all .3s ease
 
   .why_video
     width: 250px
@@ -48,8 +66,9 @@
       transform-origin: 50% 50%
       &.rotated
         transform: translate(-35%,-50%) rotate(0deg)
-      &:hover
-        transform: translate(-35%,-50%) rotate(0deg) scale(1.1)
+        animation: press_me 1.5s ease infinite .6s
+
+
       img
         width: 100%
 
@@ -68,6 +87,13 @@
       .video_hidden
         display: block
 
+      & + .call_to_action
+        top: 500px
+        opacity: 0
+
+        & + .largest
+          margin-top: 134px
+
     &.step2
       width: 500px
       height: 281px
@@ -79,9 +105,17 @@
         display: block
         opacity: .9999
 
-      + .largest
-        margin-top: 124px
 
+
+      & + .call_to_action
+        top: 500px
+        opacity: 0
+
+        & + .largest
+          margin-top: 124px
+
+    &:hover + .call_to_action
+      color: #000
 
 
   .largest

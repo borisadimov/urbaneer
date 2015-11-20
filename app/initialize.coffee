@@ -1,8 +1,8 @@
 isiPad = false
 ipadCheck = ->
   isiPad = navigator.userAgent.match(/iPad/i) != null
-  if isiPad
-    $('body').addClass('is-ipad')
+  unless isiPad
+    $('body').addClass('not-ipad')
 
 
 initShowWhyVideo = =>
@@ -19,8 +19,13 @@ initScrollMaigic = =>
   require('scrollmagic/custom_scrollbar')(controller)
   require('scrollmagic/earth_section')(controller)
   require('scrollmagic/timeline_section')(controller)
-  require('scrollmagic/about_section')(controller)
-  require('scrollmagic/get_started_section')(controller)
+  unless isiPad
+    require('scrollmagic/about_section')(controller)
+    require('scrollmagic/get_started_section')(controller)
+  else
+    require('scrollmagic/about_section_ipad')(controller)
+    require('scrollmagic/get_started_section_ipad')(controller)
+
   require('scrollmagic/get_smarter_section')(controller)
 
 

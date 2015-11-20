@@ -8,7 +8,7 @@ module.exports = (controller) ->
   scene_get_started = new ScrollMagic.Scene
     triggerElement: ".about_us"
     duration: 200
-    offset: 7000
+    offset: 4300
   .triggerHook(0.2)
   .setTween(get_started_tween)
   .addTo(controller)
@@ -57,11 +57,11 @@ module.exports = (controller) ->
 
   scene_get_started_tips = new ScrollMagic.Scene
     triggerElement: ".about_us"
-    duration: 1350
-    offset: 7450
+    duration: 350
+    offset: 4750
     tweenChanges: true
-  .triggerHook(0.1)
-  .setPin('.about_us .container.long')
+  .triggerHook(0.3)
+
   .setTween(get_started_tween)
   .addTo(controller)
 
@@ -73,7 +73,7 @@ module.exports = (controller) ->
   scene_end_of_guideline = new ScrollMagic.Scene
     triggerElement: ".about_us"
     duration: 200
-    offset: 8801
+    offset: 4960
   .triggerHook(0.2)
   .on 'start', (e) ->
     if e.target.controller().info("scrollDirection") is "FORWARD"

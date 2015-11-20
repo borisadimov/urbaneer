@@ -86,11 +86,10 @@ module.exports = (controller) ->
 
   scene_what_we_do_tips = new ScrollMagic.Scene
     triggerElement: ".about_us"
-    duration: 1350
+    duration: 350
     offset: 900
     tweenChanges: true
-  .triggerHook(0.1)
-  .setPin('.about_us .container.long')
+  .triggerHook(0.3)
   .setTween(what_we_do_tips_tween)
   .addTo(controller)
 
@@ -115,7 +114,7 @@ module.exports = (controller) ->
   scene_jessica = new ScrollMagic.Scene
     triggerElement: ".about_us"
     duration: 1400
-    offset: 2400
+    offset: 1200
   .triggerHook(0.3)
   .on 'start', (e) ->
     if e.target.controller().info("scrollDirection") is "FORWARD"
@@ -137,12 +136,10 @@ module.exports = (controller) ->
   scene_how_we_do_it = new ScrollMagic.Scene
     triggerElement: ".about_us"
     duration: 400
-    offset: 3950
+    offset: 2500
   .triggerHook(0.2)
   .setTween(how_we_do_it_tween)
-
   .addTo(controller)
-
 
 
 
@@ -186,12 +183,12 @@ module.exports = (controller) ->
 
   scene_what_we_do_tips = new ScrollMagic.Scene
     triggerElement: ".about_us"
-    duration: 1300
-    offset: 4400
+    duration: 300
+    offset: 2900
     tweenChanges: true
   .triggerHook(0.3)
   .setTween(how_we_do_it_icons_tween)
-  .setPin('.about_us .container.long')
+
   .addTo(controller)
 
 
@@ -216,7 +213,7 @@ module.exports = (controller) ->
   scene_jessica2 = new ScrollMagic.Scene
     triggerElement: ".about_us"
     duration: 1100
-    offset: 5900
+    offset: 3250
   .triggerHook(0.3)
   .on 'start', (e) ->
     if e.target.controller().info("scrollDirection") is "FORWARD"

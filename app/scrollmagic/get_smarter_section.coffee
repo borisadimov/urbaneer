@@ -6,8 +6,7 @@ module.exports = (controller) ->
   .add(TweenMax.to($('.about_us .get_smarter_video .label'), 1, {'transform': 'translate3D(0,-250px,0)'}))
 
   scene_get_smarter = new ScrollMagic.Scene
-    triggerElement: ".about_us"
-    offset: 5660
+    triggerElement: ".get_smarter_video"
     duration: '200%'
   .triggerHook(1)
   # .setClassToggle(".about_us_video, .about_us .overlay", "showed")
@@ -20,8 +19,7 @@ module.exports = (controller) ->
   .add(TweenMax.to($('.contact_us_video .label'), 1, {'transform': 'translate3D(0,-250px,0)'}))
 
   scene_get_smarter = new ScrollMagic.Scene
-    triggerElement: ".about_us"
-    offset: 6660
+    triggerElement: ".contact_us_video"
     duration: '200%'
   .triggerHook(1)
   .setTween(contact_us_video_tween)
