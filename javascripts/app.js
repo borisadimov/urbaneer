@@ -1064,7 +1064,8 @@ module.exports = function(controller) {
     $(".earth .logo").addClass("showed");
     return $(".why_video .play").addClass("rotated");
   }).on("end", function() {
-    return $(".earth .largest").addClass("showed");
+    $(".earth .largest").addClass("showed");
+    return $(".earth .call_to_action").addClass("fadein");
   }).triggerHook(0).setTween(largest_tween).addTo(controller);
   scene_earth = new ScrollMagic.Scene({
     triggerElement: ".earth .largest",
