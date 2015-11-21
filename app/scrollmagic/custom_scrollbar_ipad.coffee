@@ -19,11 +19,11 @@ module.exports = (controller) ->
   .addTo(controller)
 
   scroller_tween2 = new TimelineMax()
-  .add(TweenMax.to($('.scroller .progress'), 1, {height: '65%'}))
+  .add(TweenMax.to($('.scroller .progress'), 1, {height: '60%'}))
   scroller2 = new ScrollMagic.Scene
     triggerElement: "#scrolltrigger"
     offset: 3301
-    duration: 10000
+    duration: 5800
   .triggerHook(0)
   .on 'progress', (e) ->
     $('.active_icon').removeClass('active_icon')
@@ -39,7 +39,7 @@ module.exports = (controller) ->
   .add(TweenMax.to($('.scroller .progress'), 1, {height: '110%'}))
   scroller2 = new ScrollMagic.Scene
     triggerElement: "#scrolltrigger"
-    offset: 13302
+    offset: 9100
     duration: 1200
   .triggerHook(0)
   .on 'progress', (e) ->

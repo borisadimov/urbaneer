@@ -18,6 +18,7 @@ module.exports = (controller) ->
     $(".why_video .play").addClass("rotated")
   .on "end", ->
     $(".earth .largest").addClass("showed")
+    $(".earth .call_to_action").addClass("showed")
   .triggerHook(0)
   .setTween(largest_tween)
   .addTo(controller)

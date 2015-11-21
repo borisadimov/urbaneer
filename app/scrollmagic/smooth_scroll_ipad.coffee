@@ -29,7 +29,7 @@ module.exports = (controller) ->
     if scrolling then return
     scrolling = true
     $('body').addClass('disable-hover')
-    scrollTo $(".inner")[0], 12650, ->
+    scrollTo $(".inner")[0], 8650, ->
       $('body').removeClass('disable-hover')
       scrolling = false
 
@@ -37,7 +37,7 @@ module.exports = (controller) ->
     if scrolling then return
     scrolling = true
     $('body').addClass('disable-hover')
-    scrollTo $(".inner")[0],13600, ->
+    scrollTo $(".inner")[0],9600, ->
       $('body').removeClass('disable-hover')
       scrolling = false
 

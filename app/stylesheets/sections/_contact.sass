@@ -431,18 +431,30 @@ $font_4: HelveticaNeueCyr-Bold
           .input
             height: 45px
             padding-left: 30px
+            margin-left: 2px
+            width: 99.9%
             &:focus
               outline: none
+
+            &.error
+              box-shadow: inset 0px 0px 11px 0px rgba(255,0,0, 0.3)
+
           textarea.input
             height: 141px
 
           .btn_submit
             font-family: "HelveticaNeueCyr-Bold", Helvetica, Arial, sans-serif
-            height: 60px
+            height: 61px
             display: flex
             align-items: center
             padding-left: 30px
-            width: 100%
+            width: 100.5%
+            cursor: pointer
+            transition: all 0.3s ease
+            &:hover
+              color: #fff
+              background: #000
+
 
 
 

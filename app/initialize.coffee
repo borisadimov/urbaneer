@@ -4,6 +4,96 @@ ipadCheck = ->
   unless isiPad
     $('body').addClass('not-ipad')
 
+send_mail = (theme, text, cb = false, success_message = false) ->
+    Parse.Cloud.run 'sendmail', {
+      target: 'info@urbaneercreative.com'
+      originator: 'urbaneer@landing.com'
+      subject: theme
+      text: text
+    } ,
+    success: (success) ->
+      if success_message
+        swal('Thank you!', success_message, 'success')
+      else
+        swal('Thank you!', 'We will reply soon', 'success')
+      unless cb is false
+        try
+          cb()
+    error: (error) ->
+      swal('Oops...', 'Something went wrong!', 'error')
+
+
+validateEmail = (email) ->
+    re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
+    return re.test(email)
+
+validateContact = ->
+  valid = true
+  unless $('.contact_form [name=name]').val().length
+    $('.contact_form [name=name]').addClass('error').one 'keyup', ->
+      $('.contact_form [name=name]').removeClass('error')
+    valid = false
+  else
+    $('.contact_form [name=name]').removeClass('hasError')
+
+  unless $('.contact_form [name=phone]').val().length
+    $('.contact_form [name=phone]').addClass('error').one 'keyup', ->
+      $('.contact_form [name=phone]').removeClass('error')
+    valid = false
+  else
+    $('.contact_form [name=phone]').removeClass('hasError')
+
+  unless $('.contact_form [name=message]').val().length
+    $('.contact_form [name=message]').addClass('error').one 'keyup', ->
+      $('.contact_form [name=message]').removeClass('error')
+    valid = false
+  else
+    $('.contact_form [name=message]').removeClass('hasError')
+
+
+  unless validateEmail($('.contact_form [name=email]').val())
+    $('.contact_form [name=email]').addClass('error').on 'keyup', ->
+      if validateEmail($('.contact_form [name=email]').val())
+        $('.contact_form [name=email]').removeClass('error')
+    valid = false
+  else
+    $('.contact_form [name=email]').removeClass('hasError')
+
+   return valid
+
+
+validatePurchase = ->
+  valid = true
+  unless $('.first_form .name input').val().length
+    $('.first_form .name input').addClass('error').one 'keyup', ->
+      $('.first_form .name input').removeClass('error')
+    valid = false
+  else
+    $('.first_form .name input').removeClass('hasError')
+
+  unless $('.first_form .message textarea').val().length
+    $('.first_form .message textarea').addClass('error').one 'keyup', ->
+      $('.first_form .message textarea').removeClass('error')
+    valid = false
+  else
+    $('.first_form .message textarea').removeClass('hasError')
+
+
+  unless validateEmail($('.first_form .email input').val())
+    $('.first_form .email input').addClass('error').on 'keyup', ->
+      if validateEmail($('.first_form .email input').val())
+        $('.first_form .email input').removeClass('error')
+    valid = false
+  else
+    $('.first_form .email input').removeClass('hasError')
+
+   return valid
+
+
+
+
+
+
 
 initShowWhyVideo = =>
   $('.why_video .play').click ->
@@ -15,16 +105,20 @@ initShowWhyVideo = =>
 
 initScrollMaigic = =>
 
-  require('scrollmagic/smooth_scroll')(controller)
-  require('scrollmagic/custom_scrollbar')(controller)
+
+
   require('scrollmagic/earth_section')(controller)
   require('scrollmagic/timeline_section')(controller)
   unless isiPad
     require('scrollmagic/about_section')(controller)
     require('scrollmagic/get_started_section')(controller)
+    require('scrollmagic/custom_scrollbar')(controller)
+    require('scrollmagic/smooth_scroll')(controller)
   else
     require('scrollmagic/about_section_ipad')(controller)
     require('scrollmagic/get_started_section_ipad')(controller)
+    require('scrollmagic/custom_scrollbar_ipad')(controller)
+    require('scrollmagic/smooth_scroll_ipad')(controller)
 
   require('scrollmagic/get_smarter_section')(controller)
 
@@ -165,8 +259,32 @@ $( window ).load ->
 
 $(document).ready ->
   ipadCheck()
-
+  Parse.initialize('cYShbzU7vF1CCtx3r11fQcYFd7vxCNu8ESMBYNq9','9edRFzvAVLNm8lS39szU3AiTmrBrdP8anIidjg56')
   window.controller = controller = new ScrollMagic.Controller({container: ".inner"})
+
+
+  $('.contact_form .btn_submit').click ->
+    if validateContact()
+      text = "Name: #{$('.contact_form [name=name]').val()}\n"+
+      "Phone: #{$('.contact_form [name=phone]').val()}\n"+
+      "Email: #{$('.contact_form [name=email]').val()}\n\n"+
+      "#{$('.contact_form [name=message]').val()}"
+
+      send_mail 'Message from contact form',text, ->
+        $('.contact_form .input').val('')
+    else
+      console.log('invalid')
+
+  $('.first_form .submit').click ->
+    if validatePurchase()
+      text = "Name: #{$('.first_form .name input').val()}\n"+
+      "Email: #{$('.first_form .email input').val()}\n\n"+
+      "#{$('.first_form .message textarea').val()}"
+
+      send_mail 'Message from purchase form',text, ->
+        $('.first_form input, .first_form textarea').val('')
+    else
+      console.log('invalid')
 
   # controller.scrollTo (newpos) ->
   #   TweenMax.to window, 0.5, {scrollTo: {y: newpos, autoKill:false}}
