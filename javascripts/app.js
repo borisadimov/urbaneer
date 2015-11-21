@@ -187,7 +187,7 @@ buf.push("\n<video autoplay=\"autoplay\" preload=\"true\" loop=\"loop\" class=\"
 });
 
 require.register("initialize", function(exports, require, module) {
-var initScrollMaigic, initShowWhyVideo, ipadCheck, isiPad;
+var initScrollMaigic, initShowWhyVideo, ipadCheck, isiPad, send_mail, validateContact, validateEmail, validatePurchase;
 
 isiPad = false;
 
@@ -196,6 +196,115 @@ ipadCheck = function() {
   if (!isiPad) {
     return $('body').addClass('not-ipad');
   }
+};
+
+send_mail = function(theme, text, cb, success_message) {
+  if (cb == null) {
+    cb = false;
+  }
+  if (success_message == null) {
+    success_message = false;
+  }
+  return Parse.Cloud.run('sendmail', {
+    target: 'info@urbaneercreative.com',
+    originator: 'urbaneer@landing.com',
+    subject: theme,
+    text: text
+  }, {
+    success: function(success) {
+      if (success_message) {
+        swal('Thank you!', success_message, 'success');
+      } else {
+        swal('Thank you!', 'We will reply soon', 'success');
+      }
+      if (cb !== false) {
+        try {
+          return cb();
+        } catch (undefined) {}
+      }
+    },
+    error: function(error) {
+      return swal('Oops...', 'Something went wrong!', 'error');
+    }
+  });
+};
+
+validateEmail = function(email) {
+  var re;
+  re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+  return re.test(email);
+};
+
+validateContact = function() {
+  var valid;
+  valid = true;
+  if (!$('.contact_form [name=name]').val().length) {
+    $('.contact_form [name=name]').addClass('error').one('keyup', function() {
+      return $('.contact_form [name=name]').removeClass('error');
+    });
+    valid = false;
+  } else {
+    $('.contact_form [name=name]').removeClass('hasError');
+  }
+  if (!$('.contact_form [name=phone]').val().length) {
+    $('.contact_form [name=phone]').addClass('error').one('keyup', function() {
+      return $('.contact_form [name=phone]').removeClass('error');
+    });
+    valid = false;
+  } else {
+    $('.contact_form [name=phone]').removeClass('hasError');
+  }
+  if (!$('.contact_form [name=message]').val().length) {
+    $('.contact_form [name=message]').addClass('error').one('keyup', function() {
+      return $('.contact_form [name=message]').removeClass('error');
+    });
+    valid = false;
+  } else {
+    $('.contact_form [name=message]').removeClass('hasError');
+  }
+  if (!validateEmail($('.contact_form [name=email]').val())) {
+    $('.contact_form [name=email]').addClass('error').on('keyup', function() {
+      if (validateEmail($('.contact_form [name=email]').val())) {
+        return $('.contact_form [name=email]').removeClass('error');
+      }
+    });
+    valid = false;
+  } else {
+    $('.contact_form [name=email]').removeClass('hasError');
+  }
+  return valid;
+};
+
+validatePurchase = function() {
+  var valid;
+  valid = true;
+  if (!$('.first_form .name input').val().length) {
+    $('.first_form .name input').addClass('error').one('keyup', function() {
+      return $('.first_form .name input').removeClass('error');
+    });
+    valid = false;
+  } else {
+    $('.first_form .name input').removeClass('hasError');
+  }
+  if (!$('.first_form .message textarea').val().length) {
+    $('.first_form .message textarea').addClass('error').one('keyup', function() {
+      return $('.first_form .message textarea').removeClass('error');
+    });
+    valid = false;
+  } else {
+    $('.first_form .message textarea').removeClass('hasError');
+  }
+  if (!validateEmail($('.first_form .email input').val())) {
+    $('.first_form .email input').addClass('error').on('keyup', function() {
+      if (validateEmail($('.first_form .email input').val())) {
+        return $('.first_form .email input').removeClass('error');
+      }
+    });
+    valid = false;
+  } else {
+    $('.first_form .email input').removeClass('hasError');
+  }
+  return valid;
 };
 
 initShowWhyVideo = (function(_this) {
@@ -213,16 +322,18 @@ initShowWhyVideo = (function(_this) {
 initScrollMaigic = (function(_this) {
   return function() {
     var contact_form_scene, scene_footer, setFooterTween;
-    require('scrollmagic/smooth_scroll')(controller);
-    require('scrollmagic/custom_scrollbar')(controller);
     require('scrollmagic/earth_section')(controller);
     require('scrollmagic/timeline_section')(controller);
     if (!isiPad) {
       require('scrollmagic/about_section')(controller);
       require('scrollmagic/get_started_section')(controller);
+      require('scrollmagic/custom_scrollbar')(controller);
+      require('scrollmagic/smooth_scroll')(controller);
     } else {
       require('scrollmagic/about_section_ipad')(controller);
       require('scrollmagic/get_started_section_ipad')(controller);
+      require('scrollmagic/custom_scrollbar_ipad')(controller);
+      require('scrollmagic/smooth_scroll_ipad')(controller);
     }
     require('scrollmagic/get_smarter_section')(controller);
     scene_footer = new ScrollMagic.Scene({
@@ -346,8 +457,31 @@ $(window).load(function() {
 $(document).ready(function() {
   var controller;
   ipadCheck();
-  return window.controller = controller = new ScrollMagic.Controller({
+  Parse.initialize('cYShbzU7vF1CCtx3r11fQcYFd7vxCNu8ESMBYNq9', '9edRFzvAVLNm8lS39szU3AiTmrBrdP8anIidjg56');
+  window.controller = controller = new ScrollMagic.Controller({
     container: ".inner"
+  });
+  $('.contact_form .btn_submit').click(function() {
+    var text;
+    if (validateContact()) {
+      text = ("Name: " + ($('.contact_form [name=name]').val()) + "\n") + ("Phone: " + ($('.contact_form [name=phone]').val()) + "\n") + ("Email: " + ($('.contact_form [name=email]').val()) + "\n\n") + ("" + ($('.contact_form [name=message]').val()));
+      return send_mail('Message from contact form', text, function() {
+        return $('.contact_form .input').val('');
+      });
+    } else {
+      return console.log('invalid');
+    }
+  });
+  return $('.first_form .submit').click(function() {
+    var text;
+    if (validatePurchase()) {
+      text = ("Name: " + ($('.first_form .name input').val()) + "\n") + ("Email: " + ($('.first_form .email input').val()) + "\n\n") + ("" + ($('.first_form .message textarea').val()));
+      return send_mail('Message from purchase form', text, function() {
+        return $('.first_form input, .first_form textarea').val('');
+      });
+    } else {
+      return console.log('invalid');
+    }
   });
 });
 });
@@ -1011,6 +1145,59 @@ module.exports = function(controller) {
     }
   }).setTween(scroller_tween1).addTo(controller);
   scroller_tween2 = new TimelineMax().add(TweenMax.to($('.scroller .progress'), 1, {
+    height: '65%'
+  }));
+  scroller2 = new ScrollMagic.Scene({
+    triggerElement: "#scrolltrigger",
+    offset: 3301,
+    duration: 10000
+  }).triggerHook(0).on('progress', function(e) {
+    $('.active_icon').removeClass('active_icon');
+    $('.disabled').removeClass('disabled');
+    if (e.target.controller().info("scrollDirection") === "FORWARD") {
+      return $('.progress .icon').removeClass('reversed');
+    } else {
+      return $('.progress .icon').addClass('reversed');
+    }
+  }).setTween(scroller_tween2).addTo(controller);
+  scroller_tween3 = new TimelineMax().add(TweenMax.to($('.scroller .progress'), 1, {
+    height: '110%'
+  }));
+  return scroller2 = new ScrollMagic.Scene({
+    triggerElement: "#scrolltrigger",
+    offset: 13302,
+    duration: 1200
+  }).triggerHook(0).on('progress', function(e) {
+    $('.active_icon').removeClass('active_icon');
+    $('.disabled').removeClass('disabled');
+    if (e.target.controller().info("scrollDirection") === "FORWARD") {
+      return $('.progress .icon').removeClass('reversed');
+    } else {
+      return $('.progress .icon').addClass('reversed');
+    }
+  }).setTween(scroller_tween3).addTo(controller);
+};
+});
+
+;require.register("scrollmagic/custom_scrollbar_ipad", function(exports, require, module) {
+module.exports = function(controller) {
+  var scroller1, scroller2, scroller_tween1, scroller_tween2, scroller_tween3;
+  scroller_tween1 = new TimelineMax().add(TweenMax.to($('.scroller .progress'), 1, {
+    height: '33%'
+  }));
+  scroller1 = new ScrollMagic.Scene({
+    triggerElement: "#scrolltrigger",
+    duration: 3300
+  }).triggerHook(0).on('progress', function(e) {
+    $('.active_icon').removeClass('active_icon');
+    $('.disabled').removeClass('disabled');
+    if (e.target.controller().info("scrollDirection") === "FORWARD") {
+      return $('.progress .icon').removeClass('reversed');
+    } else {
+      return $('.progress .icon').addClass('reversed');
+    }
+  }).setTween(scroller_tween1).addTo(controller);
+  scroller_tween2 = new TimelineMax().add(TweenMax.to($('.scroller .progress'), 1, {
     height: '60%'
   }));
   scroller2 = new ScrollMagic.Scene({
@@ -1337,6 +1524,114 @@ module.exports = function(controller) {
 });
 
 ;require.register("scrollmagic/smooth_scroll", function(exports, require, module) {
+module.exports = function(controller) {
+  var scrollDown, scrolling;
+  scrolling = false;
+  $('.spacer .scrolldown').click(function() {
+    if (scrolling) {
+      return;
+    }
+    scrolling = true;
+    $('body').addClass('disable-hover');
+    return scrollTo($(".inner")[0], $('#hero').height() + 40, function() {
+      $('body').removeClass('disable-hover');
+      return scrolling = false;
+    });
+  });
+  $('.to_about_us').click(function() {
+    if (scrolling) {
+      return;
+    }
+    scrolling = true;
+    $('body').addClass('disable-hover');
+    return scrollTo($(".inner")[0], 3150, function() {
+      $('body').removeClass('disable-hover');
+      return scrolling = false;
+    });
+  });
+  $('.to_home').click(function() {
+    if (scrolling) {
+      return;
+    }
+    scrolling = true;
+    $('body').addClass('disable-hover');
+    return scrollTo($(".inner")[0], 0, function() {
+      $('body').removeClass('disable-hover');
+      return scrolling = false;
+    });
+  });
+  $('.to_get_smarter').click(function() {
+    if (scrolling) {
+      return;
+    }
+    scrolling = true;
+    $('body').addClass('disable-hover');
+    return scrollTo($(".inner")[0], 12650, function() {
+      $('body').removeClass('disable-hover');
+      return scrolling = false;
+    });
+  });
+  $('.to_contact').click(function() {
+    if (scrolling) {
+      return;
+    }
+    scrolling = true;
+    $('body').addClass('disable-hover');
+    return scrollTo($(".inner")[0], 13600, function() {
+      $('body').removeClass('disable-hover');
+      return scrolling = false;
+    });
+  });
+  return scrollDown = new ScrollMagic.Scene({
+    triggerElement: "#scrolltrigger",
+    duration: "100%"
+  }).triggerHook(0).on('progress', function(e) {
+    if (e.target.controller().info("scrollDirection") === "FORWARD") {
+      return $('.progress .icon').removeClass('reversed');
+    } else {
+      return $('.progress .icon').addClass('reversed');
+    }
+  }).on("start end", function(e) {
+    if (e.type === "start") {
+      if (e.target.controller().info("scrollDirection") === "FORWARD") {
+        if (scrolling) {
+          return;
+        }
+        scrolling = true;
+        $('body').addClass('disable-hover');
+        return scrollTo($(".inner")[0], $('#hero').height() + 40, function() {
+          $('body').removeClass('disable-hover');
+          return scrolling = false;
+        });
+      } else {
+
+      }
+    } else {
+      if (e.target.controller().info("scrollDirection") === "REVERSE") {
+        $('.hero .bg').append(require('hero_video'));
+        $(".inner")[0].scrollTop = $('#hero').height() + 40;
+        return setTimeout(function() {
+          if (scrolling) {
+            return;
+          }
+          scrolling = true;
+          $('body').addClass('disable-hover');
+          return scrollTo($(".inner")[0], 0, function() {
+            $('body').removeClass('disable-hover');
+            return scrolling = false;
+          });
+        }, 200);
+      } else {
+        return setTimeout(function() {
+          return $('.hero_video').remove();
+        }, 500);
+      }
+    }
+  }).addTo(controller);
+};
+});
+
+;require.register("scrollmagic/smooth_scroll_ipad", function(exports, require, module) {
 module.exports = function(controller) {
   var scrollDown, scrolling;
   scrolling = false;
