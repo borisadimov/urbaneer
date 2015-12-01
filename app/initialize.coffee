@@ -173,7 +173,7 @@ initScrollMaigic = =>
 
     setFooterTween(500)
     $('.footer').addClass('extended')
-    $('.footer_items').addClass('disabled')
+    $('.footer_items').addClass('disabled_important')
     $('.purchase_form').addClass('showed')
     $('.contact_form').addClass('down')
     setTimeout ->
@@ -186,7 +186,7 @@ initScrollMaigic = =>
 
     setFooterTween(500)
     $('.footer').addClass('extended')
-    $('.footer_items').addClass('disabled')
+    $('.footer_items').addClass('disabled_important')
     $('.footer_item_ext.gbrief').addClass('showed')
     setTimeout ->
       $('.footer_item_ext.gbrief').addClass('drawn')
@@ -197,7 +197,7 @@ initScrollMaigic = =>
   $('.footer_item.show_frontier').click ->
     setFooterTween(500)
     $('.footer').addClass('extended')
-    $('.footer_items').addClass('disabled')
+    $('.footer_items').addClass('disabled_important')
     $('.footer_item_ext.frontier').addClass('showed')
     $('.footer_item_ext.frontier .illustration').append(require('frontier'))
     setTimeout ->
@@ -214,7 +214,7 @@ initScrollMaigic = =>
 
     setTimeout ->
       setFooterTween(0)
-      $('.footer_items').removeClass('disabled')
+      $('.footer_items').removeClass('disabled_important')
       $('.purchase_form').removeClass('showed')
       $('.footer').removeClass('extended')
     , 2100
@@ -226,7 +226,7 @@ initScrollMaigic = =>
 
     setTimeout ->
       setFooterTween(0)
-      $('.footer_items').removeClass('disabled')
+      $('.footer_items').removeClass('disabled_important')
       $('.footer_item_ext.gbrief').removeClass('showed')
       $('.footer').removeClass('extended')
     , 400
@@ -238,7 +238,7 @@ initScrollMaigic = =>
     $('.illustration iframe').remove()
     setTimeout ->
       setFooterTween(0)
-      $('.footer_items').removeClass('disabled')
+      $('.footer_items').removeClass('disabled_important')
       $('.footer_item_ext.frontier').removeClass('showed')
       $('.footer').removeClass('extended')
     , 400
@@ -261,7 +261,6 @@ $(document).ready ->
   ipadCheck()
   Parse.initialize('cYShbzU7vF1CCtx3r11fQcYFd7vxCNu8ESMBYNq9','9edRFzvAVLNm8lS39szU3AiTmrBrdP8anIidjg56')
   window.controller = controller = new ScrollMagic.Controller({container: ".inner"})
-
 
   $('.contact_form .btn_submit').click ->
     if validateContact()

@@ -29,6 +29,8 @@ module.exports = (controller) ->
   .triggerHook(0.6)
   .on "start", ->
     $('.about_us .who .h1, .about_us .who .col').addClass('showed')
+    $('.illustration video').each (i,e) ->
+      e.play()
   .addTo(controller)
 
 
