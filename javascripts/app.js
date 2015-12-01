@@ -386,7 +386,7 @@ initScrollMaigic = (function(_this) {
     $('.footer_item.show_purchase').click(function() {
       setFooterTween(500);
       $('.footer').addClass('extended');
-      $('.footer_items').addClass('disabled');
+      $('.footer_items').addClass('disabled_important');
       $('.purchase_form').addClass('showed');
       $('.contact_form').addClass('down');
       return setTimeout(function() {
@@ -396,7 +396,7 @@ initScrollMaigic = (function(_this) {
     $('.footer_item.show_gbrief').click(function() {
       setFooterTween(500);
       $('.footer').addClass('extended');
-      $('.footer_items').addClass('disabled');
+      $('.footer_items').addClass('disabled_important');
       $('.footer_item_ext.gbrief').addClass('showed');
       return setTimeout(function() {
         return $('.footer_item_ext.gbrief').addClass('drawn');
@@ -405,7 +405,7 @@ initScrollMaigic = (function(_this) {
     $('.footer_item.show_frontier').click(function() {
       setFooterTween(500);
       $('.footer').addClass('extended');
-      $('.footer_items').addClass('disabled');
+      $('.footer_items').addClass('disabled_important');
       $('.footer_item_ext.frontier').addClass('showed');
       $('.footer_item_ext.frontier .illustration').append(require('frontier'));
       return setTimeout(function() {
@@ -416,7 +416,7 @@ initScrollMaigic = (function(_this) {
       $('.purchase_form').removeClass('drawn');
       return setTimeout(function() {
         setFooterTween(0);
-        $('.footer_items').removeClass('disabled');
+        $('.footer_items').removeClass('disabled_important');
         $('.purchase_form').removeClass('showed');
         return $('.footer').removeClass('extended');
       }, 2100);
@@ -425,7 +425,7 @@ initScrollMaigic = (function(_this) {
       $('.footer_item_ext.gbrief').removeClass('drawn');
       return setTimeout(function() {
         setFooterTween(0);
-        $('.footer_items').removeClass('disabled');
+        $('.footer_items').removeClass('disabled_important');
         $('.footer_item_ext.gbrief').removeClass('showed');
         return $('.footer').removeClass('extended');
       }, 400);
@@ -435,7 +435,7 @@ initScrollMaigic = (function(_this) {
       $('.illustration iframe').remove();
       return setTimeout(function() {
         setFooterTween(0);
-        $('.footer_items').removeClass('disabled');
+        $('.footer_items').removeClass('disabled_important');
         $('.footer_item_ext.frontier').removeClass('showed');
         return $('.footer').removeClass('extended');
       }, 400);
@@ -529,7 +529,10 @@ module.exports = function(controller) {
   scene_who_we_are_text = new ScrollMagic.Scene({
     triggerElement: ".about_us .who"
   }).triggerHook(0.6).on("start", function() {
-    return $('.about_us .who .h1, .about_us .who .col').addClass('showed');
+    $('.about_us .who .h1, .about_us .who .col').addClass('showed');
+    return $('.illustration video').each(function(i, e) {
+      return e.play();
+    });
   }).addTo(controller);
   scene_what_we_do_text = new ScrollMagic.Scene({
     triggerElement: ".about_us .h2",
