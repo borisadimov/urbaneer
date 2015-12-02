@@ -2824,9 +2824,93 @@ p {
           color: #fff;
           background-color: #000; }
 
+.about_us .perspectives, .about_us .perspectives2 {
+  top: 1200px;
+  position: absolute;
+  left: 0;
+  width: 980px; }
+  .about_us .perspectives .text_box, .about_us .perspectives2 .text_box {
+    opacity: 0.0001;
+    position: absolute;
+    left: 50%;
+    width: 640px;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    -webkit-transition: all 0.8s ease;
+    transition: all 0.8s ease;
+    text-align: center;
+    padding: 24px 10px;
+    font: 300 20px/28px "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica Neue, Helvetica, Arial;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.02em; }
+    .about_us .perspectives .text_box.showed, .about_us .perspectives2 .text_box.showed {
+      opacity: 0.9999; }
+    .about_us .perspectives .text_box span, .about_us .perspectives2 .text_box span {
+      font: 700 24px/36px "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: 0.02em;
+      color: #96B482; }
+  .about_us .perspectives .line, .about_us .perspectives2 .line {
+    position: absolute;
+    background: #000;
+    -webkit-transition: width 0.3s ease, height 0.3s ease;
+    transition: width 0.3s ease, height 0.3s ease; }
+    .about_us .perspectives .line.lnp1, .about_us .perspectives2 .line.lnp1 {
+      width: 0px;
+      height: 1px;
+      right: 20px;
+      top: 40px; }
+    .about_us .perspectives .line.lnp2, .about_us .perspectives2 .line.lnp2 {
+      width: 1px;
+      height: 0px;
+      right: 169px;
+      top: 41px;
+      -webkit-transform: rotate(180deg);
+          -ms-transform: rotate(180deg);
+              transform: rotate(180deg);
+      -webkit-transform-origin: 0 0;
+          -ms-transform-origin: 0 0;
+              transform-origin: 0 0; }
+    .about_us .perspectives .line.lnp3, .about_us .perspectives2 .line.lnp3 {
+      width: 1px;
+      height: 0px;
+      right: 170px;
+      top: 41px; }
+    .about_us .perspectives .line.lnp4, .about_us .perspectives2 .line.lnp4 {
+      width: 0px;
+      top: 0;
+      right: 170px;
+      height: 1px; }
+    .about_us .perspectives .line.lnp5, .about_us .perspectives2 .line.lnp5 {
+      width: 0px;
+      top: 77px;
+      right: 170px;
+      height: 1px; }
+    .about_us .perspectives .line.lnp6, .about_us .perspectives2 .line.lnp6 {
+      width: 1px;
+      height: 0px;
+      right: 809px;
+      top: 0px; }
+    .about_us .perspectives .line.lnp7, .about_us .perspectives2 .line.lnp7 {
+      width: 1px;
+      height: 0px;
+      right: 808px;
+      top: 77px;
+      -webkit-transform: rotate(180deg);
+          -ms-transform: rotate(180deg);
+              transform: rotate(180deg);
+      -webkit-transform-origin: 0 0;
+          -ms-transform-origin: 0 0;
+              transform-origin: 0 0; }
+    .about_us .perspectives .line.lnp8, .about_us .perspectives2 .line.lnp8 {
+      width: 0px;
+      height: 1px;
+      right: 810px;
+      top: 40px; }
 .about_us .stories, .about_us .stories2 {
   position: absolute;
-  top: 1500px;
+  top: 1700px;
   left: 0;
   width: 100%; }
   .about_us .stories .story, .about_us .stories2 .story {
@@ -2904,8 +2988,10 @@ p {
       .about_us .stories .story.story5 .illustration, .about_us .stories2 .story.story5 .illustration {
         top: 0px;
         right: 30px; }
+.about_us .perspectives2 {
+  top: 3212px; }
 .about_us .stories2 {
-  top: 3400px; }
+  top: 3700px; }
 
 .guidelines {
   position: absolute;
@@ -2934,14 +3020,15 @@ p {
       height: 0px;
       width: 1px; }
     .guidelines .guide_line.ln4 {
-      top: 1300px;
-      right: 20px;
+      top: 1240px;
+      left: 20px;
       height: 0px;
       width: 1px;
       -webkit-transform-origin: 0% 0%;
           -ms-transform-origin: 0% 0%;
               transform-origin: 0% 0%; }
     .guidelines .guide_line.ln4_1 {
+      display: none;
       top: 2432px;
       right: 20px;
       height: 1px;
@@ -2967,8 +3054,8 @@ p {
       height: 0px;
       width: 1px; }
     .guidelines .guide_line.ln8 {
-      top: 3312px;
-      right: 20px;
+      top: 3252px;
+      left: 20px;
       height: 0px;
       width: 1px;
       -webkit-transform-origin: 0% 0%;

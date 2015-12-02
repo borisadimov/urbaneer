@@ -510,7 +510,7 @@ buf.push("\n<video autoplay=\"autoplay\" preload=\"true\" loop=\"loop\" class=\"
 
 require.register("scrollmagic/about_section", function(exports, require, module) {
 module.exports = function(controller) {
-  var about_us_tween, how_we_do_it_icons_tween, how_we_do_it_tween, jessica_tween, jessica_tween2, scene_about_us, scene_how_we_do_it, scene_jessica, scene_jessica2, scene_what_we_do_text, scene_what_we_do_tips, scene_who_we_are, scene_who_we_are_text, what_we_do_tips_tween, who_we_are_tween;
+  var about_us_tween, box_tween1, box_tween2, how_we_do_it_icons_tween, how_we_do_it_tween, jessica_tween, jessica_tween2, scene_about_us, scene_box1, scene_box2, scene_how_we_do_it, scene_jessica, scene_jessica2, scene_what_we_do_text, scene_what_we_do_tips, scene_who_we_are, scene_who_we_are_text, what_we_do_tips_tween, who_we_are_tween;
   about_us_tween = new TimelineMax().add(TweenMax.to($('.about_us .video_section_about_us .label'), 1, {
     'transform': 'translate3D(0,-250px,0)'
   }));
@@ -621,12 +621,45 @@ module.exports = function(controller) {
     offset: 900,
     tweenChanges: true
   }).triggerHook(0.1).setPin('.about_us .container.long').setTween(what_we_do_tips_tween).addTo(controller);
+  box_tween1 = new TimelineMax().add(TweenMax.to($('.guidelines .ln3'), 0.3, {
+    'height': '490px',
+    delay: 0.5
+  })).add(TweenMax.to($('.perspectives .lnp1'), 0.2, {
+    'width': '150px'
+  })).add([
+    TweenMax.to($('.perspectives .lnp2'), 0.1, {
+      'height': '41px'
+    }), TweenMax.to($('.perspectives .lnp3'), 0.1, {
+      'height': '37px'
+    })
+  ]).add([
+    TweenMax.to($('.perspectives .lnp4'), 0.1, {
+      'width': '640px'
+    }), TweenMax.to($('.perspectives .text_box'), 0.1, {
+      'opacity': '0.9999'
+    }), TweenMax.to($('.perspectives .lnp5'), 0.1, {
+      'width': '640px'
+    })
+  ]).add([
+    TweenMax.to($('.perspectives .lnp6'), 0.1, {
+      'height': '37px'
+    }), TweenMax.to($('.perspectives .lnp7'), 0.1, {
+      'height': '41px'
+    })
+  ]).add(TweenMax.to($('.perspectives .lnp8'), 0.2, {
+    'width': '150px'
+  }));
+  scene_box1 = new ScrollMagic.Scene({
+    triggerElement: ".about_us",
+    duration: 300,
+    offset: 2400
+  }).triggerHook(0.3).setTween(box_tween1).addTo(controller);
   jessica_tween = new TimelineMax().add([
-    TweenMax.to($('.guidelines .ln3'), 0.1, {
-      'height': '550px',
-      delay: 0.4
-    }), TweenMax.to($('.stories .story1'), 4, {
-      'transform': 'translate3D(0,-900px,0)'
+    TweenMax.to($('.guidelines .ln4'), 4, {
+      'height': '1195px',
+      delay: 0.6
+    }), TweenMax.to($('.stories .story1'), 2, {
+      'transform': 'translate3D(0,-600px,0)'
     }), TweenMax.to($('.stories .story2'), 2.5, {
       'transform': 'translate3D(0,-900px,0)'
     }), TweenMax.to($('.stories .story3'), 2, {
@@ -651,17 +684,12 @@ module.exports = function(controller) {
     }), TweenMax.to($('.stories .story5 .quote'), 4.8, {
       'transform': 'translate3D(0,-200px,0)',
       delay: 0.6
-    }), TweenMax.to($('.guidelines .ln4'), 2, {
-      'height': '1132px',
-      delay: 1
     })
-  ]).add(TweenMax.to($('.guidelines .ln4_1'), 0.2, {
-    'width': '940px'
-  }));
+  ]);
   scene_jessica = new ScrollMagic.Scene({
     triggerElement: ".about_us",
     duration: 1400,
-    offset: 2400
+    offset: 2600
   }).triggerHook(0.3).on('start', function(e) {
     if (e.target.controller().info("scrollDirection") === "FORWARD") {
       return $('.ln2').addClass('complete');
@@ -760,12 +788,42 @@ module.exports = function(controller) {
     offset: 4400,
     tweenChanges: true
   }).triggerHook(0.3).setTween(how_we_do_it_icons_tween).setPin('.about_us .container.long').addTo(controller);
+  box_tween2 = new TimelineMax().add(TweenMax.to($('.guidelines .ln7'), 0.3, {
+    'height': '490px',
+    delay: 0.5
+  })).add(TweenMax.to($('.perspectives2 .lnp1'), 0.2, {
+    'width': '150px'
+  })).add([
+    TweenMax.to($('.perspectives2 .lnp2'), 0.1, {
+      'height': '41px'
+    }), TweenMax.to($('.perspectives2 .lnp3'), 0.1, {
+      'height': '37px'
+    })
+  ]).add([
+    TweenMax.to($('.perspectives2 .lnp4'), 0.1, {
+      'width': '640px'
+    }), TweenMax.to($('.perspectives2 .text_box'), 0.1, {
+      'opacity': '0.9999'
+    }), TweenMax.to($('.perspectives2 .lnp5'), 0.1, {
+      'width': '640px'
+    })
+  ]).add([
+    TweenMax.to($('.perspectives2 .lnp6'), 0.1, {
+      'height': '37px'
+    }), TweenMax.to($('.perspectives2 .lnp7'), 0.1, {
+      'height': '41px'
+    })
+  ]).add(TweenMax.to($('.perspectives2 .lnp8'), 0.2, {
+    'width': '150px'
+  }));
+  scene_box2 = new ScrollMagic.Scene({
+    triggerElement: ".about_us",
+    duration: 300,
+    offset: 5900
+  }).triggerHook(0.3).setTween(box_tween2).addTo(controller);
   jessica_tween2 = new TimelineMax().add([
-    TweenMax.to($('.guidelines .ln7'), 0.1, {
-      'height': '550px',
-      delay: 0.4
-    }), TweenMax.to($('.stories2 .story1'), 4, {
-      'transform': 'translate3D(0,-900px,0)'
+    TweenMax.to($('.stories2 .story1'), 4, {
+      'transform': 'translate3D(0,-600px,0)'
     }), TweenMax.to($('.stories2 .story2'), 2.5, {
       'transform': 'translate3D(0,-900px,0)'
     }), TweenMax.to($('.stories2 .story3'), 2, {
@@ -791,16 +849,14 @@ module.exports = function(controller) {
       'transform': 'translate3D(0,-200px,0)',
       delay: 0.6
     }), TweenMax.to($('.guidelines .ln8'), 2, {
-      'height': '1032px',
+      'height': '1100px',
       delay: 1
     })
-  ]).add(TweenMax.to($('.guidelines .ln8_1'), 0.2, {
-    'width': '940px'
-  }));
+  ]);
   scene_jessica2 = new ScrollMagic.Scene({
     triggerElement: ".about_us",
     duration: 1100,
-    offset: 5900
+    offset: 6000
   }).triggerHook(0.3).on('start', function(e) {
     if (e.target.controller().info("scrollDirection") === "FORWARD") {
       return $('.ln6').addClass('complete');
