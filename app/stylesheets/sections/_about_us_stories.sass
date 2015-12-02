@@ -1,7 +1,86 @@
 .about_us
+
+  .perspectives, .perspectives2
+    top: 1200px
+    position: absolute
+    left: 0
+    width: 980px
+
+    .text_box
+      opacity: 0.0001
+      position: absolute
+      left: 50%
+      width: 640px
+      transform: translateX(-50%)
+
+      transition: all .8s ease
+      text-align: center
+      padding: 24px 10px
+      +light(20px,28px)
+      &.showed
+        opacity: 0.9999
+
+      span
+        +bold(24px,36px)
+        color: #96B482
+
+    .line
+      position: absolute
+      background: #000
+      transition: width 0.3s ease, height .3s ease
+      &.lnp1
+        width: 0px //150px
+        height: 1px
+        right: 20px
+        top: 40px
+      &.lnp2
+        width: 1px
+        height: 0px //41px
+        right: 169px
+        top: 41px
+        transform: rotate(180deg)
+        transform-origin: 0 0
+      &.lnp3
+        width: 1px
+        height: 0px//37px
+        right: 170px
+        top: 41px
+      &.lnp4
+        width: 0px //640px
+        top: 0
+        right: 170px
+        height: 1px
+
+      &.lnp5
+        width: 0px //640px
+        top: 77px
+        right: 170px
+        height: 1px
+
+      &.lnp6
+        width: 1px
+        height: 0px //41px
+        right: 640 + 169px
+        top: 0px
+
+      &.lnp7
+        width: 1px
+        height: 0px //37px
+        right: 640 + 168px
+        top: 77px
+        transform: rotate(180deg)
+        transform-origin: 0 0
+
+      &.lnp8
+        width: 0px //150px
+        height: 1px
+        right: 810px
+        top: 40px
+
+
   .stories, .stories2
     position: absolute
-    top: 1500px
+    top: 1700px
     left: 0
     width: 100%
     .story
@@ -97,9 +176,10 @@
 
 
 
-
+  .perspectives2
+    top: 3212px
   .stories2
-    top: 3400px
+    top: 3700px
 
 
 
