@@ -109,16 +109,16 @@ initScrollMaigic = =>
 
   require('scrollmagic/earth_section')(controller)
   require('scrollmagic/timeline_section')(controller)
-  unless isiPad
-    require('scrollmagic/about_section')(controller)
-    require('scrollmagic/get_started_section')(controller)
-    require('scrollmagic/custom_scrollbar')(controller)
-    require('scrollmagic/smooth_scroll')(controller)
-  else
-    require('scrollmagic/about_section_ipad')(controller)
-    require('scrollmagic/get_started_section_ipad')(controller)
-    require('scrollmagic/custom_scrollbar_ipad')(controller)
-    require('scrollmagic/smooth_scroll_ipad')(controller)
+  # unless isiPad
+  #   require('scrollmagic/about_section')(controller)
+  #   require('scrollmagic/get_started_section')(controller)
+  #   require('scrollmagic/custom_scrollbar')(controller)
+  #   require('scrollmagic/smooth_scroll')(controller)
+  # else
+  require('scrollmagic/about_section_ipad')(controller)
+  require('scrollmagic/get_started_section_ipad')(controller)
+  require('scrollmagic/custom_scrollbar_ipad')(controller)
+  require('scrollmagic/smooth_scroll_ipad')(controller)
 
   require('scrollmagic/get_smarter_section')(controller)
 
