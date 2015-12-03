@@ -324,17 +324,10 @@ initScrollMaigic = (function(_this) {
     var contact_form_scene, scene_footer, setFooterTween;
     require('scrollmagic/earth_section')(controller);
     require('scrollmagic/timeline_section')(controller);
-    if (!isiPad) {
-      require('scrollmagic/about_section')(controller);
-      require('scrollmagic/get_started_section')(controller);
-      require('scrollmagic/custom_scrollbar')(controller);
-      require('scrollmagic/smooth_scroll')(controller);
-    } else {
-      require('scrollmagic/about_section_ipad')(controller);
-      require('scrollmagic/get_started_section_ipad')(controller);
-      require('scrollmagic/custom_scrollbar_ipad')(controller);
-      require('scrollmagic/smooth_scroll_ipad')(controller);
-    }
+    require('scrollmagic/about_section_ipad')(controller);
+    require('scrollmagic/get_started_section_ipad')(controller);
+    require('scrollmagic/custom_scrollbar_ipad')(controller);
+    require('scrollmagic/smooth_scroll_ipad')(controller);
     require('scrollmagic/get_smarter_section')(controller);
     scene_footer = new ScrollMagic.Scene({
       triggerElement: ".footer",
