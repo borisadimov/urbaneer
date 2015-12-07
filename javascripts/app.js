@@ -1401,9 +1401,9 @@ module.exports = function(controller) {
   });
   return scene_get_smarter = new ScrollMagic.Scene({
     triggerElement: ".contact_us_video",
-    offset: 40,
+    offset: 0,
     duration: '150%'
-  }).triggerHook(0).setClassToggle('.contacts-table', 'drawn').addTo(controller);
+  }).triggerHook(0.3).setClassToggle('.contacts-table', 'drawn').addTo(controller);
 };
 });
 
