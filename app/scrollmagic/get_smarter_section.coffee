@@ -37,9 +37,9 @@ module.exports = (controller) ->
 
   scene_get_smarter = new ScrollMagic.Scene
     triggerElement: ".contact_us_video"
-    offset: 40
+    offset: 0
     duration: '150%'
-  .triggerHook(0)
+  .triggerHook(0.3)
   .setClassToggle('.contacts-table', 'drawn')
   .addTo(controller)
 
